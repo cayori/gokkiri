@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="area">
+	
+	<resultMap type="area" id="areaRes">
+		
+		<result property="c_no" column="c_no" /> 
+		 
+		<!-- AREA 테이블 -->
+		<result property="a_no" column="a_no" />
+		<result property="a_name" column="a_name" />
+		<result property="a_con" column="a_con" />
+		<result property="a_addr" column="a_addr" />
+		<result property="a_count" column="a_count" />
+		<result property="a_cate" column="a_cate" />
+		<result property="a_way" column="a_way" />
+		<result property="a_tel" column="a_tel" />
+		<result property="a_hours" column="a_hours" />
+		<result property="a_web" column="a_web" />
+		
+		<!-- AREA_IMG 테이블 -->
+		<result property="a_img_no" column="a_img_no" />
+		<result property="a_img_org" column="a_img_org" />
+		<result property="a_img_sav" column="a_img_sav" />
+		<result property="a_img_index" column="a_ing_index" />
+		
+	</resultMap>
+	
+	<resultMap type="areaReview" id="areaReviewRes">
+		
+		<result property="a_no" column="a_no" />
+		<result property="m_email" column="m_email" />
+		
+		<!-- REVIEW 테이블 -->
+		<result property="r_no" column="r_no" />
+		<result property="r_con" column="r_con" />
+		<result property="r_date" column="r_date" />
+		<result property="r_score" column="r_score" />
+		
+	</resultMap>
+	
+	<!-- SELECT -->
+	<!-- 여행지 검색 -->
+	<select id="schAreaSearch" resultMap="areaRes" parameterType="HashMap">
+		SELECT *
+		FROM AREA 
+		WHERE C_NO = #{c_no} AND A_NAME LIKE #{searchKeyword}
+		ORDER BY A_cOUNT DESC
+	</select>
+	
+	<!-- 스케쥴 - 여행지 리스트  보기 -->
+	<select id="schAreaList" resultMap="areaRes" parameterType="Integer" >
+		SELECT *
+		FROM AREA
+    	where c_no = #{c_no}
+		ORDER BY A_count DESC
+	</select>
+	
+	<!-- 스케쥴 - 여행지 리스트  보기 -->
+	<select id="schAreaCateList" resultMap="areaRes" parameterType="HashMap" >
+		SELECT *
+		FROM AREA
+    	where c_no = #{c_no} and a_cate = #{a_cate}
+		ORDER BY A_count DESC
+	</select>
+	
+	<!-- 스케쥴 - 마커 찍을 장소 카테고리 구분 리스트 -->
+	<select id="markerAreaCateList" resultMap="areaRes" parameterType="HashMap">
+		SELECT * 
+		FROM AREA JOIN AREA_IMG on AREA_IMG.A_NO = AREA.A_NO
+		WHERE a_img_index = 1 and C_NO = #{c_no} AND A_CATE = #{a_cate} AND NOT EXISTS (SELECT * 
+                             		   		 						FROM SCH_DETAIL 
+             	                    		 						WHERE SCH_DETAIL.A_NO = AREA.A_NO AND S_NO = #{s_no} AND S_IDX = ${s_idx})
+	</select>
+	
+	<!-- 스케쥴 - 마커 찍을 장소 리스트 -->
+	<select id="markerAreaList" resultMap="areaRes" parameterType="HashMap">
+		SELECT * 
+		FROM AREA JOIN AREA_IMG on AREA_IMG.A_NO = AREA.A_NO
+		WHERE a_img_index = 1 and C_NO = #{c_no} AND NOT EXISTS (SELECT * 
+                             							   		 FROM SCH_DETAIL 
+             	                    		 				     WHERE SCH_DETAIL.A_NO = AREA.A_NO AND S_NO = #{s_no} AND S_IDX = ${s_idx})
+	</select>
+	
+	<!-- 스케쥴 - 지역 번호로 여행지 리스트 불러오기 -->
+	<select id="cityAreaList" resultMap="areaRes" parameterType="Integer">
+		SELECT *
+		FROM AREA INNER JOIN AREA_IMG
+		USING(A_NO)
+		WHERE A_IMG_INDEX = 1 AND C_NO = #{c_no}
+	</select>
+	
+	<!-- 스케쥴 - 지역번호, 카테고리번호로 여행지 리스트 불러오기 -->
+	<select id="cityAreaCateList" resultMap="areaRes" parameterType="HashMap">
+      SELECT *
+      FROM AREA INNER JOIN AREA_IMG
+      USING(A_NO)
+      WHERE A_IMG_INDEX = 1 AND A_CATE = #{a_cate} AND C_NO = #{c_no}
+      ORDER BY A_COUNT DESC
+   </select>
+	
+	<!-- 여행지 리스트  보기 -->	
+	<select id="areaList" resultMap="areaRes" parameterType="HashMap" >
+		SELECT *
+		FROM AREA INNER JOIN AREA_IMG
+		USING(A_NO)
+		WHERE A_IMG_INDEX = 1 AND A_CATE = #{a_cate} AND C_NO = #{c_no}
+		ORDER BY A_NO DESC
+	</select>
+	
+	<!-- 여행지 리스트 - 검색 -->
+	<select id="areaSearch" resultMap="areaRes" parameterType="HashMap">
+		SELECT *
+		FROM AREA INNER JOIN AREA_IMG
+		USING(A_NO)
+		WHERE A_IMG_INDEX = 1 AND A_CATE = #{a_cate} AND C_NO = #{c_no} AND (A_NAME LIKE #{searchKeyword} OR A_CON LIKE #{searchKeyword})
+		ORDER BY A_NO DESC
+	</select>
+	
+	<!-- 메인에서 인기 여행지 리스트 a_count로 불러오기 -->
+	<select id="areaCountList" resultMap="areaRes">
+		SELECT *
+		FROM AREA INNER JOIN AREA_IMG
+		USING(A_NO)
+		WHERE A_IMG_INDEX = 1
+		ORDER BY A_COUNT DESC
+	</select>
+
+	<!-- 여행지 상세보기 -->
+	<select id="areaDetail" resultMap="areaRes" parameterType="Integer">
+		SELECT *
+		FROM AREA
+		WHERE A_NO = #{a_no}
+	</select>
+	
+	<!-- 여행지 상세보기 할때 이미지 리스트 불러오기 -->
+	<select id="area_imgList" resultMap="areaRes" parameterType="Integer">
+		SELECT *
+		FROM AREA_IMG
+		WHERE A_NO = #{a_no}
+	</select>
+	
+	<!-- 여행지 상세보기 할때 이미지 갤러리 메인 이미지 불러오기 -->
+	<select id="main_img" resultType="String" parameterType="Integer">
+		SELECT A_IMG_SAV
+		FROM AREA_IMG
+		WHERE A_NO = #{a_no} AND A_IMG_INDEX = 1
+	</select>
+	
+	<!-- 여행지 상세보기 할때 리뷰 리스트 불러오기 -->
+	<select id="areaReviewList" resultMap="areaReviewRes" parameterType="Integer">
+		SELECT * 
+		FROM REV
+		WHERE A_NO = #{a_no}
+		ORDER BY R_DATE DESC
+	</select>
+	
+	<!-- 여행지 상세보기 볼때 리뷰 평점 구하기 -->
+	<select id="revScoreAvg" resultType="Integer" parameterType="Integer">
+		SELECT FLOOR(AVG(R_SCORE)) FROM REV
+		WHERE A_NO = #{a_no}
+	</select>
+	
+	<!-- 여행지 글 수정할때 카테고리 구하기 -->
+	<select id="areaCate" resultType="Integer" parameterType="Integer">
+		SELECT A_CATE FROM AREA
+		WHERE A_NO = #{a_no}
+	</select>
+	
+	<!-- 여행지 수정할때 이미지 원본이름 리스트 구하기 -->
+	<select id="imgList" resultMap="areaRes" parameterType="Integer">
+		SELECT A_IMG_ORG FROM AREA_IMG
+		WHERE A_NO = #{a_no}
+	</select>
+	
+	<!-- 여행지 수정하기 -->
+	<update id="areaModify" parameterType="area">
+		UPDATE AREA
+		SET A_NAME=#{a_name},A_CON=#{a_con},A_ADDR=#{a_addr},A_CATE=#{a_cate},A_WAY=#{a_way},A_TEL=#{a_tel},A_HOURS=#{a_hours},A_WEB=#{a_web}
+		WHERE A_NO = #{a_no}
+	</update>
+	
+	<!-- 수정할때 이미지첨부파일이 새로 입력되면 기존의 이미지첨부파일 삭제하기 -->
+	<delete id="fileDelete" parameterType="Integer">
+		DELETE FROM AREA_IMG
+		WHERE A_NO = #{a_no}
+	</delete>
+	
+	<!-- 여행지 리뷰 개수 구하기 -->
+	<select id="revCount" resultType="Integer" parameterType="Integer">
+		SELECT COUNT(*)
+		FROM REV
+		WHERE A_NO = #{a_no}
+	</select>
+	
+	<!-- 여행지 QNA 개수 구하기 -->
+	<select id="qnaCount" resultType="Integer" parameterType="Integer">
+		SELECT COUNT(*)
+		FROM QNA
+		WHERE A_NO = #{a_no}
+	</select>
+	
+	<!-- INSERT -->
+	<!-- 여행지 글쓰기 -->
+ 	<insert id="areaWrite" parameterType="area" >
+		INSERT INTO AREA(A_NO, A_NAME, A_CON, A_ADDR, A_CATE, A_WAY, A_TEL, A_HOURS, A_WEB, C_NO)
+		VALUES(A_NO_SEQ.nextval, #{a_name}, #{a_con}, #{a_addr}, #{a_cate}, #{a_way}, #{a_tel}, #{a_hours}, #{a_web}, #{c_no})
+	</insert>
+	
+	<!-- 파일 업로드 전에 a_no 값 보내주기 -->
+	<select id="selectSeq" resultType="Integer">
+		SELECT MAX(A_NO) FROM AREA
+	</select>
+	
+	<!-- 파일 업로드 -->
+	<insert id="fileupload" parameterType="HashMap">
+		INSERT INTO AREA_IMG(A_IMG_NO, A_IMG_ORG, A_IMG_SAV, A_NO, A_IMG_INDEX)
+		VALUES(A_IMG_NO_SEQ.nextval, #{a_img_org}, #{a_img_sav}, #{a_no}, #{a_img_index})
+	</insert>
+	
+	<!-- 여행지 리뷰 쓰기 -->
+	<insert id="areaReview" parameterType="areaReview">
+		INSERT INTO REV(R_NO, M_EMAIL, A_NO, R_CON, R_DATE, R_SCORE)
+		VALUES(R_NO_SEQ.nextval, #{m_email}, #{a_no}, #{r_con}, sysdate, #{r_score})
+	</insert>
+	
+	<!-- 여행지 리뷰 삭제하기 -->
+	<delete id="araeReviewDelete" parameterType="Integer">
+		DELETE FROM REV
+		WHERE R_NO = #{r_no}
+	</delete>
+	
+	<!-- UPDATE -->
+	<!-- 여행지 글 삭제하기 -->
+	<update id="areaDelete" parameterType="Integer">
+		DELETE FROM AREA
+		WHERE A_NO = #{a_no}
+	</update>
+
+	
+</mapper>

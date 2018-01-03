@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="member">
+
+	<resultMap type="member" id="memberRes">
+		<result property="m_email" column="m_email" />
+		<result property="m_pw" column="m_pw" />
+		<result property="m_name" column="m_name" />
+		<result property="m_date" column="m_date" />
+		<result property="m_admin" column="m_admin" />
+		<result property="m_auth" column="m_auth" />
+	</resultMap>
+	
+	<!-- 공통으로 사용할 select문 -->
+	<sql id="select-all-m">
+	SELECT * FROM MEM 
+	</sql>
+	
+	<!-- 회원가입  -->
+	<insert id="insertMem" parameterType="HashMap">
+		insert into mem(m_email, m_pw, m_name, m_auth)
+		values(#{m_email}, #{m_pw}, #{m_name}, #{m_auth})
+	</insert>
+	
+	<!-- 이메일 인증 -->
+	<update id="emailAuth" parameterType="HashMap">
+	 update mem 
+	 set m_admin = 1 
+	 where m_email = #{m_email} and m_auth = #{m_auth}
+	 </update>
+
+	<!-- 인증번호 변경 -->
+	<update id="changeAuth" parameterType="HashMap"> 
+	update mem set m_auth = #{m_auth} 
+	where m_email = #{m_email}
+	 </update>
+	
+	<!-- 이메일 중복체크 -->
+	<select id="emailCheck" parameterType="String" resultMap="memberRes"> 
+		select * from mem
+		where m_email = #{m_email}
+	</select> 
+	
+	<!-- 이름(닉네임) 중복체크 -->
+	<select id="nameCheck" parameterType="String" resultMap="memberRes"> 
+		<include refid="select-all-m" />
+		where m_name = #{m_name}
+	</select> 
+	
+
+
+	
+	
+	
+	<!-- 로그인 -->
+	<select id="login" parameterType="member" resultMap="memberRes">
+		<include refid="select-all-m" />
+		where m_email=#{m_email} and m_pw=#{m_pw}
+	</select>
+	
+	<!-- 이메일 찾기  -->
+	 <select id="emailFind" parameterType="member" resultMap="memberRes"> 
+		select *
+		from mem
+		where m_name = #{m_name}
+	</select>
+	
+	<!-- 비밀번호 찾기 -->
+	<select id="pwFind" parameterType="member" resultMap="memberRes"> 
+		select *
+		from mem 
+		where m_name = #{m_name} and m_email = #{m_email} 
+	</select>
+	
+	<!-- 회원정보 수정 -->
+	<update id="updateMem" parameterType="HashMap"> 
+		update mem set 
+		m_name=#{m_name},
+ 		m_pw=#{m_pw}
+		where m_email=#{m_email} 
+ 	</update> 
+ 	
+ 	<!-- 회원정보 수정, 회원탈퇴 시 로그인한 이메일 값 필요. -->
+	<select id="getMember" parameterType="String" resultMap="memberRes">
+		select *
+		from mem
+		where m_email = #{m_email}
+	</select>
+	
+	<!-- 회원탈퇴 --> 
+ 	<delete id="deleteMem" parameterType="String">
+ 		delete from mem
+		where m_email = #{m_email}
+	</delete>
+
+</mapper>
+
+

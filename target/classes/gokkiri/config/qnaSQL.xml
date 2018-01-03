@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="qna">
+
+	<resultMap type="qna" id="qnaModelRes">
+		<result property="q_no" column="q_no" />				
+		<result property="q_sub" column="q_sub" />
+		<result property="q_con" column="q_con" />
+		<result property="m_email" column="m_email" />
+		<result property="q_date" column="q_date" />
+		
+		<result property="a_no" column="a_no" />
+		<result property="c_no" column="c_no" />
+		<result property="a_name" column="a_name" />
+
+		<result property="q_co_no" column="q_co_no" />	
+		<result property="q_co_con" column="q_co_con" />
+		<result property="q_co_date" column="q_co_date" />
+		<result property="m_email" column="m_email" />
+
+	</resultMap> 
+	<!-- 글목록  -->
+	<select id="qnaList" resultMap="qnaModelRes" parameterType="Integer">
+			SELECT * FROM QNA
+			WHERE A_NO = #{a_no}
+			ORDER BY Q_NO DESC
+	</select>
+	
+	<!-- 글쓰기 -->
+	<insert id="qnaWrite" parameterType="Integer">
+			INSERT INTO QNA
+			(Q_NO, Q_SUB, Q_CON, Q_DATE,M_EMAIL, A_NO)
+			VALUES
+			(Q_NO_SEQ.NEXTVAL, #{q_sub}, #{q_con}, SYSDATE,#{m_email},#{a_no})
+	</insert>
+	
+
+	<!-- 글 상세보기 -->
+	<select id="qnaView" resultMap="qnaModelRes" parameterType="Integer">
+			SELECT * FROM QNA
+			WHERE 
+			Q_NO = #{q_no}
+	</select>
+	
+	<!--  글수정 -->
+	<update id="qnaModify" parameterType="Integer">
+			UPDATE QNA
+			SET
+				Q_SUB = #{q_sub},
+				Q_CON = #{q_con},
+				A_NO = 63
+			WHERE
+				Q_NO = #{q_no}	
+	</update>
+          <!-- 글삭제-->
+	<delete id="qnaDelete" parameterType="Integer">
+			DELETE QNA
+			WHERE
+				Q_NO = #{q_no}
+	</delete>
+
+
+	<!-- 댓글 목록  -->
+	<select id="qnacommList" resultMap="qnaModelRes" parameterType="int">
+			SELECT * FROM QNA_CO
+			where q_no = #{q_no}
+			ORDER BY q_co_no desc
+	</select>
+	
+	<!-- 댓글 쓰기 -->
+	<insert id="qnacommWrite"  parameterType="qna">
+		insert into qna_co(q_co_no,q_no,q_co_con, q_co_date,m_email )
+		values(Q_CO_NO_SEQ.NEXTVAL,#{q_no}, #{q_co_con}, sysdate,#{m_email})
+	</insert>
+
+	<!-- 댓글 삭제  -->
+	<delete id="qnacommDelete"  parameterType="Integer">
+		DELETE QNA_CO
+			WHERE
+				Q_CO_NO = #{q_co_no}
+	</delete>	
+	
+	<!-- 도시에서 모든 여행지QnA리스트 가져오기 -->
+	<select id="cityqnaList" resultMap="qnaModelRes" parameterType="Integer">
+		SELECT *
+		FROM AREA INNER JOIN QNA
+		USING(A_NO)
+		WHERE C_NO = #{C_NO}
+		ORDER BY Q_NO DESC
+	</select> 
+	
+
+</mapper>
+

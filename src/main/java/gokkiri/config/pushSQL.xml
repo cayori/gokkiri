@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="push">
+
+	<resultMap type="schedule" id="scheduleRes">
+		<result property="m_email" column="m_email" />
+		<result property="a_no" column="a_no" />
+		
+		<!-- SCH 테이블 -->
+		<result property="s_no" column="s_no" />
+		<result property="s_date" column="s_date" />
+		<result property="s_start_date" column="s_start_date" />
+		<result property="s_end_date" column="s_end_date" />
+		<result property="s_hit" column="s_hit" />
+		<result property="s_private" column="s_private" />
+		<result property="s_name" column="s_name" />
+		<result property="a_img_sav" column="a_img_sav" />
+		
+		<!-- SCH_DETAIL 테이블 -->
+		<result property="s_detail_memo" column="s_detail_memo" />
+		<result property="s_detail_index" column="s_detail_index" />
+		<result property="s_detail_turn" column="s_detail_turn"/>
+		
+		<!-- SCH_CO 테이블 -->
+		<result property="s_co_no" column="s_co_no" />
+		<result property="s_co_con" column="s_co_con" />
+		<result property="s_co_date" column="s_co_date" />
+		
+		<!-- SCH_TOGETHER 테이블 -->
+		<result property="s_together" column="s_together" />
+		<result property="s_state" column="s_state"/>
+	</resultMap>
+	
+	<!-- 알림 리스트 -->
+	<select id="pushList" resultMap="scheduleRes" parameterType="String">
+		select m_email, s_together, s_no, s_name, TO_CHAR(s_start_date, 'yyyy-mm-dd') s_start_date, TO_CHAR(s_end_date, 'yyyy-mm-dd') s_end_date
+		from sch_share inner join sch
+		using(s_no)
+		where s_together =#{m_email} and s_state=0
+	</select>
+	
+	<!-- 수락/거절 후 상태값 변경 -->
+	<update id="updateTogether" parameterType="HashMap"> 
+		update sch_share 
+		set s_state=#{s_state}
+		where s_together=#{s_together} and s_no=#{s_no}
+ 	</update> 
+ 	
+ 	<!-- 알림리스트 개수 구하기 -->
+	<select id="pushListCount" resultType="Integer" parameterType="String">
+		SELECT COUNT(*)
+		FROM sch_share
+		WHERE s_together = #{m_email} and s_state=0
+	</select>
+	
+	<!-- 알림리스트 개수 구하기 -->
+	<select id="deleteTogether">
+		delete
+		from sch_share
+		where s_state=2
+	</select>
+ 	
+ 
+ 	
+ 
+ 	
+ 	
+	
+	
+
+	
+</mapper>

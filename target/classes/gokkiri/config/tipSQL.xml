@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="tip">
+
+	<resultMap type="tip" id="tipRes">
+		<result property="t_no" column="t_no" />
+		<result property="t_sub" column="t_sub" />
+		<result property="t_con" column="t_con" />
+		<result property="t_hit" column="t_hit" />
+		<result property="t_date" column="t_date" />
+		<result property="t_index" column="t_index" />
+
+		<result property="a_no" column="a_no" />
+		<result property="a_name" column="a_name" />
+		<result property="a_addr" column="a_addr" />
+
+
+		<result property="m_email" column="m_email" />
+
+
+		<result property="t_img_no" column="t_img_no" />
+		<result property="t_img_org" column="t_img_org" />
+		<result property="t_img_sav" column="t_img_sav" />
+		<result property="t_img_index" column="t_img_index" />
+
+
+		<result property="t_co_con" column="t_co_con" />
+		<result property="t_co_date" column="t_co_date" />
+		<result property="t_co_no" column="t_co_no" />
+	</resultMap>
+	
+	<!-- 메인에서 인기 여행팁 리스트 불러오기 -->
+	<select id="tipHitList" resultMap="tipRes">
+		SELECT * FROM TIP INNER JOIN TIP_IMG
+		USING(T_NO)
+		ORDER BY T_HIT DESC
+	</select>
+
+	<!-- tip리스트 -->
+	<select id="tipList" resultMap="tipRes">
+		select t.t_no, t.m_email,
+		t.t_sub, t.t_con,
+		t.t_date,ti.t_img_no,ti.t_img_sav,a.a_no,a.a_name
+		from
+		tip t, tip_img
+		ti,area a
+		where t.t_no = ti.t_no and t.a_no = a.a_no
+		order by t_no desc
+	</select>
+
+	<!-- tip리스트 -->
+	<select id="areaList" resultMap="tipRes">
+		select *
+		from area
+		order by a_name
+		desc
+
+	</select>
+	
+	
+		<select id="tipHList" resultMap="tipRes">
+		select t.t_no, t.m_email,
+		t.t_sub, t.t_con,t.t_hit,
+		t.t_date,ti.t_img_no,ti.t_img_sav,a.a_no,a.a_name
+		from
+		tip t, tip_img
+		ti,area a
+		where t.t_no = ti.t_no and t.a_no = a.a_no
+		order by t_hit desc
+	</select>
+
+		
+	
+	
+
+	<!-- tip 상세보기 -->
+	<select id="tipDetail" resultMap="tipRes" parameterType="Integer">
+		select *
+		from tip inner join area
+		using(a_no)
+		where #{t_no} = t_no
+	</select>
+	
+	<!-- tip 이미지 리스트 -->
+	<select id="tip_imgList" resultMap="tipRes" parameterType="Integer">
+		select *
+		from tip_img
+		where #{t_no} = t_no
+	</select>
+
+	<!-- 글삭제 -->
+	<delete id="tipDelete" parameterType="Integer">
+		DELETE TIP
+		WHERE
+		T_NO =
+		#{t_no}
+	</delete>
+
+
+	<!-- tip 글쓰기 -->
+	<insert id="tipWrite" parameterType="tip">
+		insert into tip(t_no, t_sub,
+		t_con, t_hit, t_date, m_email, t_index, a_no)
+		values(t_no_seq.NEXTVAL,
+		#{t_sub}, #{t_con}, 0, sysdate, #{m_email},1 ,#{a_no})
+	</insert>
+
+
+	<!-- tip 글수정 -->
+	<update id="tipModify" parameterType="Integer">
+		update tip
+		set
+		T_SUB =
+		#{t_sub},
+		T_CON = #{t_con}
+		WHERE
+		T_NO = #{t_no}
+	</update>
+
+
+
+	<!-- 댓글 목록 -->
+	<select id="tipcommList" resultMap="tipRes" parameterType="int">
+		select * from tip_co
+		where t_no = #{t_no}
+		ORDER BY t_co_no desc
+	</select>
+
+	<!-- 댓글 쓰기 -->
+	<insert id="tipcommWrite" parameterType="tip">
+		insert into tip_co
+		(t_co_no,t_no,
+		m_email, t_co_con, t_co_date)
+		values
+		(T_CO_NO_SEQ.NEXTVAL,#{t_no},#{m_email},
+		#{t_co_con}, sysdate)
+	</insert>
+
+
+	<!-- 게시판 검색 -->
+	<!-- 제목검색 -->
+	<select id="tipSearchW" resultMap="tipRes" parameterType="String">
+		SELECT
+		*
+		FROM TIP inner join tip_img
+		using(t_no)
+		WHERE t_sub like #{sKeyword}
+		ORDER BY T_NO DESC
+	</select>
+
+	<!-- 여행지 이름 검색 -->
+	<select id="tipSearchS" resultMap="tipRes" parameterType="String">
+		select
+		*
+		from area a inner join tip t on t.a_no = a.a_no inner join tip_img ti
+		on
+		t.t_no = ti.t_no
+		where a_name like #{sKeyword}
+		ORDER BY T_NO DESC
+	</select>
+
+	<!--여행지 제목 검색 -->
+
+	<select id="areaSearch" resultMap="tipRes" parameterType="String">
+		SELECT
+		*
+		FROM area
+		WHERE a_name like #{aKeyword}
+		ORDER BY a_no DESC
+	</select>
+	<!--여행지 주소 검색 -->
+	<select id="areaSearch2" resultMap="tipRes" parameterType="String">
+		SELECT
+		*
+		FROM area
+		WHERE a_addr like #{aKeyword}
+		ORDER BY a_no DESC
+	</select>
+
+
+	<update id="tipUpdateReadHit" parameterType="Integer">
+		UPDATE tip SET t_hit
+		= t_hit + 1
+		WHERE
+		T_NO = #{t_no}
+    </update>
+
+
+
+	<!-- 댓글 삭제 -->
+	<delete id="tipcommDelete" parameterType="Integer">
+		DELETE TIP_CO
+		WHERE
+		T_CO_NO = #{t_co_no}
+	</delete>
+
+	<!-- tip 파일업로드 -->
+	<insert id="fileupload" parameterType="HashMap">
+		insert into
+		tip_img(t_img_no, t_img_org, t_img_sav, t_no,t_img_index)
+		values(T_IMG_NO_SEQ.nextval, #{t_img_org}, #{t_img_sav},
+		#{t_no},#{t_img_index})
+	</insert>
+	
+	<!-- tip 파일 삭제 -->
+	<delete id="fileDelete" parameterType="Integer">
+		DELETE FROM TIP_IMG
+		WHERE T_NO = #{t_no}
+	</delete>
+	
+	<!-- 가장 최근 t_no 불러오기 -->
+	<select id="selectSeq" resultType="Integer">
+		SELECT MAX(T_NO) AS T_NO
+		FROM TIP
+	</select>
+
+</mapper>
