@@ -40,7 +40,7 @@ public class AreaService implements AreaDao{
 		return sqlSessionTemplate.selectList("area.schAreaCateList", map);
 	}
 	
-	//½ºÄÉÁì
+	//ìŠ¤ì¼€ì¥´
 	@Override
 	public List<AreaModel> markerAreaList(int c_no, int s_no, int s_idx) {
 		// TODO Auto-generated method stub
@@ -52,7 +52,7 @@ public class AreaService implements AreaDao{
 		return sqlSessionTemplate.selectList("area.markerAreaList", map);
 	}
 	
-	//½ºÄÉÁì
+	//ìŠ¤ì¼€ì¥´
 	@Override
 	public List<AreaModel> markerAreaCateList(int c_no, int a_cate, int s_no, int s_idx) {
 		
@@ -65,13 +65,13 @@ public class AreaService implements AreaDao{
 		return sqlSessionTemplate.selectList("area.markerAreaCateList", map);
 	}
 	
-	//½ºÄÉÁì - Áö¿ª¹øÈ£·Î ¿©ÇàÁö ¸®½ºÆ® ÀüÃ¼ ºÒ·¯¿À±â
+	//ìŠ¤ì¼€ì¥´ - ì§€ì—­ë²ˆí˜¸ë¡œ ì—¬í–‰ì§€ ë¦¬ìŠ¤íŠ¸ ì „ì²´ ë¶ˆëŸ¬ì˜¤ê¸°
 	@Override
 	public List<AreaModel> cityAreaList(int c_no) {
 		return sqlSessionTemplate.selectList("area.cityAreaList", c_no);
 	}
 	
-	//½ºÄÉÁì - Áö¿ª¹øÈ£, Ä«Å×°í¸®¹øÈ£·Î ¿©ÇàÁö ¸®½ºÆ® ºÒ·¯¿À±â
+	//ìŠ¤ì¼€ì¥´ - ì§€ì—­ë²ˆí˜¸, ì¹´í…Œê³ ë¦¬ë²ˆí˜¸ë¡œ ì—¬í–‰ì§€ ë¦¬ìŠ¤íŠ¸ ë¶ˆëŸ¬ì˜¤ê¸°
 	@Override
 	public List<AreaModel> cityAreaCateList(int c_no, int a_cate) {
 	      
@@ -83,7 +83,7 @@ public class AreaService implements AreaDao{
 		
 	}
 
-	//¿©ÇàÁö ¸®½ºÆ® º¸±â
+	//ì—¬í–‰ì§€ ë¦¬ìŠ¤íŠ¸ ë³´ê¸°
 	@Override
 	public List<AreaModel> areaList(int a_cate, int c_no) {
 		
@@ -94,7 +94,7 @@ public class AreaService implements AreaDao{
 		return sqlSessionTemplate.selectList("area.areaList", hm);
 	}
 	
-	//¿©ÇàÁö ¸®½ºÆ® - °Ë»ö
+	//ì—¬í–‰ì§€ ë¦¬ìŠ¤íŠ¸ - ê²€ìƒ‰
 	@Override
 	public List<AreaModel> areaSearch(String searchKeyword, int a_cate, int c_no) {
 		
@@ -107,26 +107,26 @@ public class AreaService implements AreaDao{
 		
 	}
 	
-	//¸ŞÀÎ¿¡¼­ ÀÎ±â ¿©ÇàÁö ¸®½ºÆ® a_count·Î ºÒ·¯¿À±â
+	//ë©”ì¸ì—ì„œ ì¸ê¸° ì—¬í–‰ì§€ ë¦¬ìŠ¤íŠ¸ a_countë¡œ ë¶ˆëŸ¬ì˜¤ê¸°
 	@Override
 	public List<AreaModel> areaCountList() {
 		return sqlSessionTemplate.selectList("area.areaCountList");
 	}
 
-	//¿©ÇàÁö ±Û¾²±â
+	//ì—¬í–‰ì§€ ê¸€ì“°ê¸°
 	@Override
 	public int areaWrite(AreaModel areaModel){
 		return sqlSessionTemplate.insert("area.areaWrite", areaModel);
 	}
 	
-	//ÆÄÀÏ ¾÷·ÎµåÇÒ¶§ a_no°ª º¸³»ÁÖ±â
+	//íŒŒì¼ ì—…ë¡œë“œí• ë•Œ a_noê°’ ë³´ë‚´ì£¼ê¸°
 	@Override
 	public int selectSeq() {
 		return sqlSessionTemplate.selectOne("area.selectSeq");
 	}
 
 
-	//ÆÄÀÏ ¾÷·Îµå
+	//íŒŒì¼ ì—…ë¡œë“œ
 	@Override
 	public void fileupload(String originalFilename, String saveFilename, int a_img_index, int a_no) {
 		
@@ -139,79 +139,79 @@ public class AreaService implements AreaDao{
 		sqlSessionTemplate.insert("area.fileupload", hm);
 	}
 
-	//¿©ÇàÁö ±Û »ó¼¼º¸±â
+	//ì—¬í–‰ì§€ ê¸€ ìƒì„¸ë³´ê¸°
 	@Override
 	public AreaModel areaDetail(int a_no) {
 		return sqlSessionTemplate.selectOne("area.areaDetail", a_no);
 	}
 
-	//¿©ÇàÁö »ó¼¼º¸±â ÇÒ¶§ ÀÌ¹ÌÁö ¸®½ºÆ® °°ÀÌ ºÒ·¯¿À±â
+	//ì—¬í–‰ì§€ ìƒì„¸ë³´ê¸° í• ë•Œ ì´ë¯¸ì§€ ë¦¬ìŠ¤íŠ¸ ê°™ì´ ë¶ˆëŸ¬ì˜¤ê¸°
 	@Override
 	public List<AreaModel> area_imgList(int a_no) {
 		return sqlSessionTemplate.selectList("area.area_imgList", a_no);
 	}
 
-	//¿©ÇàÁö »ó¼¼º¸±â ÇÒ¶§ ÀÌ¹ÌÁö °¶·¯¸®ÀÇ ¸ŞÀÎ ÀÌ¹ÌÁö ºÒ·¯¿À±â
+	//ì—¬í–‰ì§€ ìƒì„¸ë³´ê¸° í• ë•Œ ì´ë¯¸ì§€ ê°¤ëŸ¬ë¦¬ì˜ ë©”ì¸ ì´ë¯¸ì§€ ë¶ˆëŸ¬ì˜¤ê¸°
 	@Override
 	public String main_img(int a_no) {
 		return sqlSessionTemplate.selectOne("area.main_img", a_no);
 	}
 	
-	//¿©ÇàÁö »ó¼¼º¸±â ÇÒ¶§ ¸®ºä ¸®½ºÆ® ºÒ·¯¿À±â
+	//ì—¬í–‰ì§€ ìƒì„¸ë³´ê¸° í• ë•Œ ë¦¬ë·° ë¦¬ìŠ¤íŠ¸ ë¶ˆëŸ¬ì˜¤ê¸°
 	@Override
 	public List<AreaReviewModel> areaReviewList(int a_no) {
 		return sqlSessionTemplate.selectList("area.areaReviewList", a_no);
 	}
 
-	//¿©ÇàÁö ±Û ¼öÁ¤ÇÒ¶§ Ä«Å×°í¸® ±¸ÇÏ±â
+	//ì—¬í–‰ì§€ ê¸€ ìˆ˜ì •í• ë•Œ ì¹´í…Œê³ ë¦¬ êµ¬í•˜ê¸°
 	@Override
 	public int areaCate(int a_no) {
 		return sqlSessionTemplate.selectOne("area.areaCate", a_no);
 	}
 	
-	//¿©ÇàÁö ±Û ¼öÁ¤ÇÒ¶§ ÀÌ¹ÌÁö ¿øº»ÀÌ¸§ °°ÀÌ ºÒ·¯¿À±â
+	//ì—¬í–‰ì§€ ê¸€ ìˆ˜ì •í• ë•Œ ì´ë¯¸ì§€ ì›ë³¸ì´ë¦„ ê°™ì´ ë¶ˆëŸ¬ì˜¤ê¸°
 	@Override
 	public List<AreaModel> imgList(int a_no) {
 		return sqlSessionTemplate.selectList("area.imgList", a_no);
 	}
 	
-	//¿©ÇàÁö ±Û ¼öÁ¤ÇÏ±â
+	//ì—¬í–‰ì§€ ê¸€ ìˆ˜ì •í•˜ê¸°
 	@Override
 	public void areaModify(AreaModel areaModel) {
 		sqlSessionTemplate.update("area.areaModify",areaModel);
 	}
 	
-	//¼öÁ¤ÇÒ¶§ ÀÌ¹ÌÁöÃ·ºÎÆÄÀÏÀÌ »õ·Î ÀÔ·ÂµÇ¸é ±âÁ¸ÀÇ ÀÌ¹ÌÁöÃ·ºÎÆÄÀÏ »èÁ¦ÇÏ±â
+	//ìˆ˜ì •í• ë•Œ ì´ë¯¸ì§€ì²¨ë¶€íŒŒì¼ì´ ìƒˆë¡œ ì…ë ¥ë˜ë©´ ê¸°ì¡´ì˜ ì´ë¯¸ì§€ì²¨ë¶€íŒŒì¼ ì‚­ì œí•˜ê¸°
 	@Override
 	public void fileDelete(int a_no) {
 		sqlSessionTemplate.delete("area.fileDelete", a_no);
 	}
 
-	//¿©ÇàÁö ±Û »èÁ¦ÇÏ±â
+	//ì—¬í–‰ì§€ ê¸€ ì‚­ì œí•˜ê¸°
 	@Override
 	public void areaDelete(int a_no) {
 		sqlSessionTemplate.update("area.areaDelete", a_no);
 	}
 
-	//¿©ÇàÁö ¸®ºä ¾²±â
+	//ì—¬í–‰ì§€ ë¦¬ë·° ì“°ê¸°
 	@Override
 	public void areaReviewList(AreaReviewModel areaReviewModel) {
 		sqlSessionTemplate.insert("area.areaReview", areaReviewModel);
 	}
 	
-	//¿©ÇàÁö ¸®ºä »èÁ¦ÇÏ±â
+	//ì—¬í–‰ì§€ ë¦¬ë·° ì‚­ì œí•˜ê¸°
 	@Override
 	public void areaReviewDelete(int r_no) {
 		sqlSessionTemplate.delete("area.araeReviewDelete", r_no );
 	}
 
-	//¿©ÇàÁö ¸®ºä °³¼ö ±¸ÇÏ±â
+	//ì—¬í–‰ì§€ ë¦¬ë·° ê°œìˆ˜ êµ¬í•˜ê¸°
 	@Override
 	public int revCount(int a_no) {
 		return sqlSessionTemplate.selectOne("area.revCount", a_no);
 	}
 	
-	//¿©ÇàÁö ¸®ºä ÆòÁ¡ ±¸ÇÏ±â
+	//ì—¬í–‰ì§€ ë¦¬ë·° í‰ì  êµ¬í•˜ê¸°
 	@Override
 	public int revScoreAvg(int a_no) {
 		
@@ -227,7 +227,7 @@ public class AreaService implements AreaDao{
 		
 	}
 
-	//¿©ÇàÁö QNA °³¼ö ±¸ÇÏ±â
+	//ì—¬í–‰ì§€ QNA ê°œìˆ˜ êµ¬í•˜ê¸°
 	@Override
 	public int qnaCount(int a_no) {
 		return sqlSessionTemplate.selectOne("area.qnaCount", a_no);

@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="city">
+
+	<resultMap type="city" id="cityRes">
+	
+		<result property="state_no" column="state_no" />
+		<result property="state_name" column="state_name" />
+	
+		<result property="c_no" column="c_no" />
+		<result property="c_name" column="c_name" />
+		<result property="c_con" column="c_con" />
+		<result property="c_like" column="c_like" />
+		<result property="c_addr" column="c_addr" />
+		<result property="c_img_org" column="c_img_org" />
+		<result property="c_img_sav" column="c_img_sav" />
+		
+		<!-- City_Img -->
+		<result property="c_img_no" column="c_img_no" />
+		<result property="c_img_org" column="c_img_org" />
+		<result property="c_img_sav" column="c_img_sav" />
+		
+	</resultMap>
+	
+	<resultMap type="areaReview" id="areaReviewRes">
+		
+		<result property="a_no" column="a_no" />
+		<result property="m_email" column="m_email" />
+		<result property="a_cate" column="a_cate" />
+		
+		<!-- REVIEW 테이블 -->
+		<result property="a_name" column="a_name" />
+		
+		<result property="r_no" column="r_no" />
+		<result property="r_con" column="r_con" />
+		<result property="r_date" column="r_date" />
+		<result property="r_score" column="r_score" />
+		
+	</resultMap>
+	
+	<!-- SELECT -->
+	<!-- 스케쥴 도시 리스트 검색 -->
+	<select id="citySearchList" resultMap="cityRes" parameterType="HashMap">
+		SELECT *
+		FROM city
+		where state_no = #{state_no} and c_name like #{keyword}
+	</select>
+	
+	<!-- 스케쥴 - 도시 리스트 불러오기 -->
+	<select id="stateCityList" resultMap="cityRes" parameterType="Integer">
+		SELECT *
+		FROM city 
+		where state_no = #{state_no}
+	</select>
+	
+	<!-- 도시 리스트 불러오기 -->
+	<select id="cityList" resultMap="cityRes" parameterType="Integer">
+		SELECT *
+		FROM CITY
+		WHERE STATE_NO = #{state_no}
+		ORDER BY C_NO ASC
+	</select>
+	
+	<!-- 도시 글쓰기 폼에서 state_name 불러오기 -->
+	<select id="stateSelect" resultType="String" parameterType="Integer">
+		SELECT STATE_NAME
+		FROM STATE
+		WHERE STATE_NO = #{state_no}
+	</select>
+	
+	<!-- INSERT -->
+	<!-- 도시 글쓰기 -->
+	<insert id="cityWrite" parameterType="city">
+		insert into city(c_no, c_name, c_con, c_addr, state_no)
+		values(C_NO_SEQ.NEXTVAL, #{c_name}, #{c_con}, #{c_addr}, #{state_no})
+	</insert>
+	
+	<!-- 파일 업로드 전에 c_no 값 보내주기 -->
+	<select id="selectSeq" resultType="Integer">
+		SELECT MAX(C_NO) FROM CITY
+	</select>
+	
+	<!-- 파일 업로드 -->
+	<insert id="fileupload" parameterType="HashMap">
+		INSERT INTO CITY_IMG(C_IMG_NO, C_IMG_ORG, C_IMG_SAV, C_NO, C_IMG_INDEX)
+		VALUES(C_IMG_NO_SEQ.nextval, #{c_img_org}, #{c_img_sav}, #{c_no}, #{c_img_index})
+	</insert>
+	
+	<!-- 도시 상세보기 -->
+	<select id="cityDetail" resultMap="cityRes" parameterType="Integer">
+		SELECT C_NO,C_NAME,C_CON,C_LIKE,C_ADDR,STATE_NAME
+		FROM CITY INNER JOIN STATE
+		USING(STATE_NO)
+		WHERE C_NO = #{c_no}
+	</select>
+	
+	<!-- 도시 상세보기 할때 이미지 리스트 불러오기 -->
+	<select id="city_imgList" resultMap="cityRes" parameterType="Integer">
+		SELECT *
+		FROM CITY_IMG
+		WHERE C_NO = #{c_no}
+	</select>
+	
+	<!-- 도시 상세보기 할때 이미지 갤러리 메인 이미지 불러오기 -->
+	<select id="main_img" resultMap="cityRes" parameterType="Integer">
+		SELECT *
+		FROM CITY_IMG
+		WHERE C_NO = #{c_no} AND C_IMG_INDEX = 1
+	</select>
+	
+	<!-- 도시 수정할때 이미지 원본이름 리스트 구하기 -->
+	<select id="imgList" resultMap="cityRes" parameterType="Integer">
+		SELECT C_IMG_ORG FROM CITY_IMG
+		WHERE C_NO = #{c_no}
+	</select>
+	
+	<!-- 도시 수정하기 -->
+	<update id="cityModify" parameterType="city">
+		UPDATE CITY
+		SET C_NAME=#{c_name},C_CON=#{c_con},C_ADDR=#{c_addr}
+		WHERE C_NO = #{c_no}
+	</update>
+	
+	<!-- 수정할때 이미지첨부파일이 새로 입력되면 기존의 이미지첨부파일 삭제하기 -->
+	<delete id="fileDelete" parameterType="Integer">
+		DELETE FROM CITY_IMG
+		WHERE C_NO = #{c_no}
+	</delete>
+	
+	<!-- 도시 글 삭제하기 -->
+	<delete id="cityDelete" parameterType="Integer">
+		DELETE FROM CITY
+		WHERE C_NO = #{c_no}
+	</delete>
+
+	<!-- 도시에서 리뷰보기 -->
+	<select id="areaReviewList" resultMap="areaReviewRes" parameterType="Integer">
+      select a_cate,r_no,a_no,a_name,c_no,m_email,r_con,r_date,r_score
+      from area inner join rev
+      using(a_no)
+      where c_no = #{c_no}
+      order by r_no desc
+    </select>
+	
+	<!-- 도시에서 리뷰 개수 구하기 -->
+	<select id="revCount" resultType="Integer" parameterType="Integer">
+		SELECT COUNT(*)
+		FROM AREA INNER JOIN REV
+		USING(A_NO)
+		WHERE C_NO = #{C_NO}
+	</select>
+	
+	<!-- 여행지 QNA 개수 구하기 -->
+	<select id="qnaCount" resultType="Integer" parameterType="Integer">
+		SELECT COUNT(*)
+		FROM AREA INNER JOIN QNA
+		USING(A_NO)
+		WHERE C_NO = #{c_no}
+	</select> 
+
+
+</mapper>

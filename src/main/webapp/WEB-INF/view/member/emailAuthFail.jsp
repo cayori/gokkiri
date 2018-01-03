@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>Insert title here</title>
 <script type="text/javascript">
-	self.window.alert("ÀÌ¸ŞÀÏ ÀÎÁõ¿¡ ½ÇÆĞÇß½À´Ï´Ù.");
+	self.window.alert("ì´ë©”ì¼ ì¸ì¦ì— ì‹¤íŒ¨í–ˆìŠµë‹ˆë‹¤.");
 	location.href="/gokkiri/main.go";
 </script>
 </head>

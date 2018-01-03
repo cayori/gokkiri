@@ -4,24 +4,24 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<title>ÀÌ¸ÞÀÏÃ£±â ½ÇÆÐ</title>
+<title>ì´ë©”ì¼ì°¾ê¸° ì‹¤íŒ¨</title>
 <script>
 	window.onload = function(){
 		var chk = ${memberLoginChk}
 		
-		if(chk == 0){ /* ·Î±×ÀÎ¼º°ø */
+		if(chk == 0){ /* ë¡œê·¸ì¸ì„±ê³µ */
 			location.href="/gokkiri/main.go";
 		}
 		if(chk == 1){
-			alert("ÀÌ¸ÞÀÏ ÀÎÁõÈÄ ·Î±×ÀÎÀÌ °¡´ÉÇÕ´Ï´Ù.");
+			alert("ì´ë©”ì¼ ì¸ì¦í›„ ë¡œê·¸ì¸ì´ ê°€ëŠ¥í•©ë‹ˆë‹¤.");
 			history.back();
 		}
 		if(chk == 2){
-			alert("°ü¸®ÀÚ ·Î±×ÀÎ");
+			alert("ê´€ë¦¬ìž ë¡œê·¸ì¸");
 			history.back();
 		}
 		if(chk == 3){
-			alert("¾ÆÀÌµð°¡ Á¸ÀçÇÏÁö ¾Ê°Å³ª ºñ¹Ð¹øÈ£°¡ ÀÏÄ¡ÇÏÁö ¾Ê½À´Ï´Ù");
+			alert("ì•„ì´ë””ê°€ ì¡´ìž¬í•˜ì§€ ì•Šê±°ë‚˜ ë¹„ë°€ë²ˆí˜¸ê°€ ì¼ì¹˜í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤");
 			history.back();
 		}
 		

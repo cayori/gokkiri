@@ -35,7 +35,7 @@ width: 100%;
 height: 100%;
 }
 
-/*¿ÃπÃ¡ˆ ΩΩ∂Û¿ÃµÂ*/
+/*Ïù¥ÎØ∏ÏßÄ Ïä¨ÎùºÏù¥Îìú*/
   .container {
       padding: 80px 120px;
   }
@@ -62,14 +62,14 @@ height: 100%;
     }
   }  
   
-  /*∞Àªˆ*/
+  /*Í≤ÄÏÉâ*/
   .bootstrap-select.btn-group .btn .caret {
 	left: 12px;
 	}
 	.bootstrap-select.btn-group .btn .filter-option {
 	text-align: right;
 	}
-  /*∞Àªˆ ≥°*/
+  /*Í≤ÄÏÉâ ÎÅù*/
 
 </style>
 <script>
@@ -84,117 +84,117 @@ $('#accordion').on('shown.bs.collapse', function () {
 	});
 });
 
-//∞Àªˆ
+//Í≤ÄÏÉâ
 $('.selectpicker').selectpicker();
 
 </script>
 </head>
 <body>
 
-<!-- ªÛ¥‹ ¿ÃπÃ¡ˆ + ¡ˆø™∞Àªˆ -->
+<!-- ÏÉÅÎã® Ïù¥ÎØ∏ÏßÄ + ÏßÄÏó≠Í≤ÄÏÉâ -->
 <div class="jumbotron text-center">
   <form class="form-inline">
-  	<p><font color="#ffffff" size="10"><b>¥ŸæÁ«— ¡ˆø™¿« ø©«‡¡ˆ ¡§∫∏∏¶ √£æ∆∫∏ººø‰!</b></font></p>
+  	<p><font color="#ffffff" size="10"><b>Îã§ÏñëÌïú ÏßÄÏó≠Ïùò Ïó¨ÌñâÏßÄ Ï†ïÎ≥¥Î•º Ï∞æÏïÑÎ≥¥ÏÑ∏Ïöî!</b></font></p>
   
 	<table width="30%" align="center">
 	<tr><td>
       <div class="row">
     	<div class="col-sm-3 text-center">
           	<p><font color="#ffffff" size="6"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span></font></p>
-          	<p><font color="#ffffff" size="2">¡ˆø™ »®</font></p>
+          	<p><font color="#ffffff" size="2">ÏßÄÏó≠ Ìôà</font></p>
     	</div>
         <div class="col-sm-3 text-center">
           	<p><font color="#ffffff" size="6"><span class="glyphicon glyphicon-camera" aria-hidden="true"></span></font></p>
-          	<p><font color="#ffffff" size="2">∞¸±§¡ˆ</font></p>
+          	<p><font color="#ffffff" size="2">Í¥ÄÍ¥ëÏßÄ</font></p>
     	</div>
         <div class="col-sm-3 text-center">
           	<p><font color="#ffffff" size="6"><span class="glyphicon glyphicon-cutlery" aria-hidden="true"></span></font></p>
-          	<p><font color="#ffffff" size="2">∏¿¡˝</font></p>
+          	<p><font color="#ffffff" size="2">ÎßõÏßë</font></p>
     	</div>
     	<div class="col-sm-3 text-center">
           	<p><font color="#ffffff" size="6"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span></font></p>
-          	<p><font color="#ffffff" size="2">ø©«‡¿œ¡§</font></p>
+          	<p><font color="#ffffff" size="2">Ïó¨ÌñâÏùºÏ†ï</font></p>
     	</div>
   	</div>
   	</td></tr>
   	</table>
-  	<p><font color="#ffffff" size="3">¿¸±π 16∞≥ ¡ˆø™¿« ƒ´≈◊∞Ì∏Ææ»ø° ºº∫Œ ¡ˆø™¿ª ≈¨∏Ø«œΩ√∏È «ÿ¥Á ¡ˆø™¿« »®¿Ã ≥™ø…¥œ¥Ÿ.</font></p>
+  	<p><font color="#ffffff" size="3">Ï†ÑÍµ≠ 16Í∞ú ÏßÄÏó≠Ïùò Ïπ¥ÌÖåÍ≥†Î¶¨ÏïàÏóê ÏÑ∏Î∂Ä ÏßÄÏó≠ÏùÑ ÌÅ¥Î¶≠ÌïòÏãúÎ©¥ Ìï¥Îãπ ÏßÄÏó≠Ïùò ÌôàÏù¥ ÎÇòÏòµÎãàÎã§.</font></p>
   </form>
 </div>
 
-<!-- ¡ˆø™ ƒ´≈◊∞Ì∏Æ -->
+<!-- ÏßÄÏó≠ Ïπ¥ÌÖåÍ≥†Î¶¨ -->
 <table width="80%" align="center">
 <tr>
 <td align="center">
 
 <div class="panel-group" id="accordion">
 
-	<!-- √π¬∞¡Ÿ -->
+	<!-- Ï≤´Ïß∏Ï§Ñ -->
     <div class="panel panel-default">
-    	<!-- ªÛ¿ß ∏ﬁ¥∫(STATE) -->
-    	<!-- 1.º≠øÔ -->
+    	<!-- ÏÉÅÏúÑ Î©îÎâ¥(STATE) -->
+    	<!-- 1.ÏÑúÏö∏ -->
         <div class="panel-heading">
-        	 <span class="strong"><a data-toggle="collapse" data-parent="#accordion" href="#Seoul" id="predict"><b>º≠øÔ</b><span class="caret"></span>
+        	 <span class="strong"><a data-toggle="collapse" data-parent="#accordion" href="#Seoul" id="predict"><b>ÏÑúÏö∏</b><span class="caret"></span>
                 </a>
             </span>
         </div>
         
-        <!-- 2.∫ŒªÍ -->
+        <!-- 2.Î∂ÄÏÇ∞ -->
         <div class="panel-heading">
-        	 <span class="strong"><a data-toggle="collapse" data-parent="#accordion" href="#Busan" id="predict"><b>∫ŒªÍ</b><span class="caret"></span>
+        	 <span class="strong"><a data-toggle="collapse" data-parent="#accordion" href="#Busan" id="predict"><b>Î∂ÄÏÇ∞</b><span class="caret"></span>
                 </a>
             </span>
         </div>
         
-        <!-- 3.¥Î±∏ -->
+        <!-- 3.ÎåÄÍµ¨ -->
         <div class="panel-heading">
-        	 <span class="strong"><a data-toggle="collapse" data-parent="#accordion" href="#Daegu" id="predict"><b>¥Î±∏</b><span class="caret"></span>
+        	 <span class="strong"><a data-toggle="collapse" data-parent="#accordion" href="#Daegu" id="predict"><b>ÎåÄÍµ¨</b><span class="caret"></span>
                 </a>
             </span>
         </div>
         
-        <!-- 4.¿Œ√µ -->
+        <!-- 4.Ïù∏Ï≤ú -->
         <div class="panel-heading">
-        	 <span class="strong"><a data-toggle="collapse" data-parent="#accordion" href="#Incheon" id="predict"><b>¿Œ√µ</b><span class="caret"></span>
+        	 <span class="strong"><a data-toggle="collapse" data-parent="#accordion" href="#Incheon" id="predict"><b>Ïù∏Ï≤ú</b><span class="caret"></span>
                 </a>
             </span>
         </div>
         
-        <!-- 5.±§¡÷ -->
+        <!-- 5.Í¥ëÏ£º -->
         <div class="panel-heading">
-        	 <span class="strong"><a data-toggle="collapse" data-parent="#accordion" href="#Gwangju" id="predict"><b>±§¡÷</b><span class="caret"></span>
+        	 <span class="strong"><a data-toggle="collapse" data-parent="#accordion" href="#Gwangju" id="predict"><b>Í¥ëÏ£º</b><span class="caret"></span>
                 </a>
             </span>
         </div>
         
-        <!-- 6.¥Î¿¸ -->
+        <!-- 6.ÎåÄÏ†Ñ -->
         <div class="panel-heading">
-        	 <span class="strong"><a data-toggle="collapse" data-parent="#accordion" href="#Daejeon" id="predict"><b>¥Î¿¸</b><span class="caret"></span>
+        	 <span class="strong"><a data-toggle="collapse" data-parent="#accordion" href="#Daejeon" id="predict"><b>ÎåÄÏ†Ñ</b><span class="caret"></span>
                 </a>
             </span>
         </div>
         
-        <!-- 7.øÔªÍ -->
+        <!-- 7.Ïö∏ÏÇ∞ -->
         <div class="panel-heading">
-        	 <span class="strong"><a data-toggle="collapse" data-parent="#accordion" href="#Ulsan" id="predict"><b>øÔªÍ</b><span class="caret"></span>
+        	 <span class="strong"><a data-toggle="collapse" data-parent="#accordion" href="#Ulsan" id="predict"><b>Ïö∏ÏÇ∞</b><span class="caret"></span>
                 </a>
             </span>
         </div>
         
-        <!-- 8.∞Ê±‚ -->
+        <!-- 8.Í≤ΩÍ∏∞ -->
         <div class="panel-heading">
-        	 <span class="strong"><a data-toggle="collapse" data-parent="#accordion" href="#Gyeonggi" id="predict"><b>∞Ê±‚</b><span class="caret"></span>
+        	 <span class="strong"><a data-toggle="collapse" data-parent="#accordion" href="#Gyeonggi" id="predict"><b>Í≤ΩÍ∏∞</b><span class="caret"></span>
                 </a>
             </span>
         </div>
         
         
-        <!-- «œ¿ß∏ﬁ¥∫(CITY) -->
-        <!-- 1.º≠øÔ -->
+        <!-- ÌïòÏúÑÎ©îÎâ¥(CITY) -->
+        <!-- 1.ÏÑúÏö∏ -->
         <div id="Seoul" class="panel-collapse collapse">
         	<c:forEach var="seoulList" items="${seoulList }" >
             <div class="panel-body">
-                <p><a href="cityDetail.go?c_no=${seoulList.c_no }&keyword=º≠øÔ">${seoulList.c_name }</a></p>
+                <p><a href="cityDetail.go?c_no=${seoulList.c_no }&keyword=ÏÑúÏö∏">${seoulList.c_name }</a></p>
             </div>
             </c:forEach>
             <c:if test="${session_m_email == 'admin' }">
@@ -206,11 +206,11 @@ $('.selectpicker').selectpicker();
           	</c:if>
         </div>
         
-        <!-- 2.∫ŒªÍ -->
+        <!-- 2.Î∂ÄÏÇ∞ -->
         <div id="Busan" class="panel-collapse collapse">
         	<c:forEach var="busanList" items="${busanList }" >
             <div class="panel-body">
-                <p><a href="cityDetail.go?c_no=${busanList.c_no }&keyword=∫ŒªÍ">${busanList.c_name }</a></p>
+                <p><a href="cityDetail.go?c_no=${busanList.c_no }&keyword=Î∂ÄÏÇ∞">${busanList.c_name }</a></p>
             </div>
             </c:forEach>
             <c:if test="${session_m_email == 'admin' }">
@@ -222,11 +222,11 @@ $('.selectpicker').selectpicker();
           	</c:if>
         </div>
         
-        <!-- 3.¥Î±∏ -->
+        <!-- 3.ÎåÄÍµ¨ -->
         <div id="Daegu" class="panel-collapse collapse">
         	<c:forEach var="daeguList" items="${daeguList }" >
             <div class="panel-body">
-                <p><a href="cityDetail.go?c_no=${daeguList.c_no }&keyword=¥Î±∏">${daeguList.c_name }</a></p>
+                <p><a href="cityDetail.go?c_no=${daeguList.c_no }&keyword=ÎåÄÍµ¨">${daeguList.c_name }</a></p>
             </div>
             </c:forEach>
             <c:if test="${session_m_email == 'admin' }">
@@ -238,11 +238,11 @@ $('.selectpicker').selectpicker();
           	</c:if>
         </div>
         
-        <!-- 4.¿Œ√µ -->
+        <!-- 4.Ïù∏Ï≤ú -->
         <div id="Incheon" class="panel-collapse collapse">
         	<c:forEach var="incheonList" items="${incheonList }" >
             <div class="panel-body">
-                <p><a href="cityDetail.go?c_no=${incheonList.c_no }&keyword=¿Œ√µ">${incheonList.c_name }</a></p>
+                <p><a href="cityDetail.go?c_no=${incheonList.c_no }&keyword=Ïù∏Ï≤ú">${incheonList.c_name }</a></p>
             </div>
             </c:forEach>
             <c:if test="${session_m_email == 'admin' }">
@@ -254,11 +254,11 @@ $('.selectpicker').selectpicker();
           	</c:if>
         </div>
         
-        <!-- 5.±§¡÷ -->
+        <!-- 5.Í¥ëÏ£º -->
         <div id="Gwangju" class="panel-collapse collapse">
         	<c:forEach var="gwangjuList" items="${gwangjuList }" >
             <div class="panel-body">
-                <p><a href="cityDetail.go?c_no=${gwangjuList.c_no }&keyword=±§¡÷">${gwangjuList.c_name }</a></p>
+                <p><a href="cityDetail.go?c_no=${gwangjuList.c_no }&keyword=Í¥ëÏ£º">${gwangjuList.c_name }</a></p>
             </div>
             </c:forEach>
             <c:if test="${session_m_email == 'admin' }">
@@ -270,11 +270,11 @@ $('.selectpicker').selectpicker();
           	</c:if>
         </div>
         
-        <!-- 6.¥Î¿¸ -->
+        <!-- 6.ÎåÄÏ†Ñ -->
         <div id="Daejeon" class="panel-collapse collapse">
         	<c:forEach var="daejeonList" items="${daejeonList }" >
             <div class="panel-body">
-                <p><a href="cityDetail.go?c_no=${daejeonList.c_no }&keyword=¥Î¿¸">${daejeonList.c_name }</a></p>
+                <p><a href="cityDetail.go?c_no=${daejeonList.c_no }&keyword=ÎåÄÏ†Ñ">${daejeonList.c_name }</a></p>
             </div>
             </c:forEach>
             <c:if test="${session_m_email == 'admin' }">
@@ -286,11 +286,11 @@ $('.selectpicker').selectpicker();
           	</c:if>
         </div>
         
-        <!-- 7.øÔªÍ -->
+        <!-- 7.Ïö∏ÏÇ∞ -->
         <div id="Ulsan" class="panel-collapse collapse">
         	<c:forEach var="ulsanList" items="${ulsanList }" >
             <div class="panel-body">
-                <p><a href="cityDetail.go?c_no=${ulsanList.c_no }&keyword=øÔªÍ">${ulsanList.c_name }</a></p>
+                <p><a href="cityDetail.go?c_no=${ulsanList.c_no }&keyword=Ïö∏ÏÇ∞">${ulsanList.c_name }</a></p>
             </div>
             </c:forEach>
             <c:if test="${session_m_email == 'admin' }">
@@ -302,11 +302,11 @@ $('.selectpicker').selectpicker();
           	</c:if>
         </div>
         
-        <!-- 8.∞Ê±‚ -->
+        <!-- 8.Í≤ΩÍ∏∞ -->
         <div id="Gyeonggi" class="panel-collapse collapse">
         	<c:forEach var="gyeonggiList" items="${gyeonggiList }" >
             <div class="panel-body">
-                <p><a href="cityDetail.go?c_no=${gyeonggiList.c_no }&keyword=∞Ê±‚">${gyeonggiList.c_name }</a></p>
+                <p><a href="cityDetail.go?c_no=${gyeonggiList.c_no }&keyword=Í≤ΩÍ∏∞">${gyeonggiList.c_name }</a></p>
             </div>
             </c:forEach>
             <c:if test="${session_m_email == 'admin' }">
@@ -320,72 +320,72 @@ $('.selectpicker').selectpicker();
 
     </div>
     
-	<!-- µ—¬∞¡Ÿ -->
+	<!-- ÎëòÏß∏Ï§Ñ -->
     <div class="panel panel-default">
-    	<!-- ªÛ¿ß ∏ﬁ¥∫(STATE) -->
-    	<!-- 9.∞≠ø¯ -->
+    	<!-- ÏÉÅÏúÑ Î©îÎâ¥(STATE) -->
+    	<!-- 9.Í∞ïÏõê -->
         <div class="panel-heading">
-        	 <span class="strong"><a data-toggle="collapse" data-parent="#accordion" href="#Gangwon" id="predict"><b>∞≠ø¯</b><span class="caret"></span>
+        	 <span class="strong"><a data-toggle="collapse" data-parent="#accordion" href="#Gangwon" id="predict"><b>Í∞ïÏõê</b><span class="caret"></span>
                 </a>
             </span>
         </div>
         
-        <!-- 10.√Ê∫œ -->
+        <!-- 10.Ï∂©Î∂Å -->
         <div class="panel-heading">
-        	 <span class="strong"><a data-toggle="collapse" data-parent="#accordion" href="#Chungbuk" id="predict"><b>√Ê∫œ</b><span class="caret"></span>
+        	 <span class="strong"><a data-toggle="collapse" data-parent="#accordion" href="#Chungbuk" id="predict"><b>Ï∂©Î∂Å</b><span class="caret"></span>
                 </a>
             </span>
         </div>
         
-        <!-- 11.√Ê≥≤ -->
+        <!-- 11.Ï∂©ÎÇ® -->
         <div class="panel-heading">
-        	 <span class="strong"><a data-toggle="collapse" data-parent="#accordion" href="#Chungnam" id="predict"><b>√Ê≥≤</b><span class="caret"></span>
+        	 <span class="strong"><a data-toggle="collapse" data-parent="#accordion" href="#Chungnam" id="predict"><b>Ï∂©ÎÇ®</b><span class="caret"></span>
                 </a>
             </span>
         </div>
         
-        <!-- 12.¿¸∫œ -->
+        <!-- 12.Ï†ÑÎ∂Å -->
         <div class="panel-heading">
-        	 <span class="strong"><a data-toggle="collapse" data-parent="#accordion" href="#Jeonbuk" id="predict"><b>¿¸∫œ</b><span class="caret"></span>
+        	 <span class="strong"><a data-toggle="collapse" data-parent="#accordion" href="#Jeonbuk" id="predict"><b>Ï†ÑÎ∂Å</b><span class="caret"></span>
                 </a>
             </span>
         </div>
         
-        <!-- 13.¿¸≥≤ -->
+        <!-- 13.Ï†ÑÎÇ® -->
         <div class="panel-heading">
-        	 <span class="strong"><a data-toggle="collapse" data-parent="#accordion" href="#Jeonnam" id="predict"><b>¿¸≥≤</b><span class="caret"></span>
+        	 <span class="strong"><a data-toggle="collapse" data-parent="#accordion" href="#Jeonnam" id="predict"><b>Ï†ÑÎÇ®</b><span class="caret"></span>
                 </a>
             </span>
         </div>
         
-        <!-- 14.∞Ê∫œ-->
+        <!-- 14.Í≤ΩÎ∂Å-->
         <div class="panel-heading">
-        	 <span class="strong"><a data-toggle="collapse" data-parent="#accordion" href="#Gyeongbuk" id="predict"><b>∞Ê∫œ</b><span class="caret"></span>
+        	 <span class="strong"><a data-toggle="collapse" data-parent="#accordion" href="#Gyeongbuk" id="predict"><b>Í≤ΩÎ∂Å</b><span class="caret"></span>
                 </a>
             </span>
         </div>
         
-        <!-- 15.∞Ê≥≤ -->
+        <!-- 15.Í≤ΩÎÇ® -->
         <div class="panel-heading">
-        	 <span class="strong"><a data-toggle="collapse" data-parent="#accordion" href="#Gyeongnam" id="predict"><b>∞Ê≥≤</b><span class="caret"></span>
+        	 <span class="strong"><a data-toggle="collapse" data-parent="#accordion" href="#Gyeongnam" id="predict"><b>Í≤ΩÎÇ®</b><span class="caret"></span>
                 </a>
             </span>
         </div>
         
-        <!-- 16.¡¶¡÷ -->
+        <!-- 16.Ï†úÏ£º -->
         <div class="panel-heading">
-        	 <span class="strong"><a data-toggle="collapse" data-parent="#accordion" href="#Jeju" id="predict"><b>¡¶¡÷</b><span class="caret"></span>
+        	 <span class="strong"><a data-toggle="collapse" data-parent="#accordion" href="#Jeju" id="predict"><b>Ï†úÏ£º</b><span class="caret"></span>
                 </a>
             </span>
         </div>
         
         
-        <!-- «œ¿ß∏ﬁ¥∫(CITY) -->
-        <!-- 9.∞≠ø¯ -->
+        <!-- ÌïòÏúÑÎ©îÎâ¥(CITY) -->
+        <!-- 9.Í∞ïÏõê -->
         <div id="Gangwon" class="panel-collapse collapse">
         	<c:forEach var="gangwonList" items="${gangwonList }" >
             <div class="panel-body">
-                <p><a href="cityDetail.go?c_no=${gangwonList.c_no }&keyword=∞≠ø¯">${gangwonList.c_name }</a></p>
+                <p><a href="cityDetail.go?c_no=${gangwonList.c_no }&keyword=Í∞ïÏõê">${gangwonList.c_name }</a></p>
             </div>
             </c:forEach>
             <c:if test="${session_m_email == 'admin' }">
@@ -397,11 +397,11 @@ $('.selectpicker').selectpicker();
           	</c:if>
         </div>
         
-        <!-- 10.√Ê∫œ -->
+        <!-- 10.Ï∂©Î∂Å -->
         <div id="Chungbuk" class="panel-collapse collapse">
         	<c:forEach var="chungbukList" items="${chungbukList }" >
             <div class="panel-body">
-                <p><a href="cityDetail.go?c_no=${chungbukList.c_no }&keyword=√Ê∫œ">${chungbukList.c_name }</a></p>
+                <p><a href="cityDetail.go?c_no=${chungbukList.c_no }&keyword=Ï∂©Î∂Å">${chungbukList.c_name }</a></p>
             </div>
             </c:forEach>
             <c:if test="${session_m_email == 'admin' }">
@@ -413,11 +413,11 @@ $('.selectpicker').selectpicker();
           	</c:if>
         </div>
         
-        <!-- 11.√Ê≥≤ -->
+        <!-- 11.Ï∂©ÎÇ® -->
         <div id="Chungnam" class="panel-collapse collapse">
         	<c:forEach var="chungnamList" items="${chungnamList }" >
             <div class="panel-body">
-                <p><a href="cityDetail.go?c_no=${chungnamList.c_no }&keyword=√Ê≥≤">${chungnamList.c_name }</a></p>
+                <p><a href="cityDetail.go?c_no=${chungnamList.c_no }&keyword=Ï∂©ÎÇ®">${chungnamList.c_name }</a></p>
             </div>
             </c:forEach>
             <c:if test="${session_m_email == 'admin' }">
@@ -429,11 +429,11 @@ $('.selectpicker').selectpicker();
           	</c:if>
         </div>
         
-        <!-- 12.¿¸∫œ -->
+        <!-- 12.Ï†ÑÎ∂Å -->
         <div id="Jeonbuk" class="panel-collapse collapse">
         	<c:forEach var="jeonbukList" items="${jeonbukList }" >
             <div class="panel-body">
-                <p><a href="cityDetail.go?c_no=${jeonbukList.c_no }&keyword=¿¸∫œ">${jeonbukList.c_name }</a></p>
+                <p><a href="cityDetail.go?c_no=${jeonbukList.c_no }&keyword=Ï†ÑÎ∂Å">${jeonbukList.c_name }</a></p>
             </div>
             </c:forEach>
             <c:if test="${session_m_email == 'admin' }">
@@ -445,11 +445,11 @@ $('.selectpicker').selectpicker();
           	</c:if>
         </div>
         
-        <!-- 13.¿¸≥≤ -->
+        <!-- 13.Ï†ÑÎÇ® -->
         <div id="Jeonnam" class="panel-collapse collapse">
         	<c:forEach var="jeonnamList" items="${jeonnamList }" >
             <div class="panel-body">
-                <p><a href="cityDetail.go?c_no=${jeonnamList.c_no }&keyword=¿¸≥≤">${jeonnamList.c_name }</a></p>
+                <p><a href="cityDetail.go?c_no=${jeonnamList.c_no }&keyword=Ï†ÑÎÇ®">${jeonnamList.c_name }</a></p>
             </div>
             </c:forEach>
             <c:if test="${session_m_email == 'admin' }">
@@ -461,11 +461,11 @@ $('.selectpicker').selectpicker();
           	</c:if>
         </div>
         
-        <!-- 14.∞Ê∫œ -->
+        <!-- 14.Í≤ΩÎ∂Å -->
         <div id="Gyeongbuk" class="panel-collapse collapse">
         	<c:forEach var="gyeongbukList" items="${gyeongbukList }" >
             <div class="panel-body">
-                <p><a href="cityDetail.go?c_no=${gyeongbukList.c_no }&keyword=∞Ê∫œ">${gyeongbukList.c_name }</a></p>
+                <p><a href="cityDetail.go?c_no=${gyeongbukList.c_no }&keyword=Í≤ΩÎ∂Å">${gyeongbukList.c_name }</a></p>
             </div>
             </c:forEach>
             <c:if test="${session_m_email == 'admin' }">
@@ -477,11 +477,11 @@ $('.selectpicker').selectpicker();
           	</c:if>
         </div>
         
-        <!-- 15.∞Ê≥≤ -->
+        <!-- 15.Í≤ΩÎÇ® -->
         <div id="Gyeongnam" class="panel-collapse collapse">
         	<c:forEach var="gyeongnamList" items="${gyeongnamList }" >
             <div class="panel-body">
-                <p><a href="cityDetail.go?c_no=${gyeongnamList.c_no }&keyword=∞Ê≥≤">${gyeongnamList.c_name }</a></p>
+                <p><a href="cityDetail.go?c_no=${gyeongnamList.c_no }&keyword=Í≤ΩÎÇ®">${gyeongnamList.c_name }</a></p>
             </div>
             </c:forEach>
             <c:if test="${session_m_email == 'admin' }">
@@ -493,11 +493,11 @@ $('.selectpicker').selectpicker();
           	</c:if>
         </div>
         
-        <!-- 16.¡¶¡÷ -->
+        <!-- 16.Ï†úÏ£º -->
         <div id="Jeju" class="panel-collapse collapse">
         	<c:forEach var="jejuList" items="${jejuList }" >
             <div class="panel-body">
-                <p><a href="cityDetail.go?c_no=${jejuList.c_no }&keyword=¡¶¡÷">${jejuList.c_name }</a></p>
+                <p><a href="cityDetail.go?c_no=${jejuList.c_no }&keyword=Ï†úÏ£º">${jejuList.c_name }</a></p>
             </div>
             </c:forEach>
             <c:if test="${session_m_email == 'admin' }">
@@ -518,7 +518,7 @@ $('.selectpicker').selectpicker();
 
 <br/>
 
-<!-- ¿ÃπÃ¡ˆ ≈∏¿œ -->
+<!-- Ïù¥ÎØ∏ÏßÄ ÌÉÄÏùº -->
 
 <table width="80%" align="center">
 <tr height>
@@ -535,28 +535,28 @@ $('.selectpicker').selectpicker();
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
       <div class="item active">
-        <img src="/gokkiri/resources/img/main1.jpg" alt="¡¶¡÷" height="300">
+        <img src="/gokkiri/resources/img/main1.jpg" alt="Ï†úÏ£º" height="300">
         <div class="carousel-caption">
-         <h4>»ØªÛ¿« º∂</h4>
-          <h3>¡¶¡÷</h3>
+         <h4>ÌôòÏÉÅÏùò ÏÑ¨</h4>
+          <h3>Ï†úÏ£º</h3>
           <p></p>
         </div>      
       </div>
 
       <div class="item">
-        <img src="/gokkiri/resources/img/main2.jpg" alt="∫ŒªÍ" height="300">
+        <img src="/gokkiri/resources/img/main2.jpg" alt="Î∂ÄÏÇ∞" height="300">
         <div class="carousel-caption">
-          <h4>¥Î«—πŒ±π ¡¶ 2¿« µµΩ√</h4>
-          <h3>∫ŒªÍ</h3>
+          <h4>ÎåÄÌïúÎØºÍµ≠ Ï†ú 2Ïùò ÎèÑÏãú</h4>
+          <h3>Î∂ÄÏÇ∞</h3>
           <p></p>
         </div>      
       </div>
     
       <div class="item">
-        <img src="/gokkiri/resources/img/main3.jpg" alt="º≠øÔ" height="300">
+        <img src="/gokkiri/resources/img/main3.jpg" alt="ÏÑúÏö∏" height="300">
         <div class="carousel-caption">
-          <h4>¥Î«—πŒ±π¿« ºˆµµ</h4>
-          <h3>º≠øÔ</h3>
+          <h4>ÎåÄÌïúÎØºÍµ≠Ïùò ÏàòÎèÑ</h4>
+          <h3>ÏÑúÏö∏</h3>
           <p></p>
         </div>      
       </div>
@@ -578,7 +578,7 @@ $('.selectpicker').selectpicker();
 </tr>
 </table>
 
-<!-- ¿ÃπÃ¡ˆ ≈∏¿œ ≥° -->
+<!-- Ïù¥ÎØ∏ÏßÄ ÌÉÄÏùº ÎÅù -->
 
 <br/><br/><br/><br/>
 </html>

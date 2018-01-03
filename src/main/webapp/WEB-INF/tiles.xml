@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+
+<tiles-definitions>
+
+	<!-- Main Page -->
+	<definition name="default" template="/WEB-INF/view/layout/layout.jsp">
+		<put-attribute name="header" value="/WEB-INF/view/layout/header.jsp" />
+		<put-attribute name="body" value="/WEB-INF/view/layout/container.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/view/layout/footer.jsp" />
+	</definition>
+
+
+	<!-- Main -->
+	<definition name="main" extends="default">
+		<put-attribute name="body" value="/WEB-INF/view/layout/main.jsp" />
+	</definition>
+	
+	
+	
+	<!-- Member -->
+	<!-- 회원가입 폼 -->
+	<definition name="joinForm" extends="default">
+		<put-attribute name="body" value="/WEB-INF/view/member/joinForm.jsp" />
+	</definition>
+	<!-- 회원가입 완료 -->
+	<definition name="join" extends="default">
+		<put-attribute name="body" value="/WEB-INF/view/member/join.jsp" />
+	</definition>
+	
+	
+	
+	<!-- 로그인 완료/실패 -->
+	<definition name="login" extends="default">
+		<put-attribute name="body" value="/WEB-INF/view/member/login.jsp" />
+	</definition>
+	
+	<!-- 로그아웃 -->
+	<definition name="logout" extends="default">
+		<put-attribute name="body" value="/WEB-INF/view/member/logout.jsp" />
+	</definition>
+	
+	
+	<!-- 아이디, 비번  찾기 폼-->
+	<definition name="emailpwFindForm" extends="default">
+		<put-attribute name="body" value="/WEB-INF/view/member/emailpwFindForm.jsp" />
+	</definition>
+	<!-- 아이디 찾기 완료-->
+	<definition name="emailFind" extends="default">
+		<put-attribute name="body" value="/WEB-INF/view/member/emailFind.jsp" />
+	</definition>
+	<!-- 비밀번호 찾기 완료 -->
+	<definition name="pwFind" extends="default">
+		<put-attribute name="body" value="/WEB-INF/view/member/pwFind.jsp" />
+	</definition>
+	<!-- 아이디/비번찾기 오류 -->
+	<definition name="findError" extends="default">
+		<put-attribute name="body" value="/WEB-INF/view/member/findError.jsp" />
+	</definition>
+	
+	
+	<!-- 회원정보 수정 폼 -->
+	<definition name="memberModifyForm" extends="default">
+		<put-attribute name="body" value="/WEB-INF/view/member/memberModifyForm.jsp" />
+	</definition>
+	<!-- 회원정보 수정 완료-->
+	<definition name="memberModify" extends="default">
+		<put-attribute name="body" value="/WEB-INF/view/member/memberModify.jsp" />
+	</definition>
+	
+	<!-- 로그인 알림창 -->
+	<!-- 로그인을 해야만 접근이 가능한 경우 로그인을 하라는 알림창 뜸 -->
+	<definition name="loginConfirm" extends="default">
+		<put-attribute name="body" value="/WEB-INF/view/member/loginConfirm.jsp" />
+	</definition>
+	
+	<!-- 회원 탈퇴 폼-->
+	<definition name="memberDeleteForm" extends="default">
+		<put-attribute name="body" value="/WEB-INF/view/member/memberDeleteForm.jsp" />
+	</definition>
+	<!-- 회원 탈퇴 완료 -->
+	<definition name="memberDelete" extends="default">
+		<put-attribute name="body" value="/WEB-INF/view/member/memberDelete.jsp" />
+	</definition>
+	
+	
+	<!-- Mypage -->
+	
+	<!-- 내가쓴 리뷰 리스트 -->
+	<definition name="myReviewList" extends="default">
+		<put-attribute name="body" value="/WEB-INF/view/mypage/myReviewList.jsp" />
+	</definition>
+	
+	<!-- 내가쓴 QnA 글/댓글 리스트 -->
+	<definition name="myQnAList" extends="default">
+		<put-attribute name="body" value="/WEB-INF/view/mypage/myQnAList.jsp" />
+	</definition>
+	
+	<definition name="myQnACoList" extends="default">
+		<put-attribute name="body" value="/WEB-INF/view/mypage/myQnACoList.jsp" />
+	</definition>
+	
+	<!-- 내가쓴 완성/미완성 일정리스트 -->
+	<definition name="myScheduleList" extends="default">
+		<put-attribute name="body" value="/WEB-INF/view/mypage/myScheduleList.jsp" />
+	</definition>
+	
+	<!-- 찜한 일정리스트 -->
+	<definition name="zzimScheduleList" extends="default">
+		<put-attribute name="body" value="/WEB-INF/view/mypage/zzimScheduleList.jsp" />
+	</definition>
+	
+	<!-- 공유한 일정리스트 -->
+	<definition name="sharedScheduleList" extends="default">
+		<put-attribute name="body" value="/WEB-INF/view/mypage/sharedScheduleList.jsp" />
+	</definition>
+	
+	<!-- 여행Tip 일정리스트 -->
+	<definition name="myTipList" extends="default">
+		<put-attribute name="body" value="/WEB-INF/view/mypage/myTipList.jsp" />
+	</definition>
+	
+	
+	<!-- City -->
+	<!-- 도시 리스트 보기 -->
+	<definition name="cityList" extends="default">
+		<put-attribute name="body" value="/WEB-INF/view/city/cityList.jsp" />
+	</definition>
+	
+	<!-- 도시 상세보기 -->
+	<definition name="cityDetail" extends="default">
+		<put-attribute name="body" value="/WEB-INF/view/city/cityDetail.jsp" />
+	</definition>
+	
+	<!-- 도시 글쓰기 -->
+	<definition name="cityWriteForm" extends="default">
+		<put-attribute name="body" value="/WEB-INF/view/city/cityWriteForm.jsp" />
+	</definition>
+	
+	<!-- 도시 수정하기 폼 -->
+	<definition name="cityModifyForm" extends="default">
+		<put-attribute name="body" value="/WEB-INF/view/city/cityModifyForm.jsp" />
+	</definition>
+	
+	
+	<!-- Area  -->
+	<!-- 여행지 리스트 보기 -->
+	<definition name="areaList" extends="default">
+		<put-attribute name="body" value="/WEB-INF/view/area/areaList.jsp" />
+	</definition>
+	
+	<!-- 여행지 글쓰기 폼 -->
+	<definition name="areaWriteForm" extends="default">
+		<put-attribute name="body" value="/WEB-INF/view/area/areaWriteForm.jsp" />
+	</definition>
+	
+	<!-- 여행지 상세보기 -->
+	<definition name="areaDetail" extends="default">
+		<put-attribute name="body" value="/WEB-INF/view/area/areaDetail.jsp" />
+	</definition>
+	
+	<!-- 여행지 수정하기 폼 -->
+	<definition name="areaModifyForm" extends="default">
+		<put-attribute name="body" value="/WEB-INF/view/area/areaModifyForm.jsp" />
+	</definition>
+	
+
+	<!-- Schedule --> 
+	<!-- 일정게시판 리스트 보기 -->
+	<definition name="scheduleList" extends="default">
+		<put-attribute name="body" value="/WEB-INF/view/schedule/scheduleList.jsp" />
+	</definition>
+	
+	<!-- 일정게시판 글 상세보기 -->
+	<definition name="scheduleDetail" extends="default">
+		<put-attribute name="body" value="/WEB-INF/view/schedule/scheduleDetail.jsp" />
+	</definition>
+	
+	<!-- 일정만들기 폼 보기 -->
+	<definition name="scheduleWriteForm" extends="default">
+		<put-attribute name="body" value="/WEB-INF/view/schedule/scheduleWriteForm.jsp" />
+	</definition>
+
+	<definition name="scheduleState" extends="default">
+		<put-attribute name="body" value="/WEB-INF/view/schedule/scheduleState.jsp" />
+	</definition>
+	
+	<definition name="scheduleCity" extends="default">
+		<put-attribute name="body" value="/WEB-INF/view/schedule/scheduleCity.jsp" />
+	</definition>
+	
+	<definition name="scheduleArea" extends="default">
+		<put-attribute name="body" value="/WEB-INF/view/schedule/scheduleArea.jsp" />
+	</definition>
+	
+	
+	<!-- QnA -->
+	<!--  qna 리스트 보기 -->
+	<definition name="qnaList" extends="default">
+		<put-attribute name="body" value="/WEB-INF/view/qna/qnaList.jsp" />
+	</definition>
+	
+	<!-- 도시상세보기에서 전체 qna리스트 보기 -->
+	<definition name="cityqnaList" extends="default">
+		<put-attribute name="body" value="/WEB-INF/view/qna/cityqnaList.jsp" />
+	</definition>
+	
+	<!-- qna 글 상세보기 -->
+	<definition name="qnaView" extends="default">
+		<put-attribute name="body" value="/WEB-INF/view/qna/qnaView.jsp" />
+	</definition>
+	
+	<!-- qna 폼 보기 -->
+	<definition name="qnaWrite" extends="default">
+		<put-attribute name="body" value="/WEB-INF/view/qna/qnaWriteForm.jsp" />
+	</definition>
+	<definition name="qnaModify" extends="default">
+		<put-attribute name="body" value="/WEB-INF/view/qna/qnaModifyForm.jsp" />
+	</definition>
+	 
+	 
+	<!-- Tip -->
+	<definition name="tipList" extends="default">
+		<put-attribute name="body" value="/WEB-INF/view/tip/tipList.jsp" />
+	</definition>
+	
+	<definition name="tipDetail" extends="default">
+		<put-attribute name="body" value="/WEB-INF/view/tip/tipDetail.jsp" />
+	</definition>
+	
+	<definition name="tipWriteForm" extends="default">
+		<put-attribute name="body" value="/WEB-INF/view/tip/tipWriteForm.jsp"/>
+	</definition>
+	
+	<definition name="tipModify" extends="default">
+		<put-attribute name="body" value="/WEB-INF/view/tip/tipModifyForm.jsp"/>
+	</definition>
+	
+	<!-- Push -->
+	
+	
+	<!-- Guide -->
+	
+	
+</tiles-definitions>

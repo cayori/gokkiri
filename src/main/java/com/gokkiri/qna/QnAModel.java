@@ -17,7 +17,7 @@ public class QnAModel {
 	private Date q_co_date;
 	
 	
-	//qna°Ô½ÃÆÇ´ñ±Û
+	//qnaê²Œì‹œíŒëŒ“ê¸€
 	public int getQ_co_no() {
 		return q_co_no;
 	}
@@ -37,7 +37,7 @@ public class QnAModel {
 	public void setQ_co_date(Date q_co_date) {
 		this.q_co_date = q_co_date;
 	}
-    //qna°Ô½ÃÆÇ
+    //qnaê²Œì‹œíŒ
 	public int getQ_no() {
 		return q_no;
 	}

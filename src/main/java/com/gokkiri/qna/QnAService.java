@@ -15,61 +15,61 @@ public class QnAService implements QnADao {
 	@Resource
 	private SqlSessionTemplate sqlSessionTemplate;
 
-	// ±Û¸ñ·Ï
+	// ê¸€ëª©ë¡
 	@Override
 	public List<QnAModel> qnaList(int a_no) {
 		return sqlSessionTemplate.selectList("qna.qnaList", a_no);
 	}
 
-	// ±Û¾²±â
+	// ê¸€ì“°ê¸°
 	@Override
 	public int qnaWrite(QnAModel qnAModel) {
 		return sqlSessionTemplate.insert("qna.qnaWrite", qnAModel);
 	}
 
-	// ±Û »ó¼¼º¸±â
+	// ê¸€ ìƒì„¸ë³´ê¸°
 	@Override
 	public QnAModel qnaView(int q_no) {
 		return sqlSessionTemplate.selectOne("qna.qnaView", q_no);
 	}
 
-	// ±Û»èÁ¦
+	// ê¸€ì‚­ì œ
 	@Override
 	public int qnaDelete(int q_no) {
 		return sqlSessionTemplate.update("qna.qnaDelete", q_no);
 	}
 
-	// ±Û¼öÁ¤
+	// ê¸€ìˆ˜ì •
 	@Override
 	public int qnaModify(QnAModel qnAModel) {
 		return sqlSessionTemplate.update("qna.qnaModify", qnAModel);
 	}
 
-	// ´ñ±Û¸ñ·Ï
+	// ëŒ“ê¸€ëª©ë¡
 	@Override
 	public List<QnAModel> qnacommList(int q_no) {
 		return sqlSessionTemplate.selectList("qna.qnacommList", q_no);
 	}
 
-	// ´ñ±Û¾²±â
+	// ëŒ“ê¸€ì“°ê¸°
 	@Override
 	public int qnacommWrite(QnAModel qnAModel) {
 		return sqlSessionTemplate.insert("qna.qnacommWrite", qnAModel);
 	}
 
-	// ´ñ±Û»èÁ¦
+	// ëŒ“ê¸€ì‚­ì œ
 	@Override
 	public int qnacommDelete(QnAModel qnAModel) {
 		return sqlSessionTemplate.delete("qna.qnacommDelete", qnAModel);
 	}
 
-	// ´ñ±Û°³¼ö
+	// ëŒ“ê¸€ê°œìˆ˜
 	@Override
 	public int comCount(int a_no) {
 		return sqlSessionTemplate.selectOne("qna.comCount", a_no);
 	}
 	
-	//µµ½Ã »ó¼¼º¸±â¿¡¼­ ¸ğµç ¿©ÇàÁöQnA¸®½ºÆ® º¸±â
+	//ë„ì‹œ ìƒì„¸ë³´ê¸°ì—ì„œ ëª¨ë“  ì—¬í–‰ì§€QnAë¦¬ìŠ¤íŠ¸ ë³´ê¸°
 	@Override
 	public List<QnAModel> cityqnaList(int c_no) {
 		return sqlSessionTemplate.selectList("qna.cityqnaList", c_no);

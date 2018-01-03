@@ -5,7 +5,7 @@
 <script language="javascript">
 function validation(){
 	if(document.findEmail.m_name.value==""){
-		alert("ÀÌ¸§À» ÀÔ·ÂÇØÁÖ¼¼¿ä.");
+		alert("ì´ë¦„ì„ ì…ë ¥í•´ì£¼ì„¸ìš”.");
 		document.findEmail.m_name.focus();
 		return false;
 	}
@@ -13,32 +13,32 @@ function validation(){
 }
 function validation2(){
 	if(document.findPassword.m_name.value==""){
-		alert("ÀÌ¸§À» ÀÔ·ÂÇØÁÖ¼¼¿ä.");
+		alert("ì´ë¦„ì„ ì…ë ¥í•´ì£¼ì„¸ìš”.");
 		document.findPassword.m_name.focus();
 		return false;
 	}
 	if(document.findPassword.m_email.value==""){
-		alert("ÀÌ¸ŞÀÏÀ» ÀÔ·ÂÇØÁÖ¼¼¿ä.");
+		alert("ì´ë©”ì¼ì„ ì…ë ¥í•´ì£¼ì„¸ìš”.");
 		document.findPassword.member_id.focus();
 		return false;
 	}
 
 }
 </script>
-<title>ÀÌ¸ŞÀÏ/ºñ¹Ğ¹øÈ£ Ã£±â</title>
+<title>ì´ë©”ì¼/ë¹„ë°€ë²ˆí˜¸ ì°¾ê¸°</title>
 </head>
 <body>
 <br><br><br><br><br>
 
 <div class="container">
-  <h2>ÀÌ¸ŞÀÏ Ã£±â</h2>
+  <h2>ì´ë©”ì¼ ì°¾ê¸°</h2>
   <hr>
   <form action="emailFind.go" method="post"  name="findEmail" onsubmit="return validation();">
   <div class="form-group">
   	<div class="col-xs-4" align="right">
-      	<input type="text" name="m_name" class="form-control" placeholder="ÀÌ¸§À» ÀÔ·ÂÇÏ¼¼¿ä.">
+      	<input type="text" name="m_name" class="form-control" placeholder="ì´ë¦„ì„ ì…ë ¥í•˜ì„¸ìš”.">
 	    <button type="submit" class="btn btn-default">
-	    <span class="glyphicon glyphicon-ok"></span>&nbsp;ÀÌ¸ŞÀÏ Ã£±â</button>
+	    <span class="glyphicon glyphicon-ok"></span>&nbsp;ì´ë©”ì¼ ì°¾ê¸°</button>
 	</div>
   </div>
   </form>
@@ -47,15 +47,15 @@ function validation2(){
 <br><br><br>
 
 	<div class="container">
-  <h2>ºñ¹Ğ¹øÈ£ Ã£±â</h2>
+  <h2>ë¹„ë°€ë²ˆí˜¸ ì°¾ê¸°</h2>
   <hr>
   <form action="pwFind.go" method="post"  name="findPassword" onsubmit="return validation2();">
   <div class="form-group">
   	<div class="col-xs-4" align="right">
-      	<input type="text" name="m_name" class="form-control" placeholder="ÀÌ¸§À» ÀÔ·ÂÇÏ¼¼¿ä.">
-      	<input type="text" name="m_email" class="form-control" placeholder="ÀÌ¸ŞÀÏÀ» ÀÔ·ÂÇÏ¼¼¿ä.">
+      	<input type="text" name="m_name" class="form-control" placeholder="ì´ë¦„ì„ ì…ë ¥í•˜ì„¸ìš”.">
+      	<input type="text" name="m_email" class="form-control" placeholder="ì´ë©”ì¼ì„ ì…ë ¥í•˜ì„¸ìš”.">
 	    <button type="submit" class="btn btn-default">
-	    <span class="glyphicon glyphicon-ok"></span>&nbsp;ÆĞ½º¿öµå Ã£±â</button>
+	    <span class="glyphicon glyphicon-ok"></span>&nbsp;íŒ¨ìŠ¤ì›Œë“œ ì°¾ê¸°</button>
 	</div>
   </div>
   </form>

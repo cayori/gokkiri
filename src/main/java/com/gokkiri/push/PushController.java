@@ -35,15 +35,15 @@ public class PushController {
 	ModelAndView mav = new ModelAndView();
 	
 	
-	 //¾Ë¸² ¸®½ºÆ®
+	 //ì•Œë¦¼ ë¦¬ìŠ¤íŠ¸
 	 @RequestMapping("/pushList.go")
 	 public ModelAndView pushList(HttpServletRequest request, HttpSession session) {
 		 
-		 if(session.getAttribute("session_m_email") != null){ //·Î±×ÀÎo
+		 if(session.getAttribute("session_m_email") != null){ //ë¡œê·¸ì¸o
 			 
 		 String m_email = (String) session.getAttribute("session_m_email");
 		 System.out.println(m_email);
-		 List<ScheduleModel> pushList = pushService.pushList(m_email); // ¾Ë¸²¸®½ºÆ® º¸¿©ÁÜ
+		 List<ScheduleModel> pushList = pushService.pushList(m_email); // ì•Œë¦¼ë¦¬ìŠ¤íŠ¸ ë³´ì—¬ì¤Œ
 		 int pushListCount = pushService.pushListCount(m_email);
 		
 		 
@@ -52,7 +52,7 @@ public class PushController {
 			 mav.setViewName("push/pushList");
 			 return mav;
 			 
-		 } else{ //·Î±×ÀÎx
+		 } else{ //ë¡œê·¸ì¸x
 			 mav.setViewName("loginConfirm"); 
 			return mav;
 		 }
@@ -61,21 +61,21 @@ public class PushController {
 	 }
 	 
 	 
-	 //Ä£±¸½ÅÃ» ¼ö¶ô/°ÅÀı
+	 //ì¹œêµ¬ì‹ ì²­ ìˆ˜ë½/ê±°ì ˆ
 	 @RequestMapping("/updateTogether.go")
 	 public ModelAndView updateTogether(HttpServletRequest request, HttpSession session) {
 
-		 //»óÅÂ º¯°æ
+		 //ìƒíƒœ ë³€ê²½
 		 String s_together = (String)request.getParameter("s_together");
 		 int s_no = Integer.parseInt(request.getParameter("s_no"));
 		 int s_state = Integer.parseInt(request.getParameter("s_state"));
-		 pushService.updateTogether(s_together, s_no, s_state);//»óÅÂ°ª ¾÷µ¥ÀÌÆ®. ¼ö¶ôÀÌ¸é 1 °ÅÀıÀÌ¸é 2
-		 pushService.deleteTogether(); //»óÅÂ°ªÀÌ 2¸é sch_shareÅ×ÀÌºí¿¡¼­ °ª »ç¶óÁü
+		 pushService.updateTogether(s_together, s_no, s_state);//ìƒíƒœê°’ ì—…ë°ì´íŠ¸. ìˆ˜ë½ì´ë©´ 1 ê±°ì ˆì´ë©´ 2
+		 pushService.deleteTogether(); //ìƒíƒœê°’ì´ 2ë©´ sch_shareí…Œì´ë¸”ì—ì„œ ê°’ ì‚¬ë¼ì§
 		 
-		 //¾÷µ¥ÀÌÆ® ÈÄ Çì´õÀÇ ¼¼¼Ç°ª º¯°æ
+		 //ì—…ë°ì´íŠ¸ í›„ í—¤ë”ì˜ ì„¸ì…˜ê°’ ë³€ê²½
 		 String m_email = (String) session.getAttribute("session_m_email");
-		 List<ScheduleModel> pushList = pushService.pushList(m_email); // ¾Ë¸²¸®½ºÆ®
-		 int pushCount = pushService.pushListCount(m_email); //¾Ë¸² °¹¼ö
+		 List<ScheduleModel> pushList = pushService.pushList(m_email); // ì•Œë¦¼ë¦¬ìŠ¤íŠ¸
+		 int pushCount = pushService.pushListCount(m_email); //ì•Œë¦¼ ê°¯ìˆ˜
 	     session.setAttribute("session_pushList", pushList);
 	     session.setAttribute("session_pushCount", pushCount);
 

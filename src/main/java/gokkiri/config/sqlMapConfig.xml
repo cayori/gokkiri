@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration 
+PUBLIC " - //mybatis.org//DTD Config 3.0//EN"
+	   " http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+
+	<!-- mybatis 기본 세팅 -->
+	<settings>
+		<setting name="cacheEnabled"              value="true"/>  
+        <setting name="lazyLoadingEnabled"        value="false"/>  
+        <setting name="multipleResultSetsEnabled" value="true"/>  
+        <setting name="useColumnLabel"            value="true"/>  
+        <setting name="useGeneratedKeys"          value="false"/>  
+        <setting name="defaultExecutorType"       value="SIMPLE"/>  
+        <setting name="defaultStatementTimeout"   value="25000"/>  
+	</settings>
+	
+	<typeAliases>
+		<typeAlias alias="member" type="com.gokkiri.member.MemberModel" />
+		<typeAlias alias="schedule" type="com.gokkiri.schedule.ScheduleModel" />
+		<typeAlias alias="schComment" type="com.gokkiri.schedule.SchCommentModel" />
+		<typeAlias alias="state" type="com.gokkiri.state.StateModel"/>
+		<typeAlias alias="city" type="com.gokkiri.city.CityModel" />
+		<typeAlias alias="area" type="com.gokkiri.area.AreaModel" />
+		<typeAlias alias="areaReview" type="com.gokkiri.area.AreaReviewModel" />
+		<typeAlias alias="qna" type="com.gokkiri.qna.QnAModel" />
+		<typeAlias alias="tip" type="com.gokkiri.tip.TipModel" />
+	</typeAliases>
+	
+	<!-- SQL 정의한 xml문서 Mapping -->
+	<mappers>
+	    <mapper resource="gokkiri/config/pushSQL.xml" />
+	    <mapper resource="gokkiri/config/memSQL.xml" />
+	    <mapper resource="gokkiri/config/mypageSQL.xml" />
+	    <mapper resource="gokkiri/config/schSQL.xml" />
+	    <mapper resource="gokkiri/config/stateSQL.xml" />
+	    <mapper resource="gokkiri/config/citySQL.xml" />
+	    <mapper resource="gokkiri/config/areaSQL.xml" />
+	    <mapper resource="gokkiri/config/qnaSQL.xml" />
+	    <mapper resource="gokkiri/config/tipSQL.xml" />
+	</mappers>
+
+
+</configuration>

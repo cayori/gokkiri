@@ -14,7 +14,7 @@
 
 function cityDetail(){
 	
-	if(confirm("¸®½ºÆ®·Î ÀÌµ¿ÇÏ½Ã°Ú½À´Ï±î?") == true){
+	if(confirm("ë¦¬ìŠ¤íŠ¸ë¡œ ì´ë™í•˜ì‹œê² ìŠµë‹ˆê¹Œ?") == true){
 		location.href="cityDetail.go?c_no=${cityModel.c_no}&keyword=${param.keyword}";
 	}else{
 		false;
@@ -39,39 +39,39 @@ function cityDetail(){
          
           <fieldset>
             <div id="legend">
-              <legend>µµ½Ã ±Û¾²±â</legend>
+              <legend>ë„ì‹œ ê¸€ì“°ê¸°</legend>
             </div>
           <br/><br/>  
           
 		 <div class="control-group">
-              <label class="control-label" for="state_name">¡¤ µµ½Ã : ${cityModel.state_name }</label>
+              <label class="control-label" for="state_name">Â· ë„ì‹œ : ${cityModel.state_name }</label>
          </div>
          <br/>
             <div class="control-group">
-              <label class="control-label" for="c_name">¡¤ ±¸ ÀÌ¸§</label>
+              <label class="control-label" for="c_name">Â· êµ¬ ì´ë¦„</label>
               <div class="controls">
-                <input name="c_name" class="form-control input" id="c_name" type="text" value="${cityModel.c_name }" placeholder="ex) °­³²±¸, Áß±¸...">
+                <input name="c_name" class="form-control input" id="c_name" type="text" value="${cityModel.c_name }" placeholder="ex) ê°•ë‚¨êµ¬, ì¤‘êµ¬...">
                 <!-- <p class="help-block"></p> -->
               </div>
             </div>
          <br/>
             <div class="control-group">
-              <label class="control-label" for="c_addr">¡¤ ÁÖ¼Ò </label>
+              <label class="control-label" for="c_addr">Â· ì£¼ì†Œ </label>
               <div class="controls">
-                <input name="c_addr" class="form-control input" id="c_addr" type="text" value="${cityModel.c_addr }" placeholder="½Ã,±¸ ±îÁöÀÇ ÁÖ¼Ò¸¦ Àû¾îÁÖ¼¼¿ä.  ex)¼­¿ïÆ¯º°½Ã °­³²±¸" >
+                <input name="c_addr" class="form-control input" id="c_addr" type="text" value="${cityModel.c_addr }" placeholder="ì‹œ,êµ¬ ê¹Œì§€ì˜ ì£¼ì†Œë¥¼ ì ì–´ì£¼ì„¸ìš”.  ex)ì„œìš¸íŠ¹ë³„ì‹œ ê°•ë‚¨êµ¬" >
               </div>
             </div>
          <br/>
          <div class="control-group">
-              <label class="control-label" for="c_con">¡¤ Áö¿ª ¼³¸í</label>
+              <label class="control-label" for="c_con">Â· ì§€ì—­ ì„¤ëª…</label>
               <div class="controls">
                 <textarea rows="10" cols="100"  name="c_con" class="form-control input" id="c_con" 
-                placeholder="ex) ¼­¿ïÆ¯º°½Ã ³²µ¿ºÎ¿¡ ÀÖ´Â ±¸. ºÏÂÊÀ¸·Î ÇÑ°­À» °æ°è·Î ¼ºµ¿±¸¡¤±¤Áø±¸, µ¿ÂÊÀ¸·Î ¼ÛÆÄ±¸, ¼­ÂÊÀ¸·Î ¼­ÃÊ±¸¿Í Á¢ÇÏ°í, ³²ÂÊÀ¸·Î °æ±â ¼º³²½Ã¿Í °æ°è¸¦ ÀÌ·é...">${cityModel.c_con }</textarea>
+                placeholder="ex) ì„œìš¸íŠ¹ë³„ì‹œ ë‚¨ë™ë¶€ì— ìˆëŠ” êµ¬. ë¶ìª½ìœ¼ë¡œ í•œê°•ì„ ê²½ê³„ë¡œ ì„±ë™êµ¬Â·ê´‘ì§„êµ¬, ë™ìª½ìœ¼ë¡œ ì†¡íŒŒêµ¬, ì„œìª½ìœ¼ë¡œ ì„œì´ˆêµ¬ì™€ ì ‘í•˜ê³ , ë‚¨ìª½ìœ¼ë¡œ ê²½ê¸° ì„±ë‚¨ì‹œì™€ ê²½ê³„ë¥¼ ì´ë£¬...">${cityModel.c_con }</textarea>
               </div>
             </div>
          <br/>
          <div class="control-group">
-              <label class="control-label" for="file">¡¤ Ã·ºÎÆÄÀÏ</label>
+              <label class="control-label" for="file">Â· ì²¨ë¶€íŒŒì¼</label>
               <div class="controls">
               <input id="files-upload" type="file" name="file" multiple>
 				
@@ -79,7 +79,7 @@ function cityDetail(){
 				</ul>
 				
 				<ul>
-					<li class="no-items"><font color="red">* ÀÌ¹ÌÁö ÆÄÀÏÀ» ´Ù½Ã Ã·ºÎÇÏÁö ¾ÊÀ¸¸é ÀÌÀü ¿øº» ÀÌ¹ÌÁö·Î ÀúÀåÀÌ µË´Ï´Ù.</font></li>
+					<li class="no-items"><font color="red">* ì´ë¯¸ì§€ íŒŒì¼ì„ ë‹¤ì‹œ ì²¨ë¶€í•˜ì§€ ì•Šìœ¼ë©´ ì´ì „ ì›ë³¸ ì´ë¯¸ì§€ë¡œ ì €ì¥ì´ ë©ë‹ˆë‹¤.</font></li>
 					<c:forEach var="imgList" items="${imgList }" varStatus="stat">
 						<c:if test="${stat.index == 0 }">
 						</c:if>
@@ -88,7 +88,7 @@ function cityDetail(){
 				</ul>
 <script>
 
-/* ÆÄÀÏ ¾÷·Îµå */
+/* íŒŒì¼ ì—…ë¡œë“œ */
     var filesUpload = document.getElementById("files-upload"),
         fileList = document.getElementById("file-list");
      
@@ -137,8 +137,8 @@ function cityDetail(){
 <center>
 <input type="hidden" name="c_no" value="${ cityModel.c_no}" />
 <input type="hidden" name="keyword" value="${param.keyword }" />
-<button class="btn btn-success" onclick="this.form.submit();">¼öÁ¤ÇÏ±â</button>&nbsp;</form>
-<button class="btn btn-default" onclick="cityDetail();">Ãë¼Ò</button>
+<button class="btn btn-success" onclick="this.form.submit();">ìˆ˜ì •í•˜ê¸°</button>&nbsp;</form>
+<button class="btn btn-default" onclick="cityDetail();">ì·¨ì†Œ</button>
 </center>
 <br><br><br>
 </body>

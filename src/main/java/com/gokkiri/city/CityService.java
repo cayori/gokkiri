@@ -31,68 +31,68 @@ public class CityService implements CityDao{
 		return sqlSessionTemplate.selectList("city.citySearchList", map);
 	}
 	
-	//½ºÄÉÁì - µµ½Ã ¸®½ºÆ® º¸±â
+	//ìŠ¤ì¼€ì¥´ - ë„ì‹œ ë¦¬ìŠ¤íŠ¸ ë³´ê¸°
 	@Override
 	public List<CityModel> stateCityList(int state_no) {
 		return sqlSessionTemplate.selectList("city.stateCityList", state_no);
 	}
 
 
-	//µµ½Ã ¸®½ºÆ® º¸±â
+	//ë„ì‹œ ë¦¬ìŠ¤íŠ¸ ë³´ê¸°
 	@Override
 	public  List<CityModel> cityList(int state_no) {
 		return sqlSessionTemplate.selectList("city.cityList", state_no);
 	}
 	
-	//µµ½Ã ±Û »ó¼¼º¸±â
+	//ë„ì‹œ ê¸€ ìƒì„¸ë³´ê¸°
 	@Override
 	public CityModel cityDetail(int c_no) {
 		return sqlSessionTemplate.selectOne("city.cityDetail", c_no);
 	}
 	
-	//µµ½Ã ±Û¾²±â Æû ºÒ·¯¿Ã¶§ state_nameµµ ºÒ·¯¿À±â
+	//ë„ì‹œ ê¸€ì“°ê¸° í¼ ë¶ˆëŸ¬ì˜¬ë•Œ state_nameë„ ë¶ˆëŸ¬ì˜¤ê¸°
 	@Override
 	public String stateSelect(int state_no) {
 		return sqlSessionTemplate.selectOne("city.stateSelect", state_no);
 	}
 
-	//µµ½Ã ±Û¾²±â
+	//ë„ì‹œ ê¸€ì“°ê¸°
 	@Override
 	public Object cityWrite(CityModel cityModel) {
 		return sqlSessionTemplate.insert("city.cityWrite", cityModel);
 	}
 	
-	//µµ½Ã ±Û ¼öÁ¤ÇÒ¶§ ÀÌ¹ÌÁö ¿øº»ÀÌ¸§ °°ÀÌ ºÒ·¯¿À±â
+	//ë„ì‹œ ê¸€ ìˆ˜ì •í• ë•Œ ì´ë¯¸ì§€ ì›ë³¸ì´ë¦„ ê°™ì´ ë¶ˆëŸ¬ì˜¤ê¸°
 	@Override
 	public List<CityModel> imgList(int c_no) {
 		return sqlSessionTemplate.selectList("city.imgList", c_no);
 	}
 	
-	//µµ½Ã ±Û ¼öÁ¤ÇÏ±â
+	//ë„ì‹œ ê¸€ ìˆ˜ì •í•˜ê¸°
 	@Override
 	public void cityModify(CityModel cityModel) {
 		sqlSessionTemplate.update("city.cityModify",cityModel);
 	}
 	
-	//¼öÁ¤ÇÒ¶§ ÀÌ¹ÌÁöÃ·ºÎÆÄÀÏÀÌ »õ·Î ÀÔ·ÂµÇ¸é ±âÁ¸ÀÇ ÀÌ¹ÌÁöÃ·ºÎÆÄÀÏ »èÁ¦ÇÏ±â
+	//ìˆ˜ì •í• ë•Œ ì´ë¯¸ì§€ì²¨ë¶€íŒŒì¼ì´ ìƒˆë¡œ ì…ë ¥ë˜ë©´ ê¸°ì¡´ì˜ ì´ë¯¸ì§€ì²¨ë¶€íŒŒì¼ ì‚­ì œí•˜ê¸°
 	@Override
 	public void fileDelete(int c_no) {
 		sqlSessionTemplate.delete("city.fileDelete", c_no);
 	}
 	
-	//µµ½Ã ±Û »èÁ¦ÇÏ±â
+	//ë„ì‹œ ê¸€ ì‚­ì œí•˜ê¸°
 	@Override
 	public void cityDelete(int c_no) {
 		sqlSessionTemplate.delete("city.cityDelete", c_no);
 	}
 	
-	//ÆÄÀÏ ¾÷·ÎµåÇÒ¶§ c_no°ª º¸³»ÁÖ±â
+	//íŒŒì¼ ì—…ë¡œë“œí• ë•Œ c_noê°’ ë³´ë‚´ì£¼ê¸°
 	@Override
 	public int selectSeq() {
 		return sqlSessionTemplate.selectOne("city.selectSeq");
 	}
 
-	//ÆÄÀÏ ¾÷·Îµå
+	//íŒŒì¼ ì—…ë¡œë“œ
 	@Override
 	public void fileupload(String originalFilename, String saveFilename, int c_img_index, int c_no) {
 		
@@ -106,7 +106,7 @@ public class CityService implements CityDao{
 	}
 
 
-	//µµ½Ã »ó¼¼º¸±â ÇÒ¶§ ÀÌ¹ÌÁö ¸®½ºÆ® °°ÀÌ ºÒ·¯¿À±â
+	//ë„ì‹œ ìƒì„¸ë³´ê¸° í• ë•Œ ì´ë¯¸ì§€ ë¦¬ìŠ¤íŠ¸ ê°™ì´ ë¶ˆëŸ¬ì˜¤ê¸°
 	@Override
 	public List<CityModel> city_imgList(int c_no) {
 		return sqlSessionTemplate.selectList("city.city_imgList", c_no);
@@ -119,13 +119,13 @@ public class CityService implements CityDao{
 		return null;
 	}
 	
-	//µµ½Ã »ó¼¼º¸±â ÇÒ¶§ ¿©ÇàÁö ¸®ºä¸®½ºÆ® ¸ğµÎ ºÒ·¯¿À±â
+	//ë„ì‹œ ìƒì„¸ë³´ê¸° í• ë•Œ ì—¬í–‰ì§€ ë¦¬ë·°ë¦¬ìŠ¤íŠ¸ ëª¨ë‘ ë¶ˆëŸ¬ì˜¤ê¸°
 	@Override
 	public List<AreaReviewModel> areaReviewList(int c_no) {
 		return sqlSessionTemplate.selectList("city.areaReviewList", c_no);
 	}
 
-	//µµ½Ã »ó¼¼º¸±â ÇÒ¶§ ¿©ÇàÁö qna¸®½ºÆ® ºÒ·¯¿À±â
+	//ë„ì‹œ ìƒì„¸ë³´ê¸° í• ë•Œ ì—¬í–‰ì§€ qnaë¦¬ìŠ¤íŠ¸ ë¶ˆëŸ¬ì˜¤ê¸°
 	@Override
 	public List<QnAModel> cityqnaList(int c_no) {
 		return sqlSessionTemplate.selectList("qna.qnaList", c_no);

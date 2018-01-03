@@ -9,7 +9,7 @@
 
 <style>
 
-/* ÀÏÁ¤ °¶·¯¸® */
+/* ì¼ì • ê°¤ëŸ¬ë¦¬ */
 ul { list-style: none;}
 
 #hover-cap-4col .thumbnail {
@@ -42,7 +42,7 @@ height: 100%;
 
 <script>
 
-//ÀÏÁ¤ °¶·¯¸®
+//ì¼ì • ê°¤ëŸ¬ë¦¬
 $(document).ready(function(){
 	 
     $("[rel='tooltip']").tooltip();    
@@ -61,17 +61,17 @@ $(document).ready(function(){
 </script>
 </head>
 <body>
-<!-- »ó´Ü ÀÌ¹ÌÁö-->
+<!-- ìƒë‹¨ ì´ë¯¸ì§€-->
 <div class="jumbotron text-center">
   <form class="form-inline">
   	<br><br>
-  	<p><font color="#ffffff" size="10"><b>ÇÑ±¹, ¾îµğ±îÁö °¡ºÃ´Ï?</b></font></p>
+  	<p><font color="#ffffff" size="10"><b>í•œêµ­, ì–´ë””ê¹Œì§€ ê°€ë´¤ë‹ˆ?</b></font></p>
   	<br><br>
   </form>
 </div>
 <br>
 
-<!-- Ä«Å×°í¸® -->
+<!-- ì¹´í…Œê³ ë¦¬ -->
 <div class="container-fluid">
   <div class="row content">
     <div class="col-sm-3">
@@ -81,25 +81,25 @@ $(document).ready(function(){
     <div class="panel panel-default">
       <div class="panel-heading" style="background-color:#266eb7;color:#fff;">
         <h4 class="panel-title" >
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse1" ><b>ÀÏÁ¤ ¸®½ºÆ®</b></a>
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse1" ><b>ì¼ì • ë¦¬ìŠ¤íŠ¸</b></a>
         </h4>
       </div>
       <div id="collapse1" class="panel-collapse collapse in">
-        <div class="panel-body"><a href="/gokkiri/mypage/myScheduleList.go?s_complete=1&s_private=0">³» ÀÏÁ¤</a></div>
-        <div class="panel-body"><a href="/gokkiri/mypage/zzimScheduleList.go"><b>ÂòÇÑ ÀÏÁ¤</b></a></div>
-        <div class="panel-body"><a href="/gokkiri/mypage/sharedScheduleList.go">°øÀ¯ÁßÀÎ ÀÏÁ¤</a></div>  
+        <div class="panel-body"><a href="/gokkiri/mypage/myScheduleList.go?s_complete=1&s_private=0">ë‚´ ì¼ì •</a></div>
+        <div class="panel-body"><a href="/gokkiri/mypage/zzimScheduleList.go"><b>ì°œí•œ ì¼ì •</b></a></div>
+        <div class="panel-body"><a href="/gokkiri/mypage/sharedScheduleList.go">ê³µìœ ì¤‘ì¸ ì¼ì •</a></div>  
       </div>
     </div>
     
     <div class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">³»°¡¾´ ±Û ¸®½ºÆ®</a>
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">ë‚´ê°€ì“´ ê¸€ ë¦¬ìŠ¤íŠ¸</a>
         </h4>
       </div>
       <div id="collapse2" class="panel-collapse collapse">
-       <div class="panel-body"><a href="/gokkiri/mypage/myTipList.go">¿©Çà Tip</a></div> 
-        <div class="panel-body"><a href="/gokkiri/mypage/myAreaReviewList.go">¸®ºä</a></div>
+       <div class="panel-body"><a href="/gokkiri/mypage/myTipList.go">ì—¬í–‰ Tip</a></div> 
+        <div class="panel-body"><a href="/gokkiri/mypage/myAreaReviewList.go">ë¦¬ë·°</a></div>
         <div class="panel-body"><a href="/gokkiri/mypage/myQnaList.go">QnA</a></div>
        
       </div>
@@ -108,12 +108,12 @@ $(document).ready(function(){
     <div class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">È¸¿øÁ¤º¸ ¼öÁ¤</a>
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">íšŒì›ì •ë³´ ìˆ˜ì •</a>
         </h4>
       </div>
       <div id="collapse3" class="panel-collapse collapse">
-       <div class="panel-body"><a href="/gokkiri/member/memberModifyForm.go" >Á¤º¸ ¼öÁ¤</a></div>
-        <div class="panel-body"><a href="/gokkiri/member/memberDeleteForm.go" >È¸¿ø Å»Åğ</a></div>
+       <div class="panel-body"><a href="/gokkiri/member/memberModifyForm.go" >ì •ë³´ ìˆ˜ì •</a></div>
+        <div class="panel-body"><a href="/gokkiri/member/memberDeleteForm.go" >íšŒì› íƒˆí‡´</a></div>
       </div>
     </div>
   </div> 
@@ -137,16 +137,16 @@ $(document).ready(function(){
    		<font size="4" color="#266eb7"><b>#.&nbsp;${zzimScheduleList.s_name}&nbsp;</b></font>
         <div class="thumbnail">
             <div class="caption">
-                <p><h5>¡ì&nbsp;${zzimScheduleList.s_start_date }¹Ú ${zzimScheduleList.s_start_date + 1 }ÀÏ ÀÏÁ¤&nbsp;¡í</h5></p>
+                <p><h5>â‰ª&nbsp;${zzimScheduleList.s_start_date }ë°• ${zzimScheduleList.s_start_date + 1 }ì¼ ì¼ì •&nbsp;â‰«</h5></p>
                 <p></p>
-                <p>ÀÛ¼ºÀÚ : ${zzimScheduleList.m_email }</p>
-                <p>Á¶È¸¼ö : ${zzimScheduleList.s_hit }</p>
+                <p>ì‘ì„±ì : ${zzimScheduleList.m_email }</p>
+                <p>ì¡°íšŒìˆ˜ : ${zzimScheduleList.s_hit }</p>
                 
-                <p><a href="/gokkiri/schedule/scheduleDetail.go?s_no=${zzimScheduleList.s_no }&s_cate=0" class="btn btn-inverse" rel="tooltip" title="»ó¼¼º¸±â"><i class="glyphicon glyphicon-eye-open"></i></a></p>
+                <p><a href="/gokkiri/schedule/scheduleDetail.go?s_no=${zzimScheduleList.s_no }&s_cate=0" class="btn btn-inverse" rel="tooltip" title="ìƒì„¸ë³´ê¸°"><i class="glyphicon glyphicon-eye-open"></i></a></p>
                 
-                <p><h4>${zzimScheduleList.s_detail_memo } Ãâ¹ß~</h4></p>
+                <p><h4>${zzimScheduleList.s_detail_memo } ì¶œë°œ~</h4></p>
             </div>
-            <!-- a_img_sav ÄÃ·³À» s_together ÄÃ·³¸íÀ¸·Î ¹Ù²ã¼­ ºÒ·¯¿È¡é¡é¡é -->
+            <!-- a_img_sav ì»¬ëŸ¼ì„ s_together ì»¬ëŸ¼ëª…ìœ¼ë¡œ ë°”ê¿”ì„œ ë¶ˆëŸ¬ì˜´â†“â†“â†“ -->
             <img src="../resources/area_img/${zzimScheduleList.s_together }" alt="ALT NAME" class="img-responsive"  style="max-width: 100%; height: 100%;" >
         </div>
 	</li>
@@ -157,10 +157,10 @@ $(document).ready(function(){
 
 
 
-<!-- DB»ó °Ô½Ã¹°ÀÌ ¾øÀ¸¸é º¸¿©ÁÖ´Â °Í -->
+<!-- DBìƒ ê²Œì‹œë¬¼ì´ ì—†ìœ¼ë©´ ë³´ì—¬ì£¼ëŠ” ê²ƒ -->
 	<c:if test="${fn:length(zzimScheduleList) le 0}">
 		<br/>
-		<center>µî·ÏµÈ °Ô½Ã¹°ÀÌ ¾ø½À´Ï´Ù</center>
+		<center>ë“±ë¡ëœ ê²Œì‹œë¬¼ì´ ì—†ìŠµë‹ˆë‹¤</center>
 		<br/>
 	</c:if>
 	</td>

@@ -44,14 +44,14 @@
 		var form = $('.commentForm')[0];
 		form.action = 'qnacommWrite.go';
 		if (form.q_co_con.value == "") {
-			alert("³»¿ëÀ» ÀÔ·ÂÇØÁÖ¼¼¿ä");
+			alert("ë‚´ìš©ì„ ì…ë ¥í•´ì£¼ì„¸ìš”");
 		} else {
 			form.submit();
 		}
-		//³Ñ±â´Â ºÎºĞ
+		//ë„˜ê¸°ëŠ” ë¶€ë¶„
 	} */
 	function qnaDelete() {
-		if (confirm("»èÁ¦ ÇÏ½Ã°Ú½À´Ï±î?") == true) {
+		if (confirm("ì‚­ì œ í•˜ì‹œê² ìŠµë‹ˆê¹Œ?") == true) {
 			location.href = 'qnaDelete.go?q_no=${qnAModel.q_no}';
 		} else {
 			return;
@@ -59,14 +59,14 @@
 	}
 
 	function qnaModify() {
-		if (confirm("¼öÁ¤ ÇÏ½Ã°Ú½À´Ï±î?") == true) {
+		if (confirm("ìˆ˜ì • í•˜ì‹œê² ìŠµë‹ˆê¹Œ?") == true) {
 			location.href = 'qnaModify.go?q_no=${qnAModel.q_no}&a_no=${param.a_no}';
 		} else {
 			return;
 		}
 	}
 	function qnacommDelete(num) {
-		if (confirm("´ñ±ÛÀ» »èÁ¦ ÇÏ½Ã°Ú½À´Ï±î?") == true) {
+		if (confirm("ëŒ“ê¸€ì„ ì‚­ì œ í•˜ì‹œê² ìŠµë‹ˆê¹Œ?") == true) {
 			location.href = 'qnacommDelete.go?q_co_no=' + num
 					+ '&q_no=${qnAModel.q_no}';
 		} else {
@@ -88,7 +88,7 @@
 				<div class="panel panel-default" style="text-align:center;">
 					<div class="panel-heading">
 						<font size="4">
-							<a href="/gokkiri/area/areaDetail.go?a_no=${param.a_no }&keyword=${fn:substring(areaModel.a_addr,0,2)}"><b>¿ø±Û Á¦¸ñ : ${areaModel.a_name }</b></a>
+							<a href="/gokkiri/area/areaDetail.go?a_no=${param.a_no }&keyword=${fn:substring(areaModel.a_addr,0,2)}"><b>ì›ê¸€ ì œëª© : ${areaModel.a_name }</b></a>
 						</font>
 					</div>
 					<div class="panel-body">
@@ -97,10 +97,10 @@
 								<img src="/gokkiri/resources/area_img/${main_img }" width="200" height="120">
 							</div>
 							<div class="col-sm-8" style="text-align:left;">
-								<font size="2">¡¤ ÁÖ¼Ò : ${areaModel.a_addr }<br/>
-								¡¤ °¡´Â ¹æ¹ı : ${areaModel.a_way }<hr>
-								¡¤&nbsp;
-								<!-- ¸îÀÚ ÀÌ»óÀÌ¸é ...À¸·Î º¸ÀÌµµ·Ï -->
+								<font size="2">Â· ì£¼ì†Œ : ${areaModel.a_addr }<br/>
+								Â· ê°€ëŠ” ë°©ë²• : ${areaModel.a_way }<hr>
+								Â·&nbsp;
+								<!-- ëª‡ì ì´ìƒì´ë©´ ...ìœ¼ë¡œ ë³´ì´ë„ë¡ -->
 								<c:if test="${fn:length(areaModel.a_con) gt 100 }">
 									<c:out value="${fn:substring(areaModel.a_con, 0, 100) }" />......
 								</c:if>
@@ -126,7 +126,7 @@
 		<div id="page-wrapper">
 			<div class="row">
 				<div class="col-lg-12">
-					<h3 class="page-header"><b>Q&A »ó¼¼º¸±â</b></h3>
+					<h3 class="page-header"><b>Q&A ìƒì„¸ë³´ê¸°</b></h3>
 				</div>
 			</div>
 			<div class="row">
@@ -159,17 +159,17 @@
 
 
 				&nbsp;&nbsp;
-				<input type="button" onclick="location.href='qnaList.go?a_no=${param.a_no}'" value="¸ñ·Ï" class="btn btn-default" />
-				<!-- ÀÛ¼ºÀÚ ¾ÆÀÌµğ¿Í ·Î±×ÀÎÇÑ ¾ÆÀÌµğ°¡ °°°Å³ª ·Î±×ÀÎÇÑ ¾ÆÀÌµğ°¡ adminÀÏ¶§¸¸ ¼öÁ¤°ú »èÁ¦ ¹öÆ°À» º¸¿©ÁÜ-->
+				<input type="button" onclick="location.href='qnaList.go?a_no=${param.a_no}'" value="ëª©ë¡" class="btn btn-default" />
+				<!-- ì‘ì„±ì ì•„ì´ë””ì™€ ë¡œê·¸ì¸í•œ ì•„ì´ë””ê°€ ê°™ê±°ë‚˜ ë¡œê·¸ì¸í•œ ì•„ì´ë””ê°€ adminì¼ë•Œë§Œ ìˆ˜ì •ê³¼ ì‚­ì œ ë²„íŠ¼ì„ ë³´ì—¬ì¤Œ-->
 				<c:if test="${session_m_email == qnAModel.m_email }"> 
-				<input type="button" onclick="qnaModify()" value="¼öÁ¤"
+				<input type="button" onclick="qnaModify()" value="ìˆ˜ì •"
 					class="btn btn-primary" /> <input type="button"
-					onclick="qnaDelete()" value="»èÁ¦" class="btn btn-primary" /> 
+					onclick="qnaDelete()" value="ì‚­ì œ" class="btn btn-primary" /> 
 					</c:if><br />
 				<br /> <br /> <br />
 				
             <form:form commandName="qnAModel" action="qnacommWrite.go" enctype="multipart/form-data"   method="post">
-				<!-- ´ñ±Û¾²´Â Ã¢ -->
+				<!-- ëŒ“ê¸€ì“°ëŠ” ì°½ -->
 				<div class="inner">
 					<form class="commentForm" method="post" onsubmit="return validation();">
 					
@@ -181,19 +181,19 @@
 
 							<div class="reply_write">
 								<div class="textarea_grp" >
-									<!-- ·Î±×ÀÎ¾ÈÇßÀ» ¶§ º¸¿©ÁÖ´Â ´ñ±Û ¿äÃ» ³»¿ë -->
+									<!-- ë¡œê·¸ì¸ì•ˆí–ˆì„ ë•Œ ë³´ì—¬ì£¼ëŠ” ëŒ“ê¸€ ìš”ì²­ ë‚´ìš© -->
 									<br />
 								 <c:if test="${session_m_email == null}"> 
 										&nbsp;&nbsp;<input type="text"
 										style="align: center; margin: 10px; width: 950px; height: 55px;"
-										value="·Î±×ÀÎ ÈÄ¿¡  ´ñ±Û ÀÛ¼ºÀÌ °¡´ÉÇÕ´Ï´Ù." readonly="readonly" /> -
+										value="ë¡œê·¸ì¸ í›„ì—  ëŒ“ê¸€ ì‘ì„±ì´ ê°€ëŠ¥í•©ë‹ˆë‹¤." readonly="readonly" /> -
 										</c:if>
-									<!-- ´ñ±Û ¾²´Â Ã¢ -->
+									<!-- ëŒ“ê¸€ ì“°ëŠ” ì°½ -->
 									 <c:if test="${session_m_email != null}"> 
-									<!-- ±ÛÀÚ ¼ö Á¦ÇÑ -->
+									<!-- ê¸€ì ìˆ˜ ì œí•œ -->
 									<textarea name="q_co_con" style="width: 885px; height: 55px;"
 										onKeyUp="javascript:fnChkByte(this,'200')"></textarea>
-									<input type="button" class="btn1 btn-primary1" value="ÀÔ·Â"
+									<input type="button" class="btn1 btn-primary1" value="ì…ë ¥"
 										onclick="this.form.submit()"/> 
 										</c:if>				
 									<div style="margin-bottom: 10px;">
@@ -211,24 +211,24 @@
 						
 								<c:if test="${fn:length(qnacommList) eq 0}">
 									<br />
-									<center>µî·ÏµÈ ´ñ±ÛÀÌ ¾ø½À´Ï´Ù</center>
+									<center>ë“±ë¡ëœ ëŒ“ê¸€ì´ ì—†ìŠµë‹ˆë‹¤</center>
 									<br />
 								</c:if>
-								<!-- ´ñ±Û Â÷·Ê·Î º¸¿©ÁÖ´Â Ã¢ -->
+								<!-- ëŒ“ê¸€ ì°¨ë¡€ë¡œ ë³´ì—¬ì£¼ëŠ” ì°½ -->
 								<c:forEach var="qnacommList" items="${qnacommList }"
 									varStatus="stat">
 									<div class="reply_view">
 										<div class="reply_tit">
 											<p class="tit">
-												<strong>${qnacommList.m_email }</strong>´Ô
+												<strong>${qnacommList.m_email }</strong>ë‹˜
 												<fmt:formatDate value="${qnacommList.q_co_date}"
 													pattern="yy.MM.dd"></fmt:formatDate>
 												<span class="ip"></span>
 											</p>
 							<c:if test="${session_m_email == qnacommList.m_email || session_m_email == 'admin'}"> 
-							<!-- °ü¸®ÀÚ È¤Àº ±Û¾´ÀÌ´Â ´ñ±Û »èÁ¦°¡´É -->
+							<!-- ê´€ë¦¬ì í˜¹ì€ ê¸€ì“´ì´ëŠ” ëŒ“ê¸€ ì‚­ì œê°€ëŠ¥ -->
 								<a href="qnacommDelete.go?q_co_no=${qnacommList.q_co_no}&q_no=${qnAModel.q_no} &m_email=${qnacommList.m_email} >">
-								<input type="button" onclick="qnacommDelete(${qnacommList.q_co_no})"  value="»èÁ¦" class="btn btnC_01 btnP_02"/>
+								<input type="button" onclick="qnacommDelete(${qnacommList.q_co_no})"  value="ì‚­ì œ" class="btn btnC_01 btnP_02"/>
 								</a>
 							</c:if>
 						</div>

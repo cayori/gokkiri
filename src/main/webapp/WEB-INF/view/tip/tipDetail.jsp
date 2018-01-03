@@ -12,7 +12,7 @@
 <style type="text/css">
 
 
-/*Áöµµ ·Îµåºä*/
+/*ì§€ë„ ë¡œë“œë·°*/
 #container {overflow:hidden;height:300px;position:relative;}
 #btnRoadview,  #btnMap {position:absolute;top:5px;left:5px;padding:7px 12px;font-size:14px;border: 1px solid #dbdbdb;background-color: #fff;border-radius: 2px;box-shadow: 0 1px 1px rgba(0,0,0,.04);z-index:1;cursor:pointer;}
 #btnRoadview:hover,  #btnMap:hover{background-color: #fcfcfc;border: 1px solid #c1c1c1;}
@@ -20,9 +20,9 @@
 #container.view_map #btnMap {display: none;}
 #container.view_roadview #mapWrapper {z-index: 0;}
 #container.view_roadview #btnRoadview {display: none;}
-/*Áöµµ ·Îµåºä ³¡*/
+/*ì§€ë„ ë¡œë“œë·° ë*/
 
-/* Ä¿½ºÅÒ ¿À¹ö·¹ÀÌ */
+/* ì»¤ìŠ¤í…€ ì˜¤ë²„ë ˆì´ */
 .label {margin-bottom: 96px;}
 .label * {display: inline-block;vertical-align: top;}
 .label .left {background: url("http://t1.daumcdn.net/localimg/localimages/07/2011/map/storeview/tip_l.png") no-repeat;display: inline-block;height: 24px;overflow: hidden;vertical-align: top;width: 7px;}
@@ -33,7 +33,7 @@ img {
     border-radius: 3px;
 }
 
-/*µî·ÏÇÏ±â ¹öÆ° */
+/*ë“±ë¡í•˜ê¸° ë²„íŠ¼ */
 .button {
   padding: 10px 10px;
   font-size: 16px;
@@ -53,7 +53,7 @@ img {
   transform: translateY(4px);
 }
 
-/*¸ñ·Ï ¹öÆ° */
+/*ëª©ë¡ ë²„íŠ¼ */
 .listButton {
   border-radius: 4px;
   background-color: #f4511e;
@@ -92,7 +92,7 @@ img {
 
 <script type="text/javascript">
    function tipDelete() {
-      if (confirm("»èÁ¦ ÇÏ½Ã°Ú½À´Ï±î?") == true) {
+      if (confirm("ì‚­ì œ í•˜ì‹œê² ìŠµë‹ˆê¹Œ?") == true) {
          location.href = 'tipDelete.go?t_no=${tipModel.t_no}';
       } else {
          return;
@@ -100,7 +100,7 @@ img {
    }
 
    function tipModify() {
-      if (confirm("¼öÁ¤ ÇÏ½Ã°Ú½À´Ï±î?") == true) {
+      if (confirm("ìˆ˜ì • í•˜ì‹œê² ìŠµë‹ˆê¹Œ?") == true) {
          location.href = 'tipModify.go?t_no=${tipModel.t_no}';
       } else {
          return;
@@ -108,7 +108,7 @@ img {
    }
    
     function tipCommentDelete(t_co_no){
-      if(confirm("´ñ±ÛÀ» »èÁ¦ÇÏ½Ã°Ú½À´Ï±î?") == true){
+      if(confirm("ëŒ“ê¸€ì„ ì‚­ì œí•˜ì‹œê² ìŠµë‹ˆê¹Œ?") == true){
          location.href = 'tipcommDelete.go?t_co_no='+t_co_no+'&t_no=${tipModel.t_no}&m_email=${session_m_email}';
       }else{
          return;
@@ -126,10 +126,10 @@ img {
 <table align="center" width="60%">
 <tr><td align="right">
 
-<button type="button" class="listButton" onclick="javascript:location.href='tipList.go?currentPage=${param.currentPage}'" ><span>¸ñ·ÏÀ¸·Î</span></button>
+<button type="button" class="listButton" onclick="javascript:location.href='tipList.go?currentPage=${param.currentPage}'" ><span>ëª©ë¡ìœ¼ë¡œ</span></button>
 <c:if test="${session_m_email == tipModel.m_email }">
-   <button type="button" class="btn btn-default" onclick="tipModify()" >¼öÁ¤</button>
-   <button type="button" class="btn btn-default" onclick="tipDelete()" >»èÁ¦</button>
+   <button type="button" class="btn btn-default" onclick="tipModify()" >ìˆ˜ì •</button>
+   <button type="button" class="btn btn-default" onclick="tipDelete()" >ì‚­ì œ</button>
 </c:if>
 <br/><br/>
 </td></tr>
@@ -138,7 +138,7 @@ img {
 <div class="panel panel-default">
   <div class="list-group-item active" align="center">
      <b><font size="5"><span class="glyphicon glyphicon-send" aria-hidden="true"></span>&nbsp;${tipModel.t_sub }</font></b><br/>
-     ¡¤ ÀÛ¼ºÀÚ : ${tipModel.m_email }&nbsp;&nbsp;&nbsp;&nbsp;¡¤ Á¶È¸¼ö : ${tipModel.t_hit }&nbsp;&nbsp;&nbsp;&nbsp;¡¤ ÀÛ¼ºÀÏ : <fmt:formatDate value="${tipModel.t_date }" pattern="yyyy.MM.dd" /><br/>
+     Â· ì‘ì„±ì : ${tipModel.m_email }&nbsp;&nbsp;&nbsp;&nbsp;Â· ì¡°íšŒìˆ˜ : ${tipModel.t_hit }&nbsp;&nbsp;&nbsp;&nbsp;Â· ì‘ì„±ì¼ : <fmt:formatDate value="${tipModel.t_date }" pattern="yyyy.MM.dd" /><br/>
   </div>
 
   <div class="panel-body" align="center">
@@ -148,92 +148,92 @@ img {
 
 <div class="panel panel-default">
   <div class="panel-heading" align="center">
-     <b><font size="3"><span class="glyphicon glyphicon-send" aria-hidden="true"></span>&nbsp;Áöµµ / ·Îµåºä</font></b>
+     <b><font size="3"><span class="glyphicon glyphicon-send" aria-hidden="true"></span>&nbsp;ì§€ë„ / ë¡œë“œë·°</font></b>
   </div>
 
 <div id="container" class="view_map">
     <div id="mapWrapper" style="width:100%;height:300px;position:relative;">
-        <div id="map" style="width:100%;height:100%"></div> <!-- Áöµµ¸¦ Ç¥½ÃÇÒ div ÀÔ´Ï´Ù -->
-        <input type="button" id="btnRoadview" onclick="toggleMap(false)" title="·Îµåºä º¸±â" value="·Îµåºä">
+        <div id="map" style="width:100%;height:100%"></div> <!-- ì§€ë„ë¥¼ í‘œì‹œí•  div ì…ë‹ˆë‹¤ -->
+        <input type="button" id="btnRoadview" onclick="toggleMap(false)" title="ë¡œë“œë·° ë³´ê¸°" value="ë¡œë“œë·°">
     </div>
     <div id="rvWrapper" style="width:100%;height:300px;position:absolute;top:0;left:0;">
-        <div id="roadview" style="width:100%;height:100%;position:relative;"></div> <!-- ·Îµåºä¸¦ Ç¥½ÃÇÒ div ÀÔ´Ï´Ù -->
-        <input type="button" id="btnMap" onclick="toggleMap(true)" title="Áöµµ º¸±â" value="Áöµµ">
+        <div id="roadview" style="width:100%;height:100%;position:relative;"></div> <!-- ë¡œë“œë·°ë¥¼ í‘œì‹œí•  div ì…ë‹ˆë‹¤ -->
+        <input type="button" id="btnMap" onclick="toggleMap(true)" title="ì§€ë„ ë³´ê¸°" value="ì§€ë„">
     </div>
 </div>
 
-<!-- Áöµµ -->
+<!-- ì§€ë„ -->
 <script src="//apis.daum.net/maps/maps3.js?apikey=431016a3643e6541b4ac065848f17cb3&libraries=services"></script>
 <script>
-var container = document.getElementById('container'), // Áöµµ¿Í ·Îµåºä¸¦ °¨½Î°í ÀÖ´Â div ÀÔ´Ï´Ù
-mapWrapper = document.getElementById('mapWrapper'), // Áöµµ¸¦ °¨½Î°í ÀÖ´Â div ÀÔ´Ï´Ù
-btnRoadview = document.getElementById('btnRoadview'), // Áöµµ À§ÀÇ ·Îµåºä ¹öÆ°, Å¬¸¯ÇÏ¸é Áöµµ´Â °¨ÃçÁö°í ·Îµåºä°¡ º¸ÀÔ´Ï´Ù 
-btnMap = document.getElementById('btnMap'), // ·Îµåºä À§ÀÇ Áöµµ ¹öÆ°, Å¬¸¯ÇÏ¸é ·Îµåºä´Â °¨ÃçÁö°í Áöµµ°¡ º¸ÀÔ´Ï´Ù 
-roadviewContainer = document.getElementById('roadview'), // ·Îµåºä¸¦ Ç¥½ÃÇÒ div ÀÔ´Ï´Ù
-mapContainer = document.getElementById('map'); // Áöµµ¸¦ Ç¥½ÃÇÒ div ÀÔ´Ï´Ù
+var container = document.getElementById('container'), // ì§€ë„ì™€ ë¡œë“œë·°ë¥¼ ê°ì‹¸ê³  ìˆëŠ” div ì…ë‹ˆë‹¤
+mapWrapper = document.getElementById('mapWrapper'), // ì§€ë„ë¥¼ ê°ì‹¸ê³  ìˆëŠ” div ì…ë‹ˆë‹¤
+btnRoadview = document.getElementById('btnRoadview'), // ì§€ë„ ìœ„ì˜ ë¡œë“œë·° ë²„íŠ¼, í´ë¦­í•˜ë©´ ì§€ë„ëŠ” ê°ì¶°ì§€ê³  ë¡œë“œë·°ê°€ ë³´ì…ë‹ˆë‹¤ 
+btnMap = document.getElementById('btnMap'), // ë¡œë“œë·° ìœ„ì˜ ì§€ë„ ë²„íŠ¼, í´ë¦­í•˜ë©´ ë¡œë“œë·°ëŠ” ê°ì¶°ì§€ê³  ì§€ë„ê°€ ë³´ì…ë‹ˆë‹¤ 
+roadviewContainer = document.getElementById('roadview'), // ë¡œë“œë·°ë¥¼ í‘œì‹œí•  div ì…ë‹ˆë‹¤
+mapContainer = document.getElementById('map'); // ì§€ë„ë¥¼ í‘œì‹œí•  div ì…ë‹ˆë‹¤
 
-//Áöµµ¿Í ·Îµåºä À§¿¡ ¸¶Ä¿·Î Ç¥½ÃÇÒ Æ¯Á¤ Àå¼ÒÀÇ ÁÂÇ¥ÀÔ´Ï´Ù 
+//ì§€ë„ì™€ ë¡œë“œë·° ìœ„ì— ë§ˆì»¤ë¡œ í‘œì‹œí•  íŠ¹ì • ì¥ì†Œì˜ ì¢Œí‘œì…ë‹ˆë‹¤ 
 var placePosition = new daum.maps.LatLng(33.450701, 126.570667);
 
-//Áöµµ ¿É¼ÇÀÔ´Ï´Ù 
+//ì§€ë„ ì˜µì…˜ì…ë‹ˆë‹¤ 
 var mapOption = {
-center: placePosition, // ÁöµµÀÇ Áß½ÉÁÂÇ¥ 
-level: 3 // ÁöµµÀÇ È®´ë ·¹º§
+center: placePosition, // ì§€ë„ì˜ ì¤‘ì‹¬ì¢Œí‘œ 
+level: 3 // ì§€ë„ì˜ í™•ëŒ€ ë ˆë²¨
 };
 
 
-//ÁÖ¼Ò-ÁÂÇ¥ º¯È¯ °´Ã¼¸¦ »ı¼ºÇÕ´Ï´Ù
+//ì£¼ì†Œ-ì¢Œí‘œ ë³€í™˜ ê°ì²´ë¥¼ ìƒì„±í•©ë‹ˆë‹¤
 var geocoder = new daum.maps.services.Geocoder();
 
 
 
-// ÁÖ¼Ò·Î ÁÂÇ¥¸¦ °Ë»öÇÕ´Ï´Ù
+// ì£¼ì†Œë¡œ ì¢Œí‘œë¥¼ ê²€ìƒ‰í•©ë‹ˆë‹¤
 geocoder.addr2coord('${tipModel.a_addr}', function(status, result) {
 
-    // Á¤»óÀûÀ¸·Î °Ë»öÀÌ ¿Ï·áµÆÀ¸¸é 
+    // ì •ìƒì ìœ¼ë¡œ ê²€ìƒ‰ì´ ì™„ë£Œëìœ¼ë©´ 
      if (status === daum.maps.services.Status.OK) {
 
        var coords = new daum.maps.LatLng(result.addr[0].lat, result.addr[0].lng);
     
-       //·Îµåºä °´Ã¼¸¦ »ı¼ºÇÑ´Ù
+       //ë¡œë“œë·° ê°ì²´ë¥¼ ìƒì„±í•œë‹¤
        var roadview = new daum.maps.Roadview(roadviewContainer, {
-          pan: 47, // ·Îµåºä Ã³À½ ½ÇÇà½Ã¿¡ ¹Ù¶óºÁ¾ß ÇÒ ¼öÆò °¢
-          tilt: 0, // ·Îµåºä Ã³À½ ½ÇÇà½Ã¿¡ ¹Ù¶óºÁ¾ß ÇÒ ¼öÁ÷ °¢
-          zoom: 0 // ·Îµåºä ÁÜ ÃÊ±â°ª
+          pan: 47, // ë¡œë“œë·° ì²˜ìŒ ì‹¤í–‰ì‹œì— ë°”ë¼ë´ì•¼ í•  ìˆ˜í‰ ê°
+          tilt: 0, // ë¡œë“œë·° ì²˜ìŒ ì‹¤í–‰ì‹œì— ë°”ë¼ë´ì•¼ í•  ìˆ˜ì§ ê°
+          zoom: 0 // ë¡œë“œë·° ì¤Œ ì´ˆê¸°ê°’
        }); 
 
-       //ÁÂÇ¥·ÎºÎÅÍ ·Îµåºä ÆÄ³ëID¸¦ °¡Á®¿Ã ·Îµåºä helper°´Ã¼¸¦ »ı¼ºÇÑ´Ù
+       //ì¢Œí‘œë¡œë¶€í„° ë¡œë“œë·° íŒŒë…¸IDë¥¼ ê°€ì ¸ì˜¬ ë¡œë“œë·° helperê°ì²´ë¥¼ ìƒì„±í•œë‹¤
        var roadviewClient = new daum.maps.RoadviewClient(); 
 
-       // Æ¯Á¤ À§Ä¡ÀÇ ÁÂÇ¥¿Í °¡±î¿î ·ÎµåºäÀÇ panoId¸¦ ÃßÃâÇÏ¿© ·Îµåºä¸¦ ¶ç¿î´Ù
+       // íŠ¹ì • ìœ„ì¹˜ì˜ ì¢Œí‘œì™€ ê°€ê¹Œìš´ ë¡œë“œë·°ì˜ panoIdë¥¼ ì¶”ì¶œí•˜ì—¬ ë¡œë“œë·°ë¥¼ ë„ìš´ë‹¤
        roadviewClient.getNearestPanoId(coords, 50, function(panoId) {
-          // panoId¿Í Áß½ÉÁÂÇ¥¸¦ ÅëÇØ ·Îµåºä¸¦ ½ÇÇàÇÑ´Ù
+          // panoIdì™€ ì¤‘ì‹¬ì¢Œí‘œë¥¼ í†µí•´ ë¡œë“œë·°ë¥¼ ì‹¤í–‰í•œë‹¤
            roadview.setPanoId(panoId, coords); 
        });
        
-       //·Îµåºä ÃÊ±âÈ­°¡ ¿Ï·áµÇ¸é 
+       //ë¡œë“œë·° ì´ˆê¸°í™”ê°€ ì™„ë£Œë˜ë©´ 
        daum.maps.event.addListener(roadview, 'init', function() {
 
-       // ·Îµåºä¿¡ Æ¯Á¤ Àå¼Ò¸¦ Ç¥½ÃÇÒ ¸¶Ä¿¸¦ »ı¼ºÇÏ°í ·Îµåºä À§¿¡ Ç¥½ÃÇÕ´Ï´Ù 
+       // ë¡œë“œë·°ì— íŠ¹ì • ì¥ì†Œë¥¼ í‘œì‹œí•  ë§ˆì»¤ë¥¼ ìƒì„±í•˜ê³  ë¡œë“œë·° ìœ„ì— í‘œì‹œí•©ë‹ˆë‹¤ 
        var rvMarker = new daum.maps.Marker({
           map: roadview,
           position: coords
        });
        });
 
-        // °á°ú°ªÀ¸·Î ¹ŞÀº À§Ä¡¸¦ ¸¶Ä¿·Î Ç¥½ÃÇÕ´Ï´Ù
+        // ê²°ê³¼ê°’ìœ¼ë¡œ ë°›ì€ ìœ„ì¹˜ë¥¼ ë§ˆì»¤ë¡œ í‘œì‹œí•©ë‹ˆë‹¤
         var marker = new daum.maps.Marker({
             map: map,
             position: coords
         });
 
-        // Ä¿½ºÅÒ ¿À¹ö·¹ÀÌ¿¡ Ç¥½ÃÇÒ ³»¿ëÀÔ´Ï´Ù     
-        // HTML ¹®ÀÚ¿­ ¶Ç´Â Dom Element ÀÔ´Ï´Ù 
+        // ì»¤ìŠ¤í…€ ì˜¤ë²„ë ˆì´ì— í‘œì‹œí•  ë‚´ìš©ì…ë‹ˆë‹¤     
+        // HTML ë¬¸ìì—´ ë˜ëŠ” Dom Element ì…ë‹ˆë‹¤ 
         var content = '<div class ="label">'+
                     '<span class="left"></span><span class="center">${tipModel.a_name}</span><span class="right"></span>'+
                     '</div>';
 
-        // Ä¿½ºÅÒ ¿À¹ö·¹ÀÌ¸¦ »ı¼ºÇÕ´Ï´Ù
+        // ì»¤ìŠ¤í…€ ì˜¤ë²„ë ˆì´ë¥¼ ìƒì„±í•©ë‹ˆë‹¤
         var customOverlay = new daum.maps.CustomOverlay({
            map: map,
             position: coords,
@@ -241,39 +241,39 @@ geocoder.addr2coord('${tipModel.a_addr}', function(status, result) {
             yAnchor: 2.7
         });
 
-        // ÁöµµÀÇ Áß½ÉÀ» °á°ú°ªÀ¸·Î ¹ŞÀº À§Ä¡·Î ÀÌµ¿½ÃÅµ´Ï´Ù
+        // ì§€ë„ì˜ ì¤‘ì‹¬ì„ ê²°ê³¼ê°’ìœ¼ë¡œ ë°›ì€ ìœ„ì¹˜ë¡œ ì´ë™ì‹œí‚µë‹ˆë‹¤
         map.setCenter(coords);
     } 
 }); 
 
 
 
-//Áöµµ¸¦ Ç¥½ÃÇÒ div¿Í Áöµµ ¿É¼ÇÀ¸·Î Áöµµ¸¦ »ı¼ºÇÕ´Ï´Ù
+//ì§€ë„ë¥¼ í‘œì‹œí•  divì™€ ì§€ë„ ì˜µì…˜ìœ¼ë¡œ ì§€ë„ë¥¼ ìƒì„±í•©ë‹ˆë‹¤
 var map = new daum.maps.Map(mapContainer, mapOption);
 
 
-//Áöµµ¿Í ·Îµåºä¸¦ °¨½Î°í ÀÖ´Â divÀÇ class¸¦ º¯°æÇÏ¿© Áöµµ¸¦ ¼û±â°Å³ª º¸ÀÌ°Ô ÇÏ´Â ÇÔ¼öÀÔ´Ï´Ù 
+//ì§€ë„ì™€ ë¡œë“œë·°ë¥¼ ê°ì‹¸ê³  ìˆëŠ” divì˜ classë¥¼ ë³€ê²½í•˜ì—¬ ì§€ë„ë¥¼ ìˆ¨ê¸°ê±°ë‚˜ ë³´ì´ê²Œ í•˜ëŠ” í•¨ìˆ˜ì…ë‹ˆë‹¤ 
 function toggleMap(active) {
 if (active) {
 
-    // Áöµµ°¡ º¸ÀÌµµ·Ï Áöµµ¿Í ·Îµåºä¸¦ °¨½Î°í ÀÖ´Â divÀÇ class¸¦ º¯°æÇÕ´Ï´Ù
+    // ì§€ë„ê°€ ë³´ì´ë„ë¡ ì§€ë„ì™€ ë¡œë“œë·°ë¥¼ ê°ì‹¸ê³  ìˆëŠ” divì˜ classë¥¼ ë³€ê²½í•©ë‹ˆë‹¤
     container.className = "view_map"
     
 } else {
 
-    // Áöµµ°¡ ¼û°ÜÁöµµ·Ï Áöµµ¿Í ·Îµåºä¸¦ °¨½Î°í ÀÖ´Â divÀÇ class¸¦ º¯°æÇÕ´Ï´Ù
+    // ì§€ë„ê°€ ìˆ¨ê²¨ì§€ë„ë¡ ì§€ë„ì™€ ë¡œë“œë·°ë¥¼ ê°ì‹¸ê³  ìˆëŠ” divì˜ classë¥¼ ë³€ê²½í•©ë‹ˆë‹¤
     container.className = "view_roadview"  
     
 }
 }
 </script>
-<!-- Áöµµ ³¡ -->
+<!-- ì§€ë„ ë -->
 
 </div>
 
 <div class="panel panel-default">
    <div class="panel-heading" align="center">
-      <font size="3"><b><span class="glyphicon glyphicon-send" aria-hidden="true"></span>&nbsp;Àå¼Ò</b></font>
+      <font size="3"><b><span class="glyphicon glyphicon-send" aria-hidden="true"></span>&nbsp;ì¥ì†Œ</b></font>
    </div>
      <div class="panel-body" align="center">
         <b>${tipModel.a_addr}&nbsp${tipModel.a_name}</b>     
@@ -295,13 +295,13 @@ if (active) {
 
 <br/><br/>
 
-<!-- ´ñ±Û ¾²±â -->
+<!-- ëŒ“ê¸€ ì“°ê¸° -->
 <table width="60%" align="center">
 
    <c:if test="${session_m_email == null}">
    <tr>
       <td align="center">
-         <br/><br/>´ñ±Û¾²±â ±ÇÇÑÀÌ ¾ø½À´Ï´Ù. ·Î±×ÀÎ ÇØÁÖ¼¼¿ä.<br/><br/><br/>
+         <br/><br/>ëŒ“ê¸€ì“°ê¸° ê¶Œí•œì´ ì—†ìŠµë‹ˆë‹¤. ë¡œê·¸ì¸ í•´ì£¼ì„¸ìš”.<br/><br/><br/>
       </td>
    </tr>
    </c:if>
@@ -312,14 +312,14 @@ if (active) {
          <form action="tipcommWrite.go" method="post">
                <input type="hidden" name="t_no" value="${tipcoModel.t_no }" />
                <input type="hidden" name="m_email" value="${session_m_email }" />
-               <b>ÀÛ¼ºÀÚ : ${session_m_email }</b>
+               <b>ì‘ì„±ì : ${session_m_email }</b>
                <div class="row">
                   <div class="col-sm-12">
                      <div class="form-group">
-                          <textarea class="form-control" rows="5" id="comment" name="t_co_con" placeholder="´ñ±Û³»¿ëÀ» ÀÔ·ÂÇØÁÖ¼¼¿ä"></textarea>
+                          <textarea class="form-control" rows="5" id="comment" name="t_co_con" placeholder="ëŒ“ê¸€ë‚´ìš©ì„ ì…ë ¥í•´ì£¼ì„¸ìš”"></textarea>
                        </div>
                        <div class="col-sm-2-left" align="right">
-                          <button type="submit" class="button">µî·ÏÇÏ±â</button>
+                          <button type="submit" class="button">ë“±ë¡í•˜ê¸°</button>
                      </div>
                   </div>
                </div>
@@ -337,7 +337,7 @@ if (active) {
 
    <tr><td align="center">
    <br />
-   <center>µî·ÏµÈ ´ñ±ÛÀÌ ¾ø½À´Ï´Ù</center>
+   <center>ë“±ë¡ëœ ëŒ“ê¸€ì´ ì—†ìŠµë‹ˆë‹¤</center>
    <br />
    </td></tr>
 

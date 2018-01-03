@@ -13,16 +13,16 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <style>
-/*ÀÌ¹ÌÁö ½½¶óÀÌµå*/
+/*ì´ë¯¸ì§€ ìŠ¬ë¼ì´ë“œ*/
 
   .carousel-inner > .item > img,
   .carousel-inner > .item > a > img {
       width: 80%;
       margin: auto;
   }
-/*ÀÌ¹ÌÁö ½½¶óÀÌµå ³¡*/
+/*ì´ë¯¸ì§€ ìŠ¬ë¼ì´ë“œ ë*/
 
-/*Áöµµ ·Îµåºä*/
+/*ì§€ë„ ë¡œë“œë·°*/
 #container {overflow:hidden;height:300px;position:relative;}
 #btnRoadview,  #btnMap {position:absolute;top:5px;left:5px;padding:7px 12px;font-size:14px;border: 1px solid #dbdbdb;background-color: #fff;border-radius: 2px;box-shadow: 0 1px 1px rgba(0,0,0,.04);z-index:1;cursor:pointer;}
 #btnRoadview:hover,  #btnMap:hover{background-color: #fcfcfc;border: 1px solid #c1c1c1;}
@@ -30,16 +30,16 @@
 #container.view_map #btnMap {display: none;}
 #container.view_roadview #mapWrapper {z-index: 0;}
 #container.view_roadview #btnRoadview {display: none;}
-/*Áöµµ ·Îµåºä ³¡*/
+/*ì§€ë„ ë¡œë“œë·° ë*/
 
-/* Ä¿½ºÅÒ ¿À¹ö·¹ÀÌ */
+/* ì»¤ìŠ¤í…€ ì˜¤ë²„ë ˆì´ */
 .label {margin-bottom: 96px;}
 .label * {display: inline-block;vertical-align: top;}
 .label .left {background: url("http://t1.daumcdn.net/localimg/localimages/07/2011/map/storeview/tip_l.png") no-repeat;display: inline-block;height: 24px;overflow: hidden;vertical-align: top;width: 7px;}
 .label .center {background: url(http://t1.daumcdn.net/localimg/localimages/07/2011/map/storeview/tip_bg.png) repeat-x;display: inline-block;height: 24px;font-size: 12px;line-height: 24px;color: black;}
 .label .right {background: url("http://t1.daumcdn.net/localimg/localimages/07/2011/map/storeview/tip_r.png") -1px 0  no-repeat;display: inline-block;height: 24px;overflow: hidden;width: 6px;}
 
-/* ÀÏÁ¤ °¶·¯¸® */
+/* ì¼ì • ê°¤ëŸ¬ë¦¬ */
 ul { list-style: none;}
 
 #hover-cap-4col .thumbnail {
@@ -81,34 +81,34 @@ ul { list-style: none;}
 
 <script type="text/javascript">
 
-//°Ô½Ã±Û »èÁ¦ ½ºÅ©¸³Æ®
+//ê²Œì‹œê¸€ ì‚­ì œ ìŠ¤í¬ë¦½íŠ¸
 function areaDelete(){
-	if(confirm("±ÛÀ» »èÁ¦ÇÏ½Ã°Ú½À´Ï±î?") == true){
+	if(confirm("ê¸€ì„ ì‚­ì œí•˜ì‹œê² ìŠµë‹ˆê¹Œ?") == true){
 		location.href='areaDelete.go?a_no=${areaModel.a_no}&keyword=${param.keyword}';
 	}else{
 		return;
 	}
 }
 
-//°Ô½Ã±Û ¼öÁ¤ ½ºÅ©¸³Æ®
+//ê²Œì‹œê¸€ ìˆ˜ì • ìŠ¤í¬ë¦½íŠ¸
 function areaModify(){
-	if(confirm("±ÛÀ» ¼öÁ¤ÇÏ½Ã°Ú½À´Ï±î?") == true){
+	if(confirm("ê¸€ì„ ìˆ˜ì •í•˜ì‹œê² ìŠµë‹ˆê¹Œ?") == true){
 		location.href='areaModifyForm.go?a_no=${areaModel.a_no}&keyword=${param.keyword}';	
 	}else{
 		return;
 	}
 }
 
-//´ñ±Û »èÁ¦ ½ºÅ©¸³Æ®
+//ëŒ“ê¸€ ì‚­ì œ ìŠ¤í¬ë¦½íŠ¸
 function areaReviewDelete(r_no){
-	if(confirm("´ñ±ÛÀ» »èÁ¦ÇÏ½Ã°Ú½À´Ï±î?") == true){
+	if(confirm("ëŒ“ê¸€ì„ ì‚­ì œí•˜ì‹œê² ìŠµë‹ˆê¹Œ?") == true){
 		location.href='areaReviewDelete.go?a_no=${param.a_no }&r_no='+r_no+'&keyword=${param.keyword}';
 	}else{
 		return;
 	}
 }
 
-//ÀÏÁ¤ °¶·¯¸®
+//ì¼ì • ê°¤ëŸ¬ë¦¬
 $(document).ready(function(){
 	 
     $("[rel='tooltip']").tooltip();    
@@ -137,17 +137,17 @@ $(document).ready(function(){
 		<tr>
 			<td colspan="3">
 				<ul class="nav nav-tabs nav-justified" >
-  					<li><a href="/gokkiri/city/cityDetail.go?c_no=${areaModel.c_no }&keyword=${param.keyword}">È¨</a></li>
-					<li><a href="/gokkiri/area/areaList.go?c_no=${areaModel.c_no }&a_cate=0&keyword=${param.keyword}">°ü±¤Áö</a></li>
-					<li><a href="/gokkiri/area/areaList.go?c_no=${areaModel.c_no }&a_cate=1&keyword=${param.keyword}">¸ÀÁı</a></li>
-					<li><a data-toggle="modal" data-target="#scheduleList">¿©ÇàÀÏÁ¤ º¸±â</a></li>
+  					<li><a href="/gokkiri/city/cityDetail.go?c_no=${areaModel.c_no }&keyword=${param.keyword}">í™ˆ</a></li>
+					<li><a href="/gokkiri/area/areaList.go?c_no=${areaModel.c_no }&a_cate=0&keyword=${param.keyword}">ê´€ê´‘ì§€</a></li>
+					<li><a href="/gokkiri/area/areaList.go?c_no=${areaModel.c_no }&a_cate=1&keyword=${param.keyword}">ë§›ì§‘</a></li>
+					<li><a data-toggle="modal" data-target="#scheduleList">ì—¬í–‰ì¼ì • ë³´ê¸°</a></li>
 				</ul>
 			</td>
 		</tr>
 		
 </table>
 
-		<!-- °ü·Ã ¿©ÇàÀÏÁ¤ º¸±â -->
+		<!-- ê´€ë ¨ ì—¬í–‰ì¼ì • ë³´ê¸° -->
 			
 <div id="scheduleList" class="modal fade" role="dialog">
 <div class="modal-dialog" style="width:80%;">
@@ -156,7 +156,7 @@ $(document).ready(function(){
 				<div class="modal-content">
 					<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal">&times;</button>
-					<h4 class="modal-title"><b><font color="#266eb7">£¼${param.keyword }£¾</font>&nbsp;</b>°ü·Ã ¿©ÇàÀÏÁ¤ º¸±â</h4>
+					<h4 class="modal-title"><b><font color="#266eb7">ï¼œ${param.keyword }ï¼</font>&nbsp;</b>ê´€ë ¨ ì—¬í–‰ì¼ì • ë³´ê¸°</h4>
 					</div>
 				
 					<div class="modal-body" style="padding-left: 0px; padding-right: 35px;">
@@ -180,16 +180,16 @@ $(document).ready(function(){
 				   		</b></font>
 				        <div class="thumbnail">
 				            <div class="caption">
-				                <p><h5>¡ì&nbsp;${scheduleList.s_start_date }¹Ú ${scheduleList.s_start_date + 1 }ÀÏ ÀÏÁ¤&nbsp;¡í</h5></p>
+				                <p><h5>â‰ª&nbsp;${scheduleList.s_start_date }ë°• ${scheduleList.s_start_date + 1 }ì¼ ì¼ì •&nbsp;â‰«</h5></p>
 				                <p></p>
-				                <p>ÀÛ¼ºÀÚ : ${scheduleList.m_email }</p>
+				                <p>ì‘ì„±ì : ${scheduleList.m_email }</p>
 				                <p><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>&nbsp;${scheduleList.s_hit }</p>
 				                
-				                <p><a href="/gokkiri/schedule/scheduleDetail.go?s_no=${scheduleList.s_no }&s_cate=0" data-toggle="tooltip" title="»ó¼¼º¸±â"><img src="/gokkiri/resources/img/view.png" width="25" /></a></p>
+				                <p><a href="/gokkiri/schedule/scheduleDetail.go?s_no=${scheduleList.s_no }&s_cate=0" data-toggle="tooltip" title="ìƒì„¸ë³´ê¸°"><img src="/gokkiri/resources/img/view.png" width="25" /></a></p>
 				                
-				                <p><h4>${scheduleList.s_detail_memo } Ãâ¹ß~</h4></p>
+				                <p><h4>${scheduleList.s_detail_memo } ì¶œë°œ~</h4></p>
 				            </div>
-				            <!-- a_img_sav ÄÃ·³À» s_together ÄÃ·³¸íÀ¸·Î ¹Ù²ã¼­ ºÒ·¯¿È¡é¡é¡é -->
+				            <!-- a_img_sav ì»¬ëŸ¼ì„ s_together ì»¬ëŸ¼ëª…ìœ¼ë¡œ ë°”ê¿”ì„œ ë¶ˆëŸ¬ì˜´â†“â†“â†“ -->
 				            <img src="/gokkiri/resources/area_img/${scheduleList.s_together }" alt="ALT NAME" class="img-responsive"  style="max-width: 100%; height: 100%;" >
 				        </div>
 					</li>
@@ -204,22 +204,22 @@ $(document).ready(function(){
 					</table>
 			</div>
 			<div class="modal-footer">
-				<button type="submit" class="btn btn-primary">´õº¸±â</button>
-				<button type="button" class="btn btn-default" data-dismiss="modal">³ª°¡±â</button>
+				<button type="submit" class="btn btn-primary">ë”ë³´ê¸°</button>
+				<button type="button" class="btn btn-default" data-dismiss="modal">ë‚˜ê°€ê¸°</button>
 			</div>
 		</div>
 		</form>
 </div>
 </div>		
-			<!-- °ü·Ã ¿©ÇàÀÏÁ¤ º¸±â ³¡ -->
+			<!-- ê´€ë ¨ ì—¬í–‰ì¼ì • ë³´ê¸° ë -->
 <br/><br/>
 </c:if>	
 <table width="70%" align="center">
 	<c:if test="${session_m_email == 'admin' }">
 	<tr>
 		<td align="right" colspan="2">
-			<button type="button" class="btn btn-default" onclick="areaModify();">¼öÁ¤</button>
-			<button type="button" class="btn btn-default" onclick="areaDelete();">»èÁ¦</button>
+			<button type="button" class="btn btn-default" onclick="areaModify();">ìˆ˜ì •</button>
+			<button type="button" class="btn btn-default" onclick="areaDelete();">ì‚­ì œ</button>
 		</td>
 	</tr>
 	</c:if>
@@ -236,7 +236,7 @@ $(document).ready(function(){
     <div class="list-group-item active" align="center">
      <b><font size="5"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span>&nbsp;${areaModel.a_name }</font></b><br/>
      	<c:if test="${revScoreAvg == 0 }">
-		&nbsp;¸®ºä º°Á¡À» µî·ÏÇØÁÖ¼¼¿ä! &nbsp;&nbsp;
+		&nbsp;ë¦¬ë·° ë³„ì ì„ ë“±ë¡í•´ì£¼ì„¸ìš”! &nbsp;&nbsp;
 		</c:if>
 		<c:if test="${revScoreAvg != 0 }">
 			<font size="3" color="#ffe616"><span class="label label-default">&nbsp;
@@ -271,7 +271,7 @@ $(document).ready(function(){
   </div>
   <div class="panel-body" align="center">
   
-<!-- ÀÌ¹ÌÁö ½½¶óÀÌµå -->	
+<!-- ì´ë¯¸ì§€ ìŠ¬ë¼ì´ë“œ -->	
 <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="2000" style="width:100%;">
   <!-- Indicators -->
    <ol class="carousel-indicators">
@@ -326,7 +326,7 @@ $(document).ready(function(){
     <span class="sr-only">Next</span>
   </a>
 </div>
-<!-- ÀÌ¹ÌÁö ½½¶óÀÌµå ³¡ -->
+<!-- ì´ë¯¸ì§€ ìŠ¬ë¼ì´ë“œ ë -->
   
 </div>
 </div>
@@ -334,93 +334,93 @@ $(document).ready(function(){
 
 <tr><td>
 <div class="panel panel-default">
-  <div class="panel-heading"><b><font size="3">¡¤ Áöµµ / ·Îµåºä</font></b></div>
+  <div class="panel-heading"><b><font size="3">Â· ì§€ë„ / ë¡œë“œë·°</font></b></div>
 
 <div id="container" class="view_map">
     <div id="mapWrapper" style="width:100%;height:300px;position:relative;">
-        <div id="map" style="width:100%;height:100%"></div> <!-- Áöµµ¸¦ Ç¥½ÃÇÒ div ÀÔ´Ï´Ù -->
-        <input type="button" id="btnRoadview" onclick="toggleMap(false)" title="·Îµåºä º¸±â" value="·Îµåºä">
+        <div id="map" style="width:100%;height:100%"></div> <!-- ì§€ë„ë¥¼ í‘œì‹œí•  div ì…ë‹ˆë‹¤ -->
+        <input type="button" id="btnRoadview" onclick="toggleMap(false)" title="ë¡œë“œë·° ë³´ê¸°" value="ë¡œë“œë·°">
     </div>
     <div id="rvWrapper" style="width:100%;height:300px;position:absolute;top:0;left:0;">
-        <div id="roadview" style="height:100%"></div> <!-- ·Îµåºä¸¦ Ç¥½ÃÇÒ div ÀÔ´Ï´Ù -->
-        <input type="button" id="btnMap" onclick="toggleMap(true)" title="Áöµµ º¸±â" value="Áöµµ">
+        <div id="roadview" style="height:100%"></div> <!-- ë¡œë“œë·°ë¥¼ í‘œì‹œí•  div ì…ë‹ˆë‹¤ -->
+        <input type="button" id="btnMap" onclick="toggleMap(true)" title="ì§€ë„ ë³´ê¸°" value="ì§€ë„">
     </div>
 </div>
 
 
 	
-<!-- Áöµµ -->
+<!-- ì§€ë„ -->
 <script src="//apis.daum.net/maps/maps3.js?apikey=431016a3643e6541b4ac065848f17cb3&libraries=services"></script>
 <script>
-var container = document.getElementById('container'), // Áöµµ¿Í ·Îµåºä¸¦ °¨½Î°í ÀÖ´Â div ÀÔ´Ï´Ù
-mapWrapper = document.getElementById('mapWrapper'), // Áöµµ¸¦ °¨½Î°í ÀÖ´Â div ÀÔ´Ï´Ù
-btnRoadview = document.getElementById('btnRoadview'), // Áöµµ À§ÀÇ ·Îµåºä ¹öÆ°, Å¬¸¯ÇÏ¸é Áöµµ´Â °¨ÃçÁö°í ·Îµåºä°¡ º¸ÀÔ´Ï´Ù 
-btnMap = document.getElementById('btnMap'), // ·Îµåºä À§ÀÇ Áöµµ ¹öÆ°, Å¬¸¯ÇÏ¸é ·Îµåºä´Â °¨ÃçÁö°í Áöµµ°¡ º¸ÀÔ´Ï´Ù 
-roadviewContainer = document.getElementById('roadview'), // ·Îµåºä¸¦ Ç¥½ÃÇÒ div ÀÔ´Ï´Ù
-mapContainer = document.getElementById('map'); // Áöµµ¸¦ Ç¥½ÃÇÒ div ÀÔ´Ï´Ù
+var container = document.getElementById('container'), // ì§€ë„ì™€ ë¡œë“œë·°ë¥¼ ê°ì‹¸ê³  ìˆëŠ” div ì…ë‹ˆë‹¤
+mapWrapper = document.getElementById('mapWrapper'), // ì§€ë„ë¥¼ ê°ì‹¸ê³  ìˆëŠ” div ì…ë‹ˆë‹¤
+btnRoadview = document.getElementById('btnRoadview'), // ì§€ë„ ìœ„ì˜ ë¡œë“œë·° ë²„íŠ¼, í´ë¦­í•˜ë©´ ì§€ë„ëŠ” ê°ì¶°ì§€ê³  ë¡œë“œë·°ê°€ ë³´ì…ë‹ˆë‹¤ 
+btnMap = document.getElementById('btnMap'), // ë¡œë“œë·° ìœ„ì˜ ì§€ë„ ë²„íŠ¼, í´ë¦­í•˜ë©´ ë¡œë“œë·°ëŠ” ê°ì¶°ì§€ê³  ì§€ë„ê°€ ë³´ì…ë‹ˆë‹¤ 
+roadviewContainer = document.getElementById('roadview'), // ë¡œë“œë·°ë¥¼ í‘œì‹œí•  div ì…ë‹ˆë‹¤
+mapContainer = document.getElementById('map'); // ì§€ë„ë¥¼ í‘œì‹œí•  div ì…ë‹ˆë‹¤
 
-//Áöµµ¿Í ·Îµåºä À§¿¡ ¸¶Ä¿·Î Ç¥½ÃÇÒ Æ¯Á¤ Àå¼ÒÀÇ ÁÂÇ¥ÀÔ´Ï´Ù 
+//ì§€ë„ì™€ ë¡œë“œë·° ìœ„ì— ë§ˆì»¤ë¡œ í‘œì‹œí•  íŠ¹ì • ì¥ì†Œì˜ ì¢Œí‘œì…ë‹ˆë‹¤ 
 var placePosition = new daum.maps.LatLng(33.450701, 126.570667);
 
-//Áöµµ ¿É¼ÇÀÔ´Ï´Ù 
+//ì§€ë„ ì˜µì…˜ì…ë‹ˆë‹¤ 
 var mapOption = {
-center: placePosition, // ÁöµµÀÇ Áß½ÉÁÂÇ¥ 
-level: 3 // ÁöµµÀÇ È®´ë ·¹º§
+center: placePosition, // ì§€ë„ì˜ ì¤‘ì‹¬ì¢Œí‘œ 
+level: 3 // ì§€ë„ì˜ í™•ëŒ€ ë ˆë²¨
 };
 
 
-//ÁÖ¼Ò-ÁÂÇ¥ º¯È¯ °´Ã¼¸¦ »ı¼ºÇÕ´Ï´Ù
+//ì£¼ì†Œ-ì¢Œí‘œ ë³€í™˜ ê°ì²´ë¥¼ ìƒì„±í•©ë‹ˆë‹¤
 var geocoder = new daum.maps.services.Geocoder();
 
 
 
-// ÁÖ¼Ò·Î ÁÂÇ¥¸¦ °Ë»öÇÕ´Ï´Ù
+// ì£¼ì†Œë¡œ ì¢Œí‘œë¥¼ ê²€ìƒ‰í•©ë‹ˆë‹¤
 geocoder.addr2coord('${areaModel.a_addr}', function(status, result) {
 
-    // Á¤»óÀûÀ¸·Î °Ë»öÀÌ ¿Ï·áµÆÀ¸¸é 
+    // ì •ìƒì ìœ¼ë¡œ ê²€ìƒ‰ì´ ì™„ë£Œëìœ¼ë©´ 
      if (status === daum.maps.services.Status.OK) {
 
     	var coords = new daum.maps.LatLng(result.addr[0].lat, result.addr[0].lng);
     
-    	//·Îµåºä °´Ã¼¸¦ »ı¼ºÇÑ´Ù
+    	//ë¡œë“œë·° ê°ì²´ë¥¼ ìƒì„±í•œë‹¤
     	var roadview = new daum.maps.Roadview(roadviewContainer, {
-    		pan: 47, // ·Îµåºä Ã³À½ ½ÇÇà½Ã¿¡ ¹Ù¶óºÁ¾ß ÇÒ ¼öÆò °¢
-    		tilt: 0, // ·Îµåºä Ã³À½ ½ÇÇà½Ã¿¡ ¹Ù¶óºÁ¾ß ÇÒ ¼öÁ÷ °¢
-    		zoom: 0 // ·Îµåºä ÁÜ ÃÊ±â°ª
+    		pan: 47, // ë¡œë“œë·° ì²˜ìŒ ì‹¤í–‰ì‹œì— ë°”ë¼ë´ì•¼ í•  ìˆ˜í‰ ê°
+    		tilt: 0, // ë¡œë“œë·° ì²˜ìŒ ì‹¤í–‰ì‹œì— ë°”ë¼ë´ì•¼ í•  ìˆ˜ì§ ê°
+    		zoom: 0 // ë¡œë“œë·° ì¤Œ ì´ˆê¸°ê°’
     	}); 
 
-    	//ÁÂÇ¥·ÎºÎÅÍ ·Îµåºä ÆÄ³ëID¸¦ °¡Á®¿Ã ·Îµåºä helper°´Ã¼¸¦ »ı¼ºÇÑ´Ù
+    	//ì¢Œí‘œë¡œë¶€í„° ë¡œë“œë·° íŒŒë…¸IDë¥¼ ê°€ì ¸ì˜¬ ë¡œë“œë·° helperê°ì²´ë¥¼ ìƒì„±í•œë‹¤
     	var roadviewClient = new daum.maps.RoadviewClient(); 
 
-    	// Æ¯Á¤ À§Ä¡ÀÇ ÁÂÇ¥¿Í °¡±î¿î ·ÎµåºäÀÇ panoId¸¦ ÃßÃâÇÏ¿© ·Îµåºä¸¦ ¶ç¿î´Ù
+    	// íŠ¹ì • ìœ„ì¹˜ì˜ ì¢Œí‘œì™€ ê°€ê¹Œìš´ ë¡œë“œë·°ì˜ panoIdë¥¼ ì¶”ì¶œí•˜ì—¬ ë¡œë“œë·°ë¥¼ ë„ìš´ë‹¤
     	roadviewClient.getNearestPanoId(coords, 50, function(panoId) {
-    		// panoId¿Í Áß½ÉÁÂÇ¥¸¦ ÅëÇØ ·Îµåºä¸¦ ½ÇÇàÇÑ´Ù
+    		// panoIdì™€ ì¤‘ì‹¬ì¢Œí‘œë¥¼ í†µí•´ ë¡œë“œë·°ë¥¼ ì‹¤í–‰í•œë‹¤
     	    roadview.setPanoId(panoId, coords); 
     	});
     	
-    	//·Îµåºä ÃÊ±âÈ­°¡ ¿Ï·áµÇ¸é 
+    	//ë¡œë“œë·° ì´ˆê¸°í™”ê°€ ì™„ë£Œë˜ë©´ 
     	daum.maps.event.addListener(roadview, 'init', function() {
 
-    	// ·Îµåºä¿¡ Æ¯Á¤ Àå¼Ò¸¦ Ç¥½ÃÇÒ ¸¶Ä¿¸¦ »ı¼ºÇÏ°í ·Îµåºä À§¿¡ Ç¥½ÃÇÕ´Ï´Ù 
+    	// ë¡œë“œë·°ì— íŠ¹ì • ì¥ì†Œë¥¼ í‘œì‹œí•  ë§ˆì»¤ë¥¼ ìƒì„±í•˜ê³  ë¡œë“œë·° ìœ„ì— í‘œì‹œí•©ë‹ˆë‹¤ 
     	var rvMarker = new daum.maps.Marker({
     		map: roadview,
     		position: coords
     	});
     	});
 
-        // °á°ú°ªÀ¸·Î ¹ŞÀº À§Ä¡¸¦ ¸¶Ä¿·Î Ç¥½ÃÇÕ´Ï´Ù
+        // ê²°ê³¼ê°’ìœ¼ë¡œ ë°›ì€ ìœ„ì¹˜ë¥¼ ë§ˆì»¤ë¡œ í‘œì‹œí•©ë‹ˆë‹¤
         var marker = new daum.maps.Marker({
             map: map,
             position: coords
         });
 
-     	// Ä¿½ºÅÒ ¿À¹ö·¹ÀÌ¿¡ Ç¥½ÃÇÒ ³»¿ëÀÔ´Ï´Ù     
-        // HTML ¹®ÀÚ¿­ ¶Ç´Â Dom Element ÀÔ´Ï´Ù 
+     	// ì»¤ìŠ¤í…€ ì˜¤ë²„ë ˆì´ì— í‘œì‹œí•  ë‚´ìš©ì…ë‹ˆë‹¤     
+        // HTML ë¬¸ìì—´ ë˜ëŠ” Dom Element ì…ë‹ˆë‹¤ 
         var content = '<div class ="label">'+
                     '<span class="left"></span><span class="center">${areaModel.a_name}</span><span class="right"></span>'+
                     '</div>';
 
-        // Ä¿½ºÅÒ ¿À¹ö·¹ÀÌ¸¦ »ı¼ºÇÕ´Ï´Ù
+        // ì»¤ìŠ¤í…€ ì˜¤ë²„ë ˆì´ë¥¼ ìƒì„±í•©ë‹ˆë‹¤
         var customOverlay = new daum.maps.CustomOverlay({
            map: map,
             position: coords,
@@ -428,47 +428,47 @@ geocoder.addr2coord('${areaModel.a_addr}', function(status, result) {
             yAnchor: 2.7
         });
 
-        // ÁöµµÀÇ Áß½ÉÀ» °á°ú°ªÀ¸·Î ¹ŞÀº À§Ä¡·Î ÀÌµ¿½ÃÅµ´Ï´Ù
+        // ì§€ë„ì˜ ì¤‘ì‹¬ì„ ê²°ê³¼ê°’ìœ¼ë¡œ ë°›ì€ ìœ„ì¹˜ë¡œ ì´ë™ì‹œí‚µë‹ˆë‹¤
         map.setCenter(coords);
     } 
 }); 
 
 
 
-//Áöµµ¸¦ Ç¥½ÃÇÒ div¿Í Áöµµ ¿É¼ÇÀ¸·Î Áöµµ¸¦ »ı¼ºÇÕ´Ï´Ù
+//ì§€ë„ë¥¼ í‘œì‹œí•  divì™€ ì§€ë„ ì˜µì…˜ìœ¼ë¡œ ì§€ë„ë¥¼ ìƒì„±í•©ë‹ˆë‹¤
 var map = new daum.maps.Map(mapContainer, mapOption);
 
 
-//Áöµµ¿Í ·Îµåºä¸¦ °¨½Î°í ÀÖ´Â divÀÇ class¸¦ º¯°æÇÏ¿© Áöµµ¸¦ ¼û±â°Å³ª º¸ÀÌ°Ô ÇÏ´Â ÇÔ¼öÀÔ´Ï´Ù 
+//ì§€ë„ì™€ ë¡œë“œë·°ë¥¼ ê°ì‹¸ê³  ìˆëŠ” divì˜ classë¥¼ ë³€ê²½í•˜ì—¬ ì§€ë„ë¥¼ ìˆ¨ê¸°ê±°ë‚˜ ë³´ì´ê²Œ í•˜ëŠ” í•¨ìˆ˜ì…ë‹ˆë‹¤ 
 function toggleMap(active) {
 if (active) {
 
-    // Áöµµ°¡ º¸ÀÌµµ·Ï Áöµµ¿Í ·Îµåºä¸¦ °¨½Î°í ÀÖ´Â divÀÇ class¸¦ º¯°æÇÕ´Ï´Ù
+    // ì§€ë„ê°€ ë³´ì´ë„ë¡ ì§€ë„ì™€ ë¡œë“œë·°ë¥¼ ê°ì‹¸ê³  ìˆëŠ” divì˜ classë¥¼ ë³€ê²½í•©ë‹ˆë‹¤
     container.className = "view_map"
     
 } else {
 
-    // Áöµµ°¡ ¼û°ÜÁöµµ·Ï Áöµµ¿Í ·Îµåºä¸¦ °¨½Î°í ÀÖ´Â divÀÇ class¸¦ º¯°æÇÕ´Ï´Ù
+    // ì§€ë„ê°€ ìˆ¨ê²¨ì§€ë„ë¡ ì§€ë„ì™€ ë¡œë“œë·°ë¥¼ ê°ì‹¸ê³  ìˆëŠ” divì˜ classë¥¼ ë³€ê²½í•©ë‹ˆë‹¤
     container.className = "view_roadview"  
     
 }
 }
 </script>
-<!-- Áöµµ ³¡ -->
+<!-- ì§€ë„ ë -->
 
 </div>
 </td></tr>
 
 <tr><td>
 <div class="panel panel-default">
-  <div class="panel-heading"><b><font size="3">¡¤ ÁÖ¼Ò</font></b></div>
+  <div class="panel-heading"><b><font size="3">Â· ì£¼ì†Œ</font></b></div>
   <div class="panel-body">${areaModel.a_addr }</div>
 </div>
 </td></tr>
 
 <tr><td>
 <div class="panel panel-default">
-  <div class="panel-heading"><b><font  size="3">¡¤ °¡´Â ¹æ¹ı</font></b></div>
+  <div class="panel-heading"><b><font  size="3">Â· ê°€ëŠ” ë°©ë²•</font></b></div>
   <div class="panel-body">${areaModel.a_way }</div>
 </div>
 </td></tr>
@@ -476,7 +476,7 @@ if (active) {
 <c:if test="${areaModel.a_tel != null }">
 <tr><td>
 <div class="panel panel-default">
-  <div class="panel-heading"><b><font  size="3">¡¤ ÀüÈ­¹øÈ£</font></b></div>
+  <div class="panel-heading"><b><font  size="3">Â· ì „í™”ë²ˆí˜¸</font></b></div>
   <div class="panel-body">${areaModel.a_tel }</div>
 </div>
 </td></tr>
@@ -485,7 +485,7 @@ if (active) {
 <c:if test="${areaModel.a_hours != null }">
 <tr><td>
 <div class="panel panel-default">
-  <div class="panel-heading"><b><font size="3">¡¤ ¿µ¾÷½Ã°£</font></b></div>
+  <div class="panel-heading"><b><font size="3">Â· ì˜ì—…ì‹œê°„</font></b></div>
   <div class="panel-body">${areaModel.a_hours }</div>
 </div>
 </td></tr>
@@ -494,7 +494,7 @@ if (active) {
 <c:if test="${areaModel.a_web != null }">
 <tr><td>
 <div class="panel panel-default">
-  <div class="panel-heading"><b><font size="3">¡¤ À¥ »çÀÌÆ®</font></b></div>
+  <div class="panel-heading"><b><font size="3">Â· ì›¹ ì‚¬ì´íŠ¸</font></b></div>
   <div class="panel-body"><a href="http://${areaModel.a_web }" >${areaModel.a_web}</a>
   </div>
 </div>
@@ -503,7 +503,7 @@ if (active) {
 
 <tr><td>
 <div class="panel panel-default">
-  <div class="panel-heading"><b><font size="3">¡¤ »ó¼¼¼³¸í</font></b></div>
+  <div class="panel-heading"><b><font size="3">Â· ìƒì„¸ì„¤ëª…</font></b></div>
   <div class="panel-body">${areaModel.a_con }</div>
 </div>
 </td></tr>
@@ -512,7 +512,7 @@ if (active) {
 
 <br/><br/>
 
-<!-- ¸®ºä/QnA -->
+<!-- ë¦¬ë·°/QnA -->
 
 <table border="0" width="70%">
 	<tr>
@@ -534,7 +534,7 @@ if (active) {
 	<c:if test="${session_m_email == null}">
 	<tr>
 		<td align="center">
-			<br/><br/>´ñ±Û¾²±â ±ÇÇÑÀÌ ¾ø½À´Ï´Ù. ·Î±×ÀÎ ÇØÁÖ¼¼¿ä.<br/><br/>
+			<br/><br/>ëŒ“ê¸€ì“°ê¸° ê¶Œí•œì´ ì—†ìŠµë‹ˆë‹¤. ë¡œê·¸ì¸ í•´ì£¼ì„¸ìš”.<br/><br/>
 		</td>
 	</tr>
 	</c:if>
@@ -546,21 +546,21 @@ if (active) {
 					<input type="hidden" name="keyword" value="${param.keyword }" />
 					<input type="hidden" name="a_no" value="${areaModel.a_no }" />
 					<input type="hidden" name="m_email" value="${session_m_email }" />
-					<b>ÀÛ¼ºÀÚ : ${session_m_email }</b>
+					<b>ì‘ì„±ì : ${session_m_email }</b>
 					<div class="row">
 						<div class="col-sm-12">
 							<div class="form-group">
 	  							<select class="form-control" id="sel1" name="r_score">
-	  								<option value="5">¡Ú¡Ú¡Ú¡Ú¡Ú</option>
-	  								<option value="4">¡Ú¡Ú¡Ú¡Ú</option>
-	  								<option value="3">¡Ú¡Ú¡Ú</option>
-	  								<option value="2">¡Ú¡Ú</option>
-			   					 	<option value="1">¡Ú</option>
+	  								<option value="5">â˜…â˜…â˜…â˜…â˜…</option>
+	  								<option value="4">â˜…â˜…â˜…â˜…</option>
+	  								<option value="3">â˜…â˜…â˜…</option>
+	  								<option value="2">â˜…â˜…</option>
+			   					 	<option value="1">â˜…</option>
 	  							</select>
-  								<textarea class="form-control" rows="5" id="comment" name="r_con" placeholder="¸®ºä³»¿ëÀ» ÀÔ·ÂÇØÁÖ¼¼¿ä"></textarea>
+  								<textarea class="form-control" rows="5" id="comment" name="r_con" placeholder="ë¦¬ë·°ë‚´ìš©ì„ ì…ë ¥í•´ì£¼ì„¸ìš”"></textarea>
   							</div>
   							<div class="col-sm-12" style="text-align: right; padding-right: 0px;">
-  								<button type="submit" class="button">µî·ÏÇÏ±â</button>
+  								<button type="submit" class="button">ë“±ë¡í•˜ê¸°</button>
 							</div>
 						</div>
 					</div>
@@ -592,19 +592,19 @@ if (active) {
 		<font color="#ffe616" size="5">
 			<c:choose>
 			<c:when test="${areaReviewList.r_score == 5 }">
-			¡Ú¡Ú¡Ú¡Ú¡Ú
+			â˜…â˜…â˜…â˜…â˜…
 			</c:when>
 			<c:when test="${areaReviewList.r_score == 4 }">
-			¡Ú¡Ú¡Ú¡Ú
+			â˜…â˜…â˜…â˜…
 			</c:when>
 			<c:when test="${areaReviewList.r_score == 3 }">
-			¡Ú¡Ú¡Ú
+			â˜…â˜…â˜…
 			</c:when>
 			<c:when test="${areaReviewList.r_score == 2 }">
-			¡Ú¡Ú
+			â˜…â˜…
 			</c:when>
 			<c:when test="${areaReviewList.r_score == 1 }">
-			¡Ú
+			â˜…
 			</c:when>
 			</c:choose>
 		</font>
@@ -620,7 +620,7 @@ if (active) {
 <table width="70%" align="center">
 <tr>
 <td>
-<button type="button" class="btn btn-primary btn-lg btn-block" onclick="javascript:self.close();">´İ±â</button>
+<button type="button" class="btn btn-primary btn-lg btn-block" onclick="javascript:self.close();">ë‹«ê¸°</button>
 </td>
 </tr>
 </table>

@@ -25,7 +25,7 @@
 <%-- 				<div class="panel panel-default" style="text-align:center;">
 					<div class="panel-heading">
 						<font size="4">
-							<a href="/gokkiri/area/areaDetail.go?a_no=${param.a_no }"><b>¿ø±Û Á¦¸ñ : ${areaModel.a_name }</b></a>
+							<a href="/gokkiri/area/areaDetail.go?a_no=${param.a_no }"><b>ì›ê¸€ ì œëª© : ${areaModel.a_name }</b></a>
 						</font>
 					</div>
 					<div class="panel-body">
@@ -34,10 +34,10 @@
 								<img src="/gokkiri/resources/area_img/${main_img }" width="200" height="120">
 							</div>
 							<div class="col-sm-8" style="text-align:left;">
-								<font size="2">¡¤ ÁÖ¼Ò : ${areaModel.a_addr }<br/>
-								¡¤ °¡´Â ¹æ¹ı : ${areaModel.a_way }<hr>
-								¡¤&nbsp;
-								<!-- ¸îÀÚ ÀÌ»óÀÌ¸é ...À¸·Î º¸ÀÌµµ·Ï -->
+								<font size="2">Â· ì£¼ì†Œ : ${areaModel.a_addr }<br/>
+								Â· ê°€ëŠ” ë°©ë²• : ${areaModel.a_way }<hr>
+								Â·&nbsp;
+								<!-- ëª‡ì ì´ìƒì´ë©´ ...ìœ¼ë¡œ ë³´ì´ë„ë¡ -->
 								<c:if test="${fn:length(areaModel.a_con) gt 100 }">
 									<c:out value="${fn:substring(areaModel.a_con, 0, 100) }" />......
 								</c:if>
@@ -52,7 +52,7 @@
 				
 				<br/>
 				<strong><font size="6px">Q&A</font></strong>&nbsp;&nbsp; 
-				<font color="red">Áú¹®&´äº¯ °Ô½ÃÆÇÀÔ´Ï´Ù.</font>
+				<font color="red">ì§ˆë¬¸&ë‹µë³€ ê²Œì‹œíŒì…ë‹ˆë‹¤.</font>
 				<div class="menu-wrap" style="text-align:right;">
 				<br/><br/>
 			</div>
@@ -75,9 +75,9 @@
 				</a>
 			</div>
 			<div class="panel-body">
-				ÀÛ¼ºÀÚ : ${cityqnaList.m_email}&nbsp;&nbsp;|&nbsp;&nbsp;
-				ÀÛ¼ºÀÏ : <fmt:formatDate value="${cityqnaList.q_date}" pattern="YYYY-MM-dd, hh:mm" />&nbsp;&nbsp;|&nbsp;&nbsp;
-				¿©ÇàÁö : ${cityqnaList.a_name}<hr/>
+				ì‘ì„±ì : ${cityqnaList.m_email}&nbsp;&nbsp;|&nbsp;&nbsp;
+				ì‘ì„±ì¼ : <fmt:formatDate value="${cityqnaList.q_date}" pattern="YYYY-MM-dd, hh:mm" />&nbsp;&nbsp;|&nbsp;&nbsp;
+				ì—¬í–‰ì§€ : ${cityqnaList.a_name}<hr/>
 				${cityqnaList.q_con}
 			</div>
 		</div>
@@ -86,10 +86,10 @@
 </c:forEach>
 
 
-<!-- DB»ó °Ô½Ã¹°ÀÌ ¾øÀ¸¸é º¸¿©ÁÖ´Â °Í -->
+<!-- DBìƒ ê²Œì‹œë¬¼ì´ ì—†ìœ¼ë©´ ë³´ì—¬ì£¼ëŠ” ê²ƒ -->
 <c:if test="${fn:length(cityqnaList) le 0}">
 	<br />
-	<center>µî·ÏµÈ °Ô½Ã¹°ÀÌ ¾ø½À´Ï´Ù</center>
+	<center>ë“±ë¡ëœ ê²Œì‹œë¬¼ì´ ì—†ìŠµë‹ˆë‹¤</center>
 	<br />
 </c:if>
 

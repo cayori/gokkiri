@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 <head>
-<title>ÀÌ¸§(´Ğ³×ÀÓ) Áßº¹ È®ÀÎ</title>
+<title>ì´ë¦„(ë‹‰ë„¤ì„) ì¤‘ë³µ í™•ì¸</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -28,7 +28,7 @@ function windowclose(){
 function check(){
 	
 	if(nameChkForm.m_name.value==""){
-		alert("ÀÌ¸§(´Ğ³×ÀÓ)¸¦ ÀÔ·ÂÇØ ÁÖ¼¼¿ä.");
+		alert("ì´ë¦„(ë‹‰ë„¤ì„)ë¥¼ ì…ë ¥í•´ ì£¼ì„¸ìš”.");
 		nameChkForm.m_name.focus();
 		return false;
 	}
@@ -43,14 +43,14 @@ function check(){
 </head>
 <body>
 
-<!-- ÀÌ¸§ÀÌ Á¸ÀçÇÒ °æ¿ì -->
+<!-- ì´ë¦„ì´ ì¡´ì¬í•  ê²½ìš° -->
  <c:choose>
 <c:when test="${memberNameChk==1}">
 	<form name="nameChkForm" action="nameDuplChk.go" method="post" onsubmit="return check();">
 	<table align="center" width="265" border="0" cellspacing="0" cellpadding="0">
 		<tr height="25">
 			<td bgcolor="red" align="left" colspan="1" width="10"></td>
-			<td align="left" colspan="3"><font color="red"><strong>&nbsp;&nbsp;ÀÌ¸§(´Ğ³×ÀÓ) Áßº¹</strong></font></td>
+			<td align="left" colspan="3"><font color="red"><strong>&nbsp;&nbsp;ì´ë¦„(ë‹‰ë„¤ì„) ì¤‘ë³µ</strong></font></td>
 		</tr>
 	</table>
 	<br>
@@ -62,7 +62,7 @@ function check(){
 			<td></td>
 		</tr>
 		<tr>
-			<td><font color="red">[ ${member.m_name} ]´Â ÀÌ¹Ì »ç¿ëÁßÀÎ ÀÌ¸§(´Ğ³×ÀÓ)ÀÔ´Ï´Ù. ´Ù¸¥ ÀÌ¸§(´Ğ³×ÀÓ)À» ¼±ÅÃÇØ ÁÖ¼¼¿ä</font></td>
+			<td><font color="red">[ ${member.m_name} ]ëŠ” ì´ë¯¸ ì‚¬ìš©ì¤‘ì¸ ì´ë¦„(ë‹‰ë„¤ì„)ì…ë‹ˆë‹¤. ë‹¤ë¥¸ ì´ë¦„(ë‹‰ë„¤ì„)ì„ ì„ íƒí•´ ì£¼ì„¸ìš”</font></td>
 		</tr>
 		<tr height="10">
 			<td></td>
@@ -76,7 +76,7 @@ function check(){
 	<table align="center" width="265" border="0" cellspacing="0" cellpadding="0">
 		<tr height="25">
 			<td bgcolor="1E90FF" align="left" colspan="1" width="10"></td>
-			<td align="left" colspan="3"><font color="black"><strong>&nbsp;&nbsp;ÀÌ¸§(´Ğ³×ÀÓ) Áßº¹ È®ÀÎ</strong></font></td>
+			<td align="left" colspan="3"><font color="black"><strong>&nbsp;&nbsp;ì´ë¦„(ë‹‰ë„¤ì„) ì¤‘ë³µ í™•ì¸</strong></font></td>
 		</tr>
 	</table>
 	<br>
@@ -90,7 +90,7 @@ function check(){
 		<tr align="center">
 			<td>
 				<input type=text maxlength=20 name="m_name"/>
-				<input type=submit value="Áßº¹ È®ÀÎ" class="topb"/>
+				<input type=submit value="ì¤‘ë³µ í™•ì¸" class="topb"/>
 			</td>
 		<tr>
 		<tr height="10">
@@ -103,7 +103,7 @@ function check(){
 			<td></td>
 		</tr>
 		<tr>
-			<td align="center"><input type="button" class="login1" value="´İ±â" onclick="javascript:window.close();"/></td>
+			<td align="center"><input type="button" class="login1" value="ë‹«ê¸°" onclick="javascript:window.close();"/></td>
 		</tr>
 	</table>
 	</form>
@@ -112,7 +112,7 @@ function check(){
 	<table align="center" width="265" border="0" cellspacing="0" cellpadding="0">
 		<tr height="25">
 			<td bgcolor="1E90FF" align="left" colspan="1" width="10"></td>
-			<td align="left" colspan="3"><font color="black"><strong>&nbsp;&nbsp;»ç¿ë °¡´É</strong></font></td>
+			<td align="left" colspan="3"><font color="black"><strong>&nbsp;&nbsp;ì‚¬ìš© ê°€ëŠ¥</strong></font></td>
 		</tr>
 	</table>
 	<br>
@@ -124,7 +124,7 @@ function check(){
 			<td></td>
 		</tr>
 		<tr>
-			<td>ÀÔ·ÂÇÏ½Å [${param.m_name}]´Â »ç¿ëÇÒ ¼ö ÀÖ´Â ÀÌ¸§(´Ğ³×ÀÓ)ÀÔ´Ï´Ù.</td>
+			<td>ì…ë ¥í•˜ì‹  [${param.m_name}]ëŠ” ì‚¬ìš©í•  ìˆ˜ ìˆëŠ” ì´ë¦„(ë‹‰ë„¤ì„)ì…ë‹ˆë‹¤.</td>
 		</tr>
 		<tr height="10">
 			<td></td>
@@ -137,11 +137,11 @@ function check(){
 		</tr>
 		<tr>
 			<c:if test="${session_m_name == null }">
-			<td align="center"><input type="button" class="login1" value="´İ±â" onclick="javascript:windowclose();"/></td>
+			<td align="center"><input type="button" class="login1" value="ë‹«ê¸°" onclick="javascript:windowclose();"/></td>
 			</c:if>
 			
 			<c:if test="${session_m_name != null }">
-			<td align="center"><input type="button" class="login1" value="´İ±â" onclick="javascript:windowclose2();"/></td>
+			<td align="center"><input type="button" class="login1" value="ë‹«ê¸°" onclick="javascript:windowclose2();"/></td>
 			</c:if>
 		</tr>
 	</table>

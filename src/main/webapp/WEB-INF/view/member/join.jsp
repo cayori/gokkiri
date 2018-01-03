@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <script language="javascript">
 window.onload = function(){
-	alert('È¸¿ø°¡ÀÔÀÌ ¿Ï·áµÇ¾ú½À´Ï´Ù. ÀÌ¸ÞÀÏ ÀÎÁõ ÈÄ ·Î±×ÀÎÇØÁÖ¼¼¿ä !');
+	alert('íšŒì›ê°€ìž…ì´ ì™„ë£Œë˜ì—ˆìŠµë‹ˆë‹¤. ì´ë©”ì¼ ì¸ì¦ í›„ ë¡œê·¸ì¸í•´ì£¼ì„¸ìš” !');
 	window.location.href = '/gokkiri/main.go';
 }
 </script>

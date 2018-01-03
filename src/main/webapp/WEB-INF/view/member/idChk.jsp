@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 <head>
-<title>ÀÌ¸ŞÀÏ Áßº¹ È®ÀÎ</title>
+<title>ì´ë©”ì¼ ì¤‘ë³µ í™•ì¸</title>
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -23,13 +23,13 @@ function check(){
 	for (i=0;i<idChkForm.m_email.value.length;i++ ){
 		var ch = idChkForm.m_email.value.charAt(i)
 		if (!(ch>='0' && ch<='9') && !(ch>='a' && ch<='z')){
-	  		alert ("ÀÌ¸ŞÀÏÀº ¼Ò¹®ÀÚ, ¼ıÀÚ¸¸ ÀÔ·Â°¡´ÉÇÕ´Ï´Ù.")
+	  		alert ("ì´ë©”ì¼ì€ ì†Œë¬¸ì, ìˆ«ìë§Œ ì…ë ¥ê°€ëŠ¥í•©ë‹ˆë‹¤.")
 	  		idChkForm.m_email.focus();
 	  		return false;
 	  	}
 	}
 	if(idChkForm.m_email.value==""){
-		alert("ÀÌ¸ŞÀÏÀ» ÀÔ·ÂÇØ ÁÖ¼¼¿ä.");
+		alert("ì´ë©”ì¼ì„ ì…ë ¥í•´ ì£¼ì„¸ìš”.");
 		idChkForm.m_email.focus();
 		return false;
 	}
@@ -39,14 +39,14 @@ function check(){
 </head>
 <body>
 
-<!-- ÀÌ¸ŞÀÏÀÌ Á¸ÀçÇÒ °æ¿ì -->
+<!-- ì´ë©”ì¼ì´ ì¡´ì¬í•  ê²½ìš° -->
  <c:choose>
 <c:when test="${memberEmailChk==1}">
 	<form name="idChkForm" action="duplChk.go" method="post" onsubmit="return check();">
 	<table align="center" width="265" border="0" cellspacing="0" cellpadding="0">
 		<tr height="25">
 			<td bgcolor="red" align="left" colspan="1" width="10"></td>
-			<td align="left" colspan="3"><font color="red"><strong>&nbsp;&nbsp;ÀÌ¸ŞÀÏ Áßº¹</strong></font></td>
+			<td align="left" colspan="3"><font color="red"><strong>&nbsp;&nbsp;ì´ë©”ì¼ ì¤‘ë³µ</strong></font></td>
 		</tr>
 	</table>
 	<br>
@@ -58,7 +58,7 @@ function check(){
 			<td></td>
 		</tr>
 		<tr>
-			<td><font color="red">[ ${member.m_email} ]´Â ÀÌ¹Ì »ç¿ëÁßÀÎ ÀÌ¸ŞÀÏÀÔ´Ï´Ù. ´Ù¸¥ ÀÌ¸ŞÀÏÀ» ¼±ÅÃÇØ ÁÖ¼¼¿ä</font></td>
+			<td><font color="red">[ ${member.m_email} ]ëŠ” ì´ë¯¸ ì‚¬ìš©ì¤‘ì¸ ì´ë©”ì¼ì…ë‹ˆë‹¤. ë‹¤ë¥¸ ì´ë©”ì¼ì„ ì„ íƒí•´ ì£¼ì„¸ìš”</font></td>
 		</tr>
 		<tr height="10">
 			<td></td>
@@ -72,7 +72,7 @@ function check(){
 	<table align="center" width="265" border="0" cellspacing="0" cellpadding="0">
 		<tr height="25">
 			<td bgcolor="1E90FF" align="left" colspan="1" width="10"></td>
-			<td align="left" colspan="3"><font color="black"><strong>&nbsp;&nbsp;ID Áßº¹ È®ÀÎ</strong></font></td>
+			<td align="left" colspan="3"><font color="black"><strong>&nbsp;&nbsp;ID ì¤‘ë³µ í™•ì¸</strong></font></td>
 		</tr>
 	</table>
 	<br>
@@ -86,7 +86,7 @@ function check(){
 		<tr align="center">
 			<td>
 				<input type=text maxlength=20 name="m_email"/>
-				<input type=submit value="Áßº¹ È®ÀÎ" class="topb"/>
+				<input type=submit value="ì¤‘ë³µ í™•ì¸" class="topb"/>
 			</td>
 		<tr>
 		<tr height="10">
@@ -99,7 +99,7 @@ function check(){
 			<td></td>
 		</tr>
 		<tr>
-			<td align="center"><input type="button" class="login1" value="´İ±â" onclick="javascript:window.close();"/></td>
+			<td align="center"><input type="button" class="login1" value="ë‹«ê¸°" onclick="javascript:window.close();"/></td>
 		</tr>
 	</table>
 	</form>
@@ -108,7 +108,7 @@ function check(){
 	<table align="center" width="265" border="0" cellspacing="0" cellpadding="0">
 		<tr height="25">
 			<td bgcolor="1E90FF" align="left" colspan="1" width="10"></td>
-			<td align="left" colspan="3"><font color="black"><strong>&nbsp;&nbsp;»ç¿ë °¡´É</strong></font></td>
+			<td align="left" colspan="3"><font color="black"><strong>&nbsp;&nbsp;ì‚¬ìš© ê°€ëŠ¥</strong></font></td>
 		</tr>
 	</table>
 	<br>
@@ -120,7 +120,7 @@ function check(){
 			<td></td>
 		</tr>
 		<tr>
-			<td>ÀÔ·ÂÇÏ½Å [${param.m_email}]´Â »ç¿ëÇÒ ¼ö ÀÖ´Â ÀÌ¸ŞÀÏÀÔ´Ï´Ù.</td>
+			<td>ì…ë ¥í•˜ì‹  [${param.m_email}]ëŠ” ì‚¬ìš©í•  ìˆ˜ ìˆëŠ” ì´ë©”ì¼ì…ë‹ˆë‹¤.</td>
 		</tr>
 		<tr height="10">
 			<td></td>
@@ -132,7 +132,7 @@ function check(){
 			<td></td>
 		</tr>
 		<tr>
-			<td align="center"><input type="button" class="login1" value="´İ±â" onclick="javascript:windowclose();"/></td>
+			<td align="center"><input type="button" class="login1" value="ë‹«ê¸°" onclick="javascript:windowclose();"/></td>
 		</tr>
 	</table>
 </c:otherwise>

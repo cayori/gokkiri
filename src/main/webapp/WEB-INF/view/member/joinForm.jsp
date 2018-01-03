@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<title>È¸¿ø°¡ÀÔ Æû</title>
+<title>íšŒì›ê°€ì… í¼</title>
 <style type="text/css">
 img {
 	border: 0;
@@ -59,7 +59,7 @@ center {
   right: 0;
 }
 
-/* ·Îµù  */
+/* ë¡œë”©  */
 #snackbar {
     visibility: hidden;
     min-width: 250px;
@@ -114,28 +114,28 @@ function check(){
 	var reg = document.joinForm;
 	
 	if(reg.m_email.value==""){
-		alert("ÀÌ¸ŞÀÏÀ» ÀÔ·ÂÇØÁÖ¼¼¿ä.");
+		alert("ì´ë©”ì¼ì„ ì…ë ¥í•´ì£¼ì„¸ìš”.");
 		reg.m_email.focus();
 		return false;
 	}
 	
 	else if(reg.m_pw.value==""){
-		alert("ºñ¹Ğ¹øÈ£¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä");
+		alert("ë¹„ë°€ë²ˆí˜¸ë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš”");
 		reg.m_pw.focus();
 		return false;
 	}
 	else if(reg.m_pw.value != reg.m_pw2.value){
-		alert("ºñ¹Ğ¹øÈ£°¡ ÀÏÄ¡ÇÏÁö ¾Ê½À´Ï´Ù.");
+		alert("ë¹„ë°€ë²ˆí˜¸ê°€ ì¼ì¹˜í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.");
 		reg.m_pw.focus();
 		return false;
 	}
 	else if(reg.m_pw.value.length < 6 || reg.m_pw.value.length > 13){
-		alert("ºñ¹Ğ¹øÈ£¸¦ 6~13ÀÚ±îÁö ÀÔ·ÂÇØÁÖ¼¼¿ä.");
+		alert("ë¹„ë°€ë²ˆí˜¸ë¥¼ 6~13ìê¹Œì§€ ì…ë ¥í•´ì£¼ì„¸ìš”.");
 		reg.m_pw.focus();
 		return false;
 	}
 	else if(reg.m_name.value==""){
-		alert("ÀÌ¸§À» ÀÔ·ÂÇØÁÖ¼¼¿ä");
+		alert("ì´ë¦„ì„ ì…ë ¥í•´ì£¼ì„¸ìš”");
 		reg.m_name.focus();
 		return false;
 	}
@@ -147,13 +147,13 @@ function openIdChk(joinForm){
 	for (i=0;i<reg.m_email.value.length;i++ ){
 		var ch = document.joinForm.m_email.value.charAt(i)
 		if (!(ch>='0' && ch<='9') && !(ch>='a' && ch<='z')){
-	  		alert ("ÀÌ¸ŞÀÏÀº ¼Ò¹®ÀÚ, ¼ıÀÚ¸¸ ÀÔ·Â°¡´ÉÇÕ´Ï´Ù.")
+	  		alert ("ì´ë©”ì¼ì€ ì†Œë¬¸ì, ìˆ«ìë§Œ ì…ë ¥ê°€ëŠ¥í•©ë‹ˆë‹¤.")
 	  		reg.m_email.focus();
 	  		return false;
 	  	}
 	}
 	if(reg.m_email.value==""){
-		alert("ÀÌ¸ŞÀÏÀ» ÀÔ·ÂÇØÁÖ¼¼¿ä");
+		alert("ì´ë©”ì¼ì„ ì…ë ¥í•´ì£¼ì„¸ìš”");
 		reg.m_email.focus();
 		return false;
 	}
@@ -170,7 +170,7 @@ function openNameChk(joinForm){
 	var reg=document.joinForm;
 	
 	if(reg.m_name.value==""){
-		alert("ÀÌ¸§(´Ğ³×ÀÓ)À» ÀÔ·ÂÇØÁÖ¼¼¿ä");
+		alert("ì´ë¦„(ë‹‰ë„¤ì„)ì„ ì…ë ¥í•´ì£¼ì„¸ìš”");
 		reg.m_name.focus();
 		return false;
 	}
@@ -189,53 +189,53 @@ $(document).ready(function(){
 
 <div class="container" style="width:60%;">
 <img src="/gokkiri/resources/img/welcome.jpg" width="100%"/>
-  <h2>È¸¿ø°¡ÀÔ</h2>
-  <span class="glyphicon glyphicon-info-sign"></span>&nbsp;¸ğµç Ç×¸ñÀ» ÀÔ·ÂÇÏ¼Å¾ß °¡ÀÔÇÏ½Ç ¼ö ÀÖ½À´Ï´Ù.
+  <h2>íšŒì›ê°€ì…</h2>
+  <span class="glyphicon glyphicon-info-sign"></span>&nbsp;ëª¨ë“  í•­ëª©ì„ ì…ë ¥í•˜ì…”ì•¼ ê°€ì…í•˜ì‹¤ ìˆ˜ ìˆìŠµë‹ˆë‹¤.
   <hr>
   
   <form action="join.go" name="joinForm" method="post" onsubmit="return check();">
   
      <div class="form-group">
-      <label for="email">ÀÌ¸ŞÀÏ:</label>
+      <label for="email">ì´ë©”ì¼:</label>
       
        <div class="input-group">
         <input type="text" name="m_email" class="form-control" aria-describedby="basic-addon2"> 
         <span class="input-group-addon" id="basic-addon2">@naver.com</span>
         <span class="input-group-btn">
         <button class="btn btn-default" onclick="openIdChk(this.form)" name="confirmId" type="button">
-        <span class="glyphicon glyphicon-ok"></span>&nbspÁßº¹È®ÀÎ</button></span>
+        <span class="glyphicon glyphicon-ok"></span>&nbspì¤‘ë³µí™•ì¸</button></span>
        </div>
       
     </div>
    
     <div class="form-group">
-      <label for="pwd">ºñ¹Ğ¹øÈ£:</label>
+      <label for="pwd">ë¹„ë°€ë²ˆí˜¸:</label>
       
-        <input type="password" data-toggle="tooltip" title="6~13ÀÚ±îÁö ÀÔ·ÂÇØÁÖ¼¼¿ä." class="form-control" name="m_pw">
+        <input type="password" data-toggle="tooltip" title="6~13ìê¹Œì§€ ì…ë ¥í•´ì£¼ì„¸ìš”." class="form-control" name="m_pw">
       
     </div>
 <div class="form-group">
-      <label for="pwd">ºñ¹Ğ¹øÈ£ È®ÀÎ:</label>
+      <label for="pwd">ë¹„ë°€ë²ˆí˜¸ í™•ì¸:</label>
       
-        <input type="password" data-toggle="tooltip" title="´Ù½Ã ÇÑ¹ø ÀÔ·ÂÇØÁÖ¼¼¿ä." class="form-control" name="m_pw2">
+        <input type="password" data-toggle="tooltip" title="ë‹¤ì‹œ í•œë²ˆ ì…ë ¥í•´ì£¼ì„¸ìš”." class="form-control" name="m_pw2">
       
     </div>
 
     
     	<div class="form-group">
-      <label for="pwd">ÀÌ¸§:</label>
+      <label for="pwd">ì´ë¦„:</label>
       <div class="input-group">
         <input type="text" class="form-control" name="m_name" aria-describedby="basic-addon2">
         <span class="input-group-btn" >
         <button class="btn btn-default" onclick="openNameChk(this.form)" name="confirmName" type="button">
-        <span class="glyphicon glyphicon-ok"></span>&nbspÁßº¹È®ÀÎ</button></span>
+        <span class="glyphicon glyphicon-ok"></span>&nbspì¤‘ë³µí™•ì¸</button></span>
         </div>
       
     </div>
 
-      <button type="submit" class="button" onclick="myFunction()"><span>È¸¿ø°¡ÀÔ</span></button>
+      <button type="submit" class="button" onclick="myFunction()"><span>íšŒì›ê°€ì…</span></button>
       
-      <div id="snackbar">ÀÎÁõ ÀÌ¸ŞÀÏ Àü¼Û Áß...</div>
+      <div id="snackbar">ì¸ì¦ ì´ë©”ì¼ ì „ì†¡ ì¤‘...</div>
 
       </form>
       

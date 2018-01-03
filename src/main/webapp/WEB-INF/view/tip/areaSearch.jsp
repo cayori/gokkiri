@@ -8,7 +8,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<title>°á°úÃ¢</title>
+<title>ê²°ê³¼ì°½</title>
  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -18,7 +18,7 @@
 </head>
 
 <script>
-	//mainÆäÀÌÁö·Î °ª Àü´Ş: ºÎ¸ğ·Î °ªÀü´ŞÇÏ±â À§ÇØ¼­´Â opener»ç¿ë
+	//mainí˜ì´ì§€ë¡œ ê°’ ì „ë‹¬: ë¶€ëª¨ë¡œ ê°’ì „ë‹¬í•˜ê¸° ìœ„í•´ì„œëŠ” openerì‚¬ìš©
 	function sendAdd(a_name,a_no){
 		opener.document.tForm.a_no.value= a_no;
 		opener.document.tForm.a_name.value= a_name;
@@ -35,8 +35,8 @@
 <form class="form-inline">
 		<select class="searchOption btn btn-default " name="searchNum2"
 				id="searchNum2">
-				<option value="0">¸í¼Ò ÀÌ¸§</option>
-				<option value="1">¸í¼Ò ÁÖ¼Ò</option>
+				<option value="0">ëª…ì†Œ ì´ë¦„</option>
+				<option value="1">ëª…ì†Œ ì£¼ì†Œ</option>
 
 			</select>
 		<div class="input-group">

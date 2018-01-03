@@ -2,7 +2,7 @@
     pageEncoding="EUC-KR"%>
 <html>
 <head>
-<title>È¸¿ø Å»Åð</title>
+<title>íšŒì› íƒˆí‡´</title>
 
 <style>
 .jumbotron{
@@ -19,7 +19,7 @@ height: 100%;
 <script language="javascript">
 function check(){
    if(document.deleteform.m_pw.value==""){
-      alert("ºñ¹Ð¹øÈ£¸¦ ÀÔ·ÂÇÏ¼¼¿ä");
+      alert("ë¹„ë°€ë²ˆí˜¸ë¥¼ ìž…ë ¥í•˜ì„¸ìš”");
       document.deleteform.m_pw.focus();
       return false;
    }
@@ -28,18 +28,18 @@ function check(){
 </script>
 </head>
 <body>
-<!-- »ó´Ü ÀÌ¹ÌÁö-->
+<!-- ìƒë‹¨ ì´ë¯¸ì§€-->
 <div class="jumbotron text-center">
   <form class="form-inline">
      <br><br>
-     <p><font color="#ffffff" size="10"><b>ÇÑ±¹, ¾îµð±îÁö °¡ºÃ´Ï?</b></font></p>
+     <p><font color="#ffffff" size="10"><b>í•œêµ­, ì–´ë””ê¹Œì§€ ê°€ë´¤ë‹ˆ?</b></font></p>
      <br><br>
   </form>
 </div>
 <br>
 
 
-<!-- Ä«Å×°í¸® -->
+<!-- ì¹´í…Œê³ ë¦¬ -->
 <div class="container-fluid">
   <div class="row content">
     <div class="col-sm-3">
@@ -49,25 +49,25 @@ function check(){
     <div class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title" >
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse1" >ÀÏÁ¤ ¸®½ºÆ®</a>
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse1" >ì¼ì • ë¦¬ìŠ¤íŠ¸</a>
         </h4>
       </div>
       <div id="collapse1" class="panel-collapse collapse">
-        <div class="panel-body"><a href="/gokkiri/mypage/myScheduleList.go?s_complete=1&s_private=0">³» ÀÏÁ¤</a></div>
-        <div class="panel-body"><a href="/gokkiri/mypage/zzimScheduleList.go">ÂòÇÑ ÀÏÁ¤</a></div>
-        <div class="panel-body"><a href="/gokkiri/mypage/sharedScheduleList.go">°øÀ¯ÁßÀÎ ÀÏÁ¤</a></div>  
+        <div class="panel-body"><a href="/gokkiri/mypage/myScheduleList.go?s_complete=1&s_private=0">ë‚´ ì¼ì •</a></div>
+        <div class="panel-body"><a href="/gokkiri/mypage/zzimScheduleList.go">ì°œí•œ ì¼ì •</a></div>
+        <div class="panel-body"><a href="/gokkiri/mypage/sharedScheduleList.go">ê³µìœ ì¤‘ì¸ ì¼ì •</a></div>  
       </div>
     </div>
     
     <div class="panel panel-default">
       <div class="panel-heading" >
         <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">³»°¡¾´ ±Û ¸®½ºÆ®</a>
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">ë‚´ê°€ì“´ ê¸€ ë¦¬ìŠ¤íŠ¸</a>
         </h4>
       </div>
       <div id="collapse2" class="panel-collapse collapse">
-      <div class="panel-body"><a href="/gokkiri/mypage/myTipList.go">¿©Çà Tip</a></div> 
-        <div class="panel-body"><a href="/gokkiri/mypage/myAreaReviewList.go">¸®ºä</a></div>
+      <div class="panel-body"><a href="/gokkiri/mypage/myTipList.go">ì—¬í–‰ Tip</a></div> 
+        <div class="panel-body"><a href="/gokkiri/mypage/myAreaReviewList.go">ë¦¬ë·°</a></div>
         <div class="panel-body"><a href="/gokkiri/mypage/myQnaList.go">QnA</a></div>
         
       </div>
@@ -76,12 +76,12 @@ function check(){
     <div class="panel panel-default">
       <div class="panel-heading" style="background-color:#266eb7;color:#fff;">
         <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse3"><b>È¸¿øÁ¤º¸ ¼öÁ¤</b></a>
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse3"><b>íšŒì›ì •ë³´ ìˆ˜ì •</b></a>
         </h4>
       </div>
       <div id="collapse3" class="panel-collapse collapse in">
-       <div class="panel-body"><a href="/gokkiri/member/memberModifyForm.go" >Á¤º¸ ¼öÁ¤</a></div>
-        <div class="panel-body"><a href="/gokkiri/member/memberDeleteForm.go" ><b>È¸¿ø Å»Åð</b></a></div>
+       <div class="panel-body"><a href="/gokkiri/member/memberModifyForm.go" >ì •ë³´ ìˆ˜ì •</a></div>
+        <div class="panel-body"><a href="/gokkiri/member/memberDeleteForm.go" ><b>íšŒì› íƒˆí‡´</b></a></div>
       </div>
     </div>
   </div> 
@@ -96,12 +96,12 @@ function check(){
   <form action="memberDelete.go" method="post" name="deleteform" onsubmit="return check();">
   
  <div class="form-group" style="width:50%;">
-  <label class="control-label" for="focusedInput">*ºñ¹Ð¹øÈ£ ÀÔ·Â ÈÄ È¸¿øÅ»Åð Ã³¸® µË´Ï´Ù.</label>
+  <label class="control-label" for="focusedInput">*ë¹„ë°€ë²ˆí˜¸ ìž…ë ¥ í›„ íšŒì›íƒˆí‡´ ì²˜ë¦¬ ë©ë‹ˆë‹¤.</label>
   <div class="input-group">
-    <input class="form-control" id="focusedInput" name="m_pw" type="password" placeholder="ºñ¹Ð¹øÈ£¸¦ ÀÔ·ÂÇÏ¼¼¿ä.">
+    <input class="form-control" id="focusedInput" name="m_pw" type="password" placeholder="ë¹„ë°€ë²ˆí˜¸ë¥¼ ìž…ë ¥í•˜ì„¸ìš”.">
     <span class="input-group-btn">
-      <button class="btn btn-default" type="submit">È¸¿øÅ»Åð</button>
-        <button type="reset" class="btn btn-default"><span class="glyphicon glyphicon-remove"></span>&nbsp;Ãë¼Ò</button>
+      <button class="btn btn-default" type="submit">íšŒì›íƒˆí‡´</button>
+        <button type="reset" class="btn btn-default"><span class="glyphicon glyphicon-remove"></span>&nbsp;ì·¨ì†Œ</button>
     </span>
   </div>
 </div>

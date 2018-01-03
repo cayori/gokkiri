@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="state">
+
+	<resultMap type="state" id="stateRes">
+	
+		<result property="state_no" column="state_no" />
+		<result property="state_org" column="state_org" />
+		<result property="state_sav" column="state_sav" />
+		<result property="state_name" column="state_name" />
+		<result property="state_addr" column="state_addr" />
+
+	</resultMap>
+	
+	<select id="stateList" resultMap="stateRes">
+		SELECT *
+		FROM state
+		ORDER BY state_NO ASC
+	</select>
+	
+	<select id="stateSearchList" resultMap="stateRes" parameterType="String">
+		SELECT *
+		FROM state
+    	where STATE_NAME like #{keyword}
+		ORDER BY state_NO ASC
+	</select>
+	
+</mapper>

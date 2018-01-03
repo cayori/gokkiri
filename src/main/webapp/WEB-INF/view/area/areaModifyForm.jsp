@@ -8,7 +8,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
 <title>Insert title here</title>
 <style>
-/*¸ğ´Ş*/
+/*ëª¨ë‹¬*/
 .modal{
 padding-top:50px; 
 }
@@ -21,7 +21,7 @@ padding-top:50px;
 
 function areaDetail(){
 	
-	if(confirm("¼öÁ¤ÇÏ±â¸¦ Ãë¼ÒÇÏ½Ã°Ú½À´Ï±î?") == true){
+	if(confirm("ìˆ˜ì •í•˜ê¸°ë¥¼ ì·¨ì†Œí•˜ì‹œê² ìŠµë‹ˆê¹Œ?") == true){
 		location.href="areaDetail.go?a_no=${param.a_no}&keyword=${param.keyword}";
 	}else{
 		false;
@@ -51,79 +51,79 @@ function searchMap(){
          <input type="hidden" name="keyword" value="${param.keyword }" />
           <fieldset>
             <div id="legend">
-              <legend>¿©ÇàÁö ±Û¾²±â</legend>
+              <legend>ì—¬í–‰ì§€ ê¸€ì“°ê¸°</legend>
             </div>
           <br/><br/>  
 	            <div class="radio">
 	            	<c:if test="${a_cate == 0 }">
-	 				 	<label><input type="radio" name="a_cate" value="0" checked="checked">°ü±¤Áö</label>
-	 				 	<label><input type="radio" name="a_cate" value="1">¸ÀÁı</label>
+	 				 	<label><input type="radio" name="a_cate" value="0" checked="checked">ê´€ê´‘ì§€</label>
+	 				 	<label><input type="radio" name="a_cate" value="1">ë§›ì§‘</label>
 	 				 </c:if>
 	 				 <c:if test="${a_cate == 1 }">
-	 				 	<label><input type="radio" name="a_cate" value="0">°ü±¤Áö</label>
-	 				 	<label><input type="radio" name="a_cate" value="1" checked="checked">¸ÀÁı</label>
+	 				 	<label><input type="radio" name="a_cate" value="0">ê´€ê´‘ì§€</label>
+	 				 	<label><input type="radio" name="a_cate" value="1" checked="checked">ë§›ì§‘</label>
 	 				 </c:if>
 				</div>
           <br/>
           
         <button type="button" class="btn btn-default btn-lg" onclick="searchMap()">
-  			<span class="glyphicon glyphicon-search" aria-hidden="true">ÁÖ¼Ò°Ë»ö</span>
+  			<span class="glyphicon glyphicon-search" aria-hidden="true">ì£¼ì†Œê²€ìƒ‰</span>
 		</button>
           
           <br/><br/>
             <div class="control-group">
-              <label class="control-label" for="a_name">¡¤ ¿©ÇàÁö ÀÌ¸§</label>
+              <label class="control-label" for="a_name">Â· ì—¬í–‰ì§€ ì´ë¦„</label>
               <div class="controls">
-                <input name="a_name" class="form-control input" id="a_name" type="text" value="${areaModel.a_name}" placeholder="ÁÖ¼Ò°Ë»ö ¹öÆ°À» Å¬¸¯ ÇØÁÖ¼¼¿ä" readonly>
+                <input name="a_name" class="form-control input" id="a_name" type="text" value="${areaModel.a_name}" placeholder="ì£¼ì†Œê²€ìƒ‰ ë²„íŠ¼ì„ í´ë¦­ í•´ì£¼ì„¸ìš”" readonly>
                 <!-- <p class="help-block"></p> -->
               </div>
             </div>
          <br/>
          	<div class="control-group">
-              <label class="control-label" for="a_addr">¡¤ ¿©ÇàÁö ÁÖ¼Ò</label>
+              <label class="control-label" for="a_addr">Â· ì—¬í–‰ì§€ ì£¼ì†Œ</label>
               <div class="controls">
-                <input name="a_addr" class="form-control input" id="a_addr" type="text" value="${areaModel.a_addr }" placeholder="ÁÖ¼Ò°Ë»ö ¹öÆ°À» Å¬¸¯ ÇØÁÖ¼¼¿ä" readonly>
+                <input name="a_addr" class="form-control input" id="a_addr" type="text" value="${areaModel.a_addr }" placeholder="ì£¼ì†Œê²€ìƒ‰ ë²„íŠ¼ì„ í´ë¦­ í•´ì£¼ì„¸ìš”" readonly>
               </div>
             </div>
          <br/>
          	<div class="control-group">
-              <label class="control-label" for="a_tel">¡¤ ÀüÈ­¹øÈ£</label>
+              <label class="control-label" for="a_tel">Â· ì „í™”ë²ˆí˜¸</label>
               <div class="controls">
                 <input name="a_tel" class="form-control input" id="a_tel" type="text" value="${areaModel.a_tel }" placeholder="ex) 02-000-0000">
               </div>
             </div>
          <br/>
             <div class="control-group">
-              <label class="control-label" for="a_way">¡¤ °¡´Â ¹æ¹ı</label>
+              <label class="control-label" for="a_way">Â· ê°€ëŠ” ë°©ë²•</label>
               <div class="controls">
-                <input name="a_way" class="form-control input" id="a_way" type="text"  value="${areaModel.a_way }" placeholder="ex) 2È£¼± »ï¼º¿ª 5¹ø Ãâ±¸·Î ³ª°¡¼­ µµº¸·Î 5ºĞ">
+                <input name="a_way" class="form-control input" id="a_way" type="text"  value="${areaModel.a_way }" placeholder="ex) 2í˜¸ì„  ì‚¼ì„±ì—­ 5ë²ˆ ì¶œêµ¬ë¡œ ë‚˜ê°€ì„œ ë„ë³´ë¡œ 5ë¶„">
               </div>
             </div>
          <br/>
          <div class="control-group">
-              <label class="control-label" for="a_hours">¡¤ ¿µ¾÷ ½Ã°£</label>
+              <label class="control-label" for="a_hours">Â· ì˜ì—… ì‹œê°„</label>
               <div class="controls">
-                <input name="a_hours" class="form-control input" id="a_hours" type="text"  value="${areaModel.a_hours }"  placeholder="ex) AM 07:00 ~ PM 9:00 ¿¬Áß¹«ÈŞ">
+                <input name="a_hours" class="form-control input" id="a_hours" type="text"  value="${areaModel.a_hours }"  placeholder="ex) AM 07:00 ~ PM 9:00 ì—°ì¤‘ë¬´íœ´">
               </div>
             </div>
          <br/>
          <div class="control-group">
-              <label class="control-label" for="a_web">¡¤ À¥ »çÀÌÆ®</label>
+              <label class="control-label" for="a_web">Â· ì›¹ ì‚¬ì´íŠ¸</label>
               <div class="controls">
                 <input name="a_web" class="form-control input" id="a_web" type="text" value="${areaModel.a_web }" placeholder="ex) www.google.co.kr">
               </div>
             </div>
          <br/>
          <div class="control-group">
-              <label class="control-label" for="a_con">¡¤ »ó¼¼ ¼³¸í</label>
+              <label class="control-label" for="a_con">Â· ìƒì„¸ ì„¤ëª…</label>
               <div class="controls">
                 <textarea rows="10" cols="100"  name="a_con" class="form-control input" id="a_con" 
-                placeholder="ex) ¾Ğ±¸Á¤/Ã»´ã¿¡ ÀÌ¾î »õ·Î¿î ÆĞ¼Ç, ºäÆ¼, ¹®È­ÀÇ Áß½ÉÁö ¿ªÇÒÀ» ÇÏ°í ÀÖ´Â °¡·Î¼ö±æÀº ¿µµ¿È£ÅÚ ¸ÂÀºÆí ºÎÅÍ ½ÃÀÛÇÏ¿© ¾Ğ±¸Á¤ Çö´ë°íµîÇĞ±³ »çÀÌÀÇ 700mÁ¤µµÀÇ °Å¸®¸¦ °¡·Î¼ö±æÀÌ¶ó°í...">${areaModel.a_con }</textarea>
+                placeholder="ex) ì••êµ¬ì •/ì²­ë‹´ì— ì´ì–´ ìƒˆë¡œìš´ íŒ¨ì…˜, ë·°í‹°, ë¬¸í™”ì˜ ì¤‘ì‹¬ì§€ ì—­í• ì„ í•˜ê³  ìˆëŠ” ê°€ë¡œìˆ˜ê¸¸ì€ ì˜ë™í˜¸í…” ë§ì€í¸ ë¶€í„° ì‹œì‘í•˜ì—¬ ì••êµ¬ì • í˜„ëŒ€ê³ ë“±í•™êµ ì‚¬ì´ì˜ 700mì •ë„ì˜ ê±°ë¦¬ë¥¼ ê°€ë¡œìˆ˜ê¸¸ì´ë¼ê³ ...">${areaModel.a_con }</textarea>
               </div>
             </div>
          <br/>
          <div class="control-group">
-              <label class="control-label" for="file">¡¤ Ã·ºÎÆÄÀÏ</label>
+              <label class="control-label" for="file">Â· ì²¨ë¶€íŒŒì¼</label>
               <div class="controls">
               <input id="files-upload" type="file" name="file" multiple>
 				
@@ -131,7 +131,7 @@ function searchMap(){
 				</ul>
 				
 				<ul>
-					<li class="no-items"><font color="red">* ÀÌ¹ÌÁö ÆÄÀÏÀ» ´Ù½Ã Ã·ºÎÇÏÁö ¾ÊÀ¸¸é ÀÌÀü ¿øº» ÀÌ¹ÌÁö·Î ÀúÀåÀÌ µË´Ï´Ù.</font></li>
+					<li class="no-items"><font color="red">* ì´ë¯¸ì§€ íŒŒì¼ì„ ë‹¤ì‹œ ì²¨ë¶€í•˜ì§€ ì•Šìœ¼ë©´ ì´ì „ ì›ë³¸ ì´ë¯¸ì§€ë¡œ ì €ì¥ì´ ë©ë‹ˆë‹¤.</font></li>
 					<c:forEach var="imgList" items="${imgList }" varStatus="stat">
 						<c:if test="${stat.index == 0 }">
 						</c:if>
@@ -140,7 +140,7 @@ function searchMap(){
 				</ul>
 <script>
 
-/* ÆÄÀÏ ¾÷·Îµå */
+/* íŒŒì¼ ì—…ë¡œë“œ */
 
 var filesUpload = document.getElementById("files-upload"),
     fileList = document.getElementById("file-list");
@@ -187,8 +187,8 @@ filesUpload.onchange = function () {
 </div>
 <center>
 <input type="hidden" name="a_no" value="${param.a_no }" />
-<button class="btn btn-success" onclick="this.form.submit();">¼öÁ¤ÇÏ±â</button>&nbsp;</form>
-<button class="btn btn-default" onclick="areaDetail();">Ãë¼Ò</button>
+<button class="btn btn-success" onclick="this.form.submit();">ìˆ˜ì •í•˜ê¸°</button>&nbsp;</form>
+<button class="btn btn-default" onclick="areaDetail();">ì·¨ì†Œ</button>
 </center>
 <br><br><br>
 </body>

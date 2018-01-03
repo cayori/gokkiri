@@ -6,9 +6,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<title>ÀÏÁ¤ ¸¸µé±â</title>
+<title>ì¼ì • ë§Œë“¤ê¸°</title>
 <style>
-/*µî·ÏÇÏ±â ¹öÆ° */
+/*ë“±ë¡í•˜ê¸° ë²„íŠ¼ */
 .button {
   padding: 10px 10px;
   font-size: 16px;
@@ -28,7 +28,7 @@
   transform: translateY(4px);
 }
 
-    .wrap {position: absolute;left: 0;bottom: 40px;width: 288px;height: 132px;margin-left: -144px;text-align: left;overflow: hidden;font-size: 12px;font-family: 'Malgun Gothic', dotum, 'µ¸¿ò', sans-serif;line-height: 1.5;}
+    .wrap {position: absolute;left: 0;bottom: 40px;width: 288px;height: 132px;margin-left: -144px;text-align: left;overflow: hidden;font-size: 12px;font-family: 'Malgun Gothic', dotum, 'ë‹ì›€', sans-serif;line-height: 1.5;}
     .wrap * {padding: 0;margin: 0;}
     .wrap .info {width: 286px;height: 120px;border-radius: 5px;border-bottom: 2px solid #ccc;border-right: 1px solid #ccc;overflow: hidden;background: #fff;}
     .wrap .info:nth-child(1) {border: 0;box-shadow: 0px 1px 2px #888;}
@@ -68,13 +68,13 @@ $(document).ready(function(){
 <form:form class="form-inline" action="scheduleComplete.go">
   <div class="form-group" style="margin-top: 0px; margin-bottom: 0px; padding-left: 10px;">
     <label for="exampleInputName2"><font size="5"><span class="glyphicon glyphicon-tags"></span></font>&nbsp;&nbsp;</label>
-    <input type="text" class="form-control" name="s_name" value="${sch.s_name }" placeholder="ÀÏÁ¤ ÀÌ¸§À» ÀÔ·ÂÇØÁÖ¼¼¿ä.">
+    <input type="text" class="form-control" name="s_name" value="${sch.s_name }" placeholder="ì¼ì • ì´ë¦„ì„ ì…ë ¥í•´ì£¼ì„¸ìš”.">
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   </div>
   
   <c:if test="${not empty togetherList }">
 	  <button class="btn btn-default btn-md" type="button" onclick="#" data-toggle="modal" data-target="#together">
-	     	<span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp;°øÀ¯ Ä£±¸ ¸ñ·Ï
+	     	<span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp;ê³µìœ  ì¹œêµ¬ ëª©ë¡
 	  </button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   </c:if>
   								 <div id="together" class="modal fade" role="dialog">
@@ -83,26 +83,26 @@ $(document).ready(function(){
 					               	<div class="modal-content">
 						                <div class="modal-header">
 							                <button type="button" class="close" data-dismiss="modal">&times;</button>
-							                <h4 class="modal-title">°øÀ¯ Ä£±¸ ¸ñ·Ï</h4>
+							                <h4 class="modal-title">ê³µìœ  ì¹œêµ¬ ëª©ë¡</h4>
 						                </div>
 						                <div class="modal-body">
   	<c:forEach var="togetherList" items="${togetherList }">
     		<span class="glyphicon glyphicon-user"></span>&nbsp;${togetherList.s_together }
     		<c:if test="${togetherList.s_state == 0 }">
-				(¿äÃ»Áß...)&nbsp;
+				(ìš”ì²­ì¤‘...)&nbsp;
 			</c:if>
 			<br/>
     </c:forEach>
 						                </div>                 
 						                <div class="modal-footer">
-						                	<button type="button" class="btn btn-default" data-dismiss="modal">³ª°¡±â</button>
+						                	<button type="button" class="btn btn-default" data-dismiss="modal">ë‚˜ê°€ê¸°</button>
 						                </div>
 					               	</div>
 					               </div>
 					             </div>
   
   <input type="hidden" name="s_no" value="${param.s_no }">
-  <button class="button" type="submit">ÀÏÁ¤ ¿Ï¼º!</button>
+  <button class="button" type="submit">ì¼ì • ì™„ì„±!</button>
 </form:form>
 </div>
 
@@ -119,12 +119,12 @@ $(document).ready(function(){
 							<c:forEach var="a" begin="1" end="${sch.s_idx+1}" step="1">
 								<c:if test="${param.a_cate == null }">
 								  <button type="button" onclick="javascript:location.href='scheduleArea.go?s_no=${param.s_no}&state_no=${param.state_no}&c_no=${param.c_no}&s_idx=${a}'" class="btn btn-default btn-xs">
-								  	${a }ÀÏÂ÷
+								  	${a }ì¼ì°¨
 								  </button>
 							    </c:if>
 							    <c:if test="${param.a_cate != null }">
 								  <button type="button" onclick="javascript:location.href='scheduleArea.go?s_no=${param.s_no}&state_no=${param.state_no}&c_no=${param.c_no}&a_cate=${param.a_cate }&s_idx=${a}'" class="btn btn-default btn-xs">
-								  	${a }ÀÏÂ÷
+								  	${a }ì¼ì°¨
 								  </button>
 							    </c:if>
 							</c:forEach>	
@@ -138,10 +138,10 @@ $(document).ready(function(){
                             	<tr>
                             		<td style="text-align:center; font-weight:bold;">
                             			<c:if test="${empty scheduleList }">
-                            				ÀÏÁ¤À» Ãß°¡ÇØÁÖ¼¼¿ä.
+                            				ì¼ì •ì„ ì¶”ê°€í•´ì£¼ì„¸ìš”.
                             			</c:if>
                             			<c:if test="${not empty scheduleList }">
-                            				<span class="glyphicon glyphicon-th-list"></span>&nbsp;${param.s_idx }ÀÏÂ÷ ÀÏÁ¤ ¸ñ·Ï
+                            				<span class="glyphicon glyphicon-th-list"></span>&nbsp;${param.s_idx }ì¼ì°¨ ì¼ì • ëª©ë¡
                             			</c:if>
                             		</td>
                             	</tr>
@@ -158,19 +158,19 @@ $(document).ready(function(){
 	                                   	${scheduleList.a_name } 
 	                                   </td>
 	                                   <td class="col-xs-2" style="text-align:right">
-	                                   	<button onclick="#" data-toggle="modal" data-target="#memo_${stat.count }" class="btn btn-default btn-xs">¸Ş¸ğ</button>
+	                                   	<button onclick="#" data-toggle="modal" data-target="#memo_${stat.count }" class="btn btn-default btn-xs">ë©”ëª¨</button>
 	                                   </td>
 	                                   <td class="col-xs-2" style="text-align:right">
 	                                   	<c:if test="${param.a_cate == null }">
 	                                   		<c:if test="${!stat.first }">
 	                                   			<span class="glyphicon glyphicon-chevron-up"
-	                                   				data-toggle="tooltip" title="ÀÌ ¿©ÇàÁöÀÇ ¼ø¼­¸¦ º¯°æÇÕ´Ï´Ù."
+	                                   				data-toggle="tooltip" title="ì´ ì—¬í–‰ì§€ì˜ ìˆœì„œë¥¼ ë³€ê²½í•©ë‹ˆë‹¤."
 	                                   				style="cursor:pointer;"
 	                                   				onclick="javascript:location.href='turnDown.go?s_no=${param.s_no}&state_no=${param.state_no}&c_no=${param.c_no}&s_idx=${param.s_idx}&a_no=${scheduleList.a_no }&s_detail_turn=${scheduleList.s_detail_turn }'"></span>
 								        	</c:if>
 								        	<c:if test="${!stat.last }">
 								        		<span class="glyphicon glyphicon-chevron-down"
-								        			data-toggle="tooltip" title="ÀÌ ¿©ÇàÁöÀÇ ¼ø¼­¸¦ º¯°æÇÕ´Ï´Ù."
+								        			data-toggle="tooltip" title="ì´ ì—¬í–‰ì§€ì˜ ìˆœì„œë¥¼ ë³€ê²½í•©ë‹ˆë‹¤."
 								        			style="cursor:pointer;"
 								        			onclick="javascript:location.href='turnUp.go?s_no=${param.s_no}&state_no=${param.state_no}&c_no=${param.c_no}&s_idx=${param.s_idx}&a_no=${scheduleList.a_no }&s_detail_turn=${scheduleList.s_detail_turn }'"></span>
 								        	</c:if>
@@ -178,13 +178,13 @@ $(document).ready(function(){
 								        <c:if test="${param.a_cate != null }">
 	                                   		<c:if test="${!stat.first }">
 	                                   			<span class="glyphicon glyphicon-chevron-up"
-	                                   				data-toggle="tooltip" title="ÀÌ ¿©ÇàÁöÀÇ ¼ø¼­¸¦ º¯°æÇÕ´Ï´Ù."
+	                                   				data-toggle="tooltip" title="ì´ ì—¬í–‰ì§€ì˜ ìˆœì„œë¥¼ ë³€ê²½í•©ë‹ˆë‹¤."
 	                                   				style="cursor:pointer;"
 	                                   				onclick="javascript:location.href='turnDown.go?s_no=${param.s_no}&state_no=${param.state_no}&c_no=${param.c_no}&a_cate=${param.a_cate }&s_idx=${param.s_idx}&a_no=${scheduleList.a_no }&s_detail_turn=${scheduleList.s_detail_turn }'"></span>
 								        	</c:if>
 								        	<c:if test="${!stat.last }">
 								        		<span class="glyphicon glyphicon-chevron-down"
-								        			data-toggle="tooltip" title="ÀÌ ¿©ÇàÁöÀÇ ¼ø¼­¸¦ º¯°æÇÕ´Ï´Ù."
+								        			data-toggle="tooltip" title="ì´ ì—¬í–‰ì§€ì˜ ìˆœì„œë¥¼ ë³€ê²½í•©ë‹ˆë‹¤."
 								        			style="cursor:pointer;"
 								        			onclick="javascript:location.href='turnUp.go?s_no=${param.s_no}&state_no=${param.state_no}&c_no=${param.c_no}&a_cate=${param.a_cate }&s_idx=${param.s_idx}&a_no=${scheduleList.a_no }&s_detail_turn=${scheduleList.s_detail_turn }'"></span>
 								        	</c:if>
@@ -193,14 +193,14 @@ $(document).ready(function(){
 								       <td class="col-xs-1" style="text-align:right">
 								       		<c:if test="${param.a_cate ==null }">
 											<span class="glyphicon glyphicon-remove"
-								        		data-toggle="tooltip" title="ÀÌ ¿©ÇàÁö¸¦ ÀÏÁ¤¿¡¼­ »èÁ¦ÇÕ´Ï´Ù." 
+								        		data-toggle="tooltip" title="ì´ ì—¬í–‰ì§€ë¥¼ ì¼ì •ì—ì„œ ì‚­ì œí•©ë‹ˆë‹¤." 
 								        		style="cursor:pointer;"
 								        		onclick="javascript:location.href='deleteArea.go?s_no=${param.s_no}&state_no=${param.state_no}&c_no=${param.c_no}&s_idx=${param.s_idx}&a_no=${scheduleList.a_no }&s_detail_turn=${scheduleList.s_detail_turn }'">
 								        	</span>
 								        	</c:if>
 								        	<c:if test="${param.a_cate !=null }">
 											<span class="glyphicon glyphicon-remove"
-								        		data-toggle="tooltip" title="ÀÌ ¿©ÇàÁö¸¦ ÀÏÁ¤¿¡¼­ »èÁ¦ÇÕ´Ï´Ù." 
+								        		data-toggle="tooltip" title="ì´ ì—¬í–‰ì§€ë¥¼ ì¼ì •ì—ì„œ ì‚­ì œí•©ë‹ˆë‹¤." 
 								        		style="cursor:pointer;"
 								        		onclick="javascript:location.href='deleteArea.go?s_no=${param.s_no}&state_no=${param.state_no}&c_no=${param.c_no}&s_idx=${param.s_idx}&a_cate=${param.a_cate }&a_no=${scheduleList.a_no }&s_detail_turn=${scheduleList.s_detail_turn }'">
 								        	</span>
@@ -215,7 +215,7 @@ $(document).ready(function(){
 					                     <div class="modal-content">
 					                        <div class="modal-header">
 					                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-					                        <h4 class="modal-title">¸Ş¸ğ</h4>
+					                        <h4 class="modal-title">ë©”ëª¨</h4>
 					                        </div>
 					                     
 					                        <div class="modal-body">
@@ -231,8 +231,8 @@ $(document).ready(function(){
 					                        </div>
 					                                                    
 					                           <div class="modal-footer">
-					                              <input type="submit" class="btn btn-primary odom-submit" value="ÀúÀå" onclick='document.forms["schDownload"].submit();'/>
-					                              <button type="button" class="btn btn-default" data-dismiss="modal">³ª°¡±â</button>
+					                              <input type="submit" class="btn btn-primary odom-submit" value="ì €ì¥" onclick='document.forms["schDownload"].submit();'/>
+					                              <button type="button" class="btn btn-default" data-dismiss="modal">ë‚˜ê°€ê¸°</button>
 					                           </div>
 					                        </div>
 					                     </form:form>
@@ -254,10 +254,10 @@ $(document).ready(function(){
                         	<button onclick="javascript:location.href='scheduleCity.go?s_no=${param.s_no}&state_no=${param.state_no}'" 
                         		class="btn btn-default btn-xs"
                         		style="margin-bottom: 5px;">
-                        				<span class="glyphicon glyphicon-refresh"></span>&nbsp;µµ½Ã º¯°æ
+                        				<span class="glyphicon glyphicon-refresh"></span>&nbsp;ë„ì‹œ ë³€ê²½
                         	</button>
                         	<br>
-                        	¿©ÇàÁö
+                        	ì—¬í–‰ì§€
 							<div style="padding-top: 5px;">
 								<form action="scheduleArea.go">
 									<div class="input-group">
@@ -268,27 +268,27 @@ $(document).ready(function(){
 											<input type="hidden" value="${param.a_cate }" name="a_cate">
 										</c:if>
 										<input type="hidden" value="${param.s_idx }" name="s_idx">
-										<input type="text" class="form-control input-sm" placeholder="¿©ÇàÁö ÀÌ¸§" name="searchKeyword">
+										<input type="text" class="form-control input-sm" placeholder="ì—¬í–‰ì§€ ì´ë¦„" name="searchKeyword">
 									    <div class="input-group-btn">
 										        <button type="submit" 
-										        		class="btn btn-default btn-sm">°Ë»ö</button>
+										        		class="btn btn-default btn-sm">ê²€ìƒ‰</button>
 									    </div>
 								    </div>
 								</form>
 							</div>
 							<div class="btn-group" style="padding-top: 5px;" >
 							  <button type="button" onclick="javascript:location.href='scheduleArea.go?s_no=${param.s_no }&state_no=${param.state_no}&c_no=${param.c_no}&s_idx=${param.s_idx }'" class="btn btn-default btn-xs">
-							  	<span class="glyphicon glyphicon-th-list"></span>&nbsp;ÀüÃ¼
+							  	<span class="glyphicon glyphicon-th-list"></span>&nbsp;ì „ì²´
 							  </button>
 							  <button type="button" onclick="javascript:location.href='scheduleArea.go?s_no=${param.s_no }&state_no=${param.state_no}&c_no=${param.c_no}&a_cate=0&s_idx=${param.s_idx }'" 
-							  	data-toggle="tooltip" title="¿©ÇàÁö Áß °ü±¤Áö¸¸ °Ë»öÇÕ´Ï´Ù." 
+							  	data-toggle="tooltip" title="ì—¬í–‰ì§€ ì¤‘ ê´€ê´‘ì§€ë§Œ ê²€ìƒ‰í•©ë‹ˆë‹¤." 
 							  	class="btn btn-default btn-xs">
-							  		<span class="glyphicon glyphicon-camera"></span>&nbsp;°ü±¤Áö
+							  		<span class="glyphicon glyphicon-camera"></span>&nbsp;ê´€ê´‘ì§€
 							  </button>
 							  <button type="button" onclick="javascript:location.href='scheduleArea.go?s_no=${param.s_no }&state_no=${param.state_no}&c_no=${param.c_no}&a_cate=1&s_idx=${param.s_idx }'" 
-							  	data-toggle="tooltip" title="¿©ÇàÁö Áß ¸ÀÁı¸¸ °Ë»öÇÕ´Ï´Ù." 
+							  	data-toggle="tooltip" title="ì—¬í–‰ì§€ ì¤‘ ë§›ì§‘ë§Œ ê²€ìƒ‰í•©ë‹ˆë‹¤." 
 							  	class="btn btn-default btn-xs">
-							  		<span class="glyphicon glyphicon-cutlery"></span>&nbsp;¸ÀÁı
+							  		<span class="glyphicon glyphicon-cutlery"></span>&nbsp;ë§›ì§‘
 							  </button>
 							</div>
                         </h4>
@@ -310,23 +310,23 @@ $(document).ready(function(){
 		                                   </td>
 		                                   <td 
 	                                   		style="cursor:pointer;" 
-	                                   		onclick="window.open('http://localhost:8080/gokkiri/area/areaDetail.go?a_no=${schAreaList.a_no}&keyword=info','¿©ÇàÁö Á¤º¸','width=550, height=500, toolbar=no, menubar=no, scrollbars=yes,status=no, resizable=yes');return false;">
+	                                   		onclick="window.open('http://localhost:8080/gokkiri/area/areaDetail.go?a_no=${schAreaList.a_no}&keyword=info','ì—¬í–‰ì§€ ì •ë³´','width=550, height=500, toolbar=no, menubar=no, scrollbars=yes,status=no, resizable=yes');return false;">
 		                                   	<span class="glyphicon glyphicon-info-sign"></span>
 		                                   </td>
 		                                   <td>
-		                                   	<span data-toggle="tooltip" title="ÀÎ±â°¡ ¸¹Àº ¿©ÇàÁö" class="glyphicon glyphicon-paperclip">${schAreaList.a_count }</span>
+		                                   	<span data-toggle="tooltip" title="ì¸ê¸°ê°€ ë§ì€ ì—¬í–‰ì§€" class="glyphicon glyphicon-paperclip">${schAreaList.a_count }</span>
 		                                   </td>
 		                                   <td style="text-align:right">
 		                                   <c:if test="${param.a_cate!=null }">
 		                                   	<span class="glyphicon glyphicon-plus"
-		                                   		data-toggle="tooltip" title="ÀÌ ¿©ÇàÁö¸¦ ÀÏÁ¤¿¡ Ãß°¡ÇÕ´Ï´Ù." 
+		                                   		data-toggle="tooltip" title="ì´ ì—¬í–‰ì§€ë¥¼ ì¼ì •ì— ì¶”ê°€í•©ë‹ˆë‹¤." 
 		                                   		style="cursor:pointer;"
 		                                   		onclick="javascript:location.href='insertArea.go?s_no=${param.s_no}&state_no=${param.state_no}&c_no=${param.c_no}&s_idx=${param.s_idx}&a_cate=${param.a_cate }&a_no=${schAreaList.a_no }'">
 		                                   	</span>
 		                                   </c:if>
 		                                   <c:if test="${param.a_cate==null }">
 		                                   	<span class="glyphicon glyphicon-plus"
-		                                   		data-toggle="tooltip" title="ÀÌ ¿©ÇàÁö¸¦ ÀÏÁ¤¿¡ Ãß°¡ÇÕ´Ï´Ù." 
+		                                   		data-toggle="tooltip" title="ì´ ì—¬í–‰ì§€ë¥¼ ì¼ì •ì— ì¶”ê°€í•©ë‹ˆë‹¤." 
 		                                   		style="cursor:pointer;"
 		                                   		onclick="javascript:location.href='insertArea.go?s_no=${param.s_no}&state_no=${param.state_no}&c_no=${param.c_no}&s_idx=${param.s_idx}&a_no=${schAreaList.a_no }'">
 		                                   	</span>
@@ -349,7 +349,7 @@ $(document).ready(function(){
 		                                   </td>
 		                                   <td
 	                                   		style="cursor:pointer;" 
-											onclick="window.open('http://localhost:8080/gokkiri/area/areaDetail.go?a_no=${schAreaSearch.a_no}&keyword=info','¿©ÇàÁö Á¤º¸','width=550, height=500, toolbar=no, menubar=no, scrollbars=yes,status=no, resizable=yes');return false;">
+											onclick="window.open('http://localhost:8080/gokkiri/area/areaDetail.go?a_no=${schAreaSearch.a_no}&keyword=info','ì—¬í–‰ì§€ ì •ë³´','width=550, height=500, toolbar=no, menubar=no, scrollbars=yes,status=no, resizable=yes');return false;">
 		                                   	<span class="glyphicon glyphicon-info-sign"></span>
 		                                   </td>
 		                                   <td>
@@ -357,7 +357,7 @@ $(document).ready(function(){
 		                                   </td>
 		                                   <td>
 		                                   	<span class="glyphicon glyphicon-plus"
-		                                   		data-toggle="tooltip" title="ÀÌ ¿©ÇàÁö¸¦ ÀÏÁ¤¿¡ Ãß°¡ÇÕ´Ï´Ù." 
+		                                   		data-toggle="tooltip" title="ì´ ì—¬í–‰ì§€ë¥¼ ì¼ì •ì— ì¶”ê°€í•©ë‹ˆë‹¤." 
 		                                   		style="cursor:pointer;"
 		                                   		onclick="javascript:location.href='insertArea.go?s_no=${param.s_no}&state_no=${param.state_no}&c_no=${param.c_no}&s_idx=${param.s_idx}&a_no=${schAreaSearch.a_no }'"></span>
 									       </td>
@@ -376,7 +376,7 @@ $(document).ready(function(){
 						                	<div class="modal-body">
 						                </div>                 
 						                <div class="modal-footer">
-						                	<button type="button" class="btn btn-default" data-dismiss="modal">³ª°¡±â</button>
+						                	<button type="button" class="btn btn-default" data-dismiss="modal">ë‚˜ê°€ê¸°</button>
 						                </div>
 					               	</div>
 					               </div>
@@ -396,33 +396,33 @@ $(document).ready(function(){
   
 <script type="text/javascript" src="//apis.daum.net/maps/maps3.js?apikey=431016a3643e6541b4ac065848f17cb3&libraries=services"></script>
 <script async="async">
-var mapContainer = document.getElementById('map'), // Áöµµ¸¦ Ç¥½ÃÇÒ div 
+var mapContainer = document.getElementById('map'), // ì§€ë„ë¥¼ í‘œì‹œí•  div 
     mapOption = {
-        center: new daum.maps.LatLng(37.534584, 126.983512), // ÁöµµÀÇ Áß½ÉÁÂÇ¥
-        level: 8 // ÁöµµÀÇ È®´ë ·¹º§
+        center: new daum.maps.LatLng(37.534584, 126.983512), // ì§€ë„ì˜ ì¤‘ì‹¬ì¢Œí‘œ
+        level: 8 // ì§€ë„ì˜ í™•ëŒ€ ë ˆë²¨
     };  
 
-// Áöµµ¸¦ »ı¼ºÇÕ´Ï´Ù    
+// ì§€ë„ë¥¼ ìƒì„±í•©ë‹ˆë‹¤    
 var map = new daum.maps.Map(mapContainer, mapOption); 
 
-//Áöµµ Å¸ÀÔ º¯°æ ÄÁÆ®·ÑÀ» »ı¼ºÇÑ´Ù
+//ì§€ë„ íƒ€ì… ë³€ê²½ ì»¨íŠ¸ë¡¤ì„ ìƒì„±í•œë‹¤
 var mapTypeControl = new daum.maps.MapTypeControl();
-// ÁöµµÀÇ »ó´Ü ¿ìÃø¿¡ Áöµµ Å¸ÀÔ º¯°æ ÄÁÆ®·ÑÀ» Ãß°¡ÇÑ´Ù
+// ì§€ë„ì˜ ìƒë‹¨ ìš°ì¸¡ì— ì§€ë„ íƒ€ì… ë³€ê²½ ì»¨íŠ¸ë¡¤ì„ ì¶”ê°€í•œë‹¤
 map.addControl(mapTypeControl, daum.maps.ControlPosition.TOPRIGHT);	
-//Áöµµ¿¡ È®´ë Ãà¼Ò ÄÁÆ®·ÑÀ» »ı¼ºÇÑ´Ù
+//ì§€ë„ì— í™•ëŒ€ ì¶•ì†Œ ì»¨íŠ¸ë¡¤ì„ ìƒì„±í•œë‹¤
 var zoomControl = new daum.maps.ZoomControl();
-// ÁöµµÀÇ ¿ìÃø¿¡ È®´ë Ãà¼Ò ÄÁÆ®·ÑÀ» Ãß°¡ÇÑ´Ù
+// ì§€ë„ì˜ ìš°ì¸¡ì— í™•ëŒ€ ì¶•ì†Œ ì»¨íŠ¸ë¡¤ì„ ì¶”ê°€í•œë‹¤
 map.addControl(zoomControl, daum.maps.ControlPosition.RIGHT);
 
-// ÁÖ¼Ò-ÁÂÇ¥ º¯È¯ °´Ã¼¸¦ »ı¼ºÇÕ´Ï´Ù
+// ì£¼ì†Œ-ì¢Œí‘œ ë³€í™˜ ê°ì²´ë¥¼ ìƒì„±í•©ë‹ˆë‹¤
 var geocoder = new daum.maps.services.Geocoder();
 
-//Áöµµ¸¦ Àç¼³Á¤ÇÒ ¹üÀ§Á¤º¸¸¦ °¡Áö°í ÀÖÀ» LatLngBounds °´Ã¼¸¦ »ı¼ºÇÕ´Ï´Ù
+//ì§€ë„ë¥¼ ì¬ì„¤ì •í•  ë²”ìœ„ì •ë³´ë¥¼ ê°€ì§€ê³  ìˆì„ LatLngBounds ê°ì²´ë¥¼ ìƒì„±í•©ë‹ˆë‹¤
 var bounds = new daum.maps.LatLngBounds(); 
 
 window.onload = function setBounds() {
-    // LatLngBounds °´Ã¼¿¡ Ãß°¡µÈ ÁÂÇ¥µéÀ» ±âÁØÀ¸·Î ÁöµµÀÇ ¹üÀ§¸¦ Àç¼³Á¤ÇÕ´Ï´Ù
-    // ÀÌ¶§ ÁöµµÀÇ Áß½ÉÁÂÇ¥¿Í ·¹º§ÀÌ º¯°æµÉ ¼ö ÀÖ½À´Ï´Ù
+    // LatLngBounds ê°ì²´ì— ì¶”ê°€ëœ ì¢Œí‘œë“¤ì„ ê¸°ì¤€ìœ¼ë¡œ ì§€ë„ì˜ ë²”ìœ„ë¥¼ ì¬ì„¤ì •í•©ë‹ˆë‹¤
+    // ì´ë•Œ ì§€ë„ì˜ ì¤‘ì‹¬ì¢Œí‘œì™€ ë ˆë²¨ì´ ë³€ê²½ë  ìˆ˜ ìˆìŠµë‹ˆë‹¤
     map.setBounds(bounds);
 }
 
@@ -430,78 +430,78 @@ var linePath = new Array();
 
 <c:forEach var="scheduleList" items="${scheduleList }" varStatus="status">
 geocoder.addr2coord('${scheduleList.a_addr}', function(status, result) {
-	// Á¤»óÀûÀ¸·Î °Ë»öÀÌ ¿Ï·áµÆÀ¸¸é 
+	// ì •ìƒì ìœ¼ë¡œ ê²€ìƒ‰ì´ ì™„ë£Œëìœ¼ë©´ 
      if (status === daum.maps.services.Status.OK) {
 
     	var coords = new daum.maps.LatLng(result.addr[0].lat, result.addr[0].lng);
 		
-    	//¸ÀÁı
+    	//ë§›ì§‘
     	if(${scheduleList.a_cate}==1){
     	var markerImageUrl = 'http://t1.daumcdn.net/localimg/localimages/07/2012/img/marker_r.png', 
-	    markerImageSize = new daum.maps.Size(27, 27), // ¸¶Ä¿ ÀÌ¹ÌÁöÀÇ Å©±â
+	    markerImageSize = new daum.maps.Size(27, 27), // ë§ˆì»¤ ì´ë¯¸ì§€ì˜ í¬ê¸°
 	    markerImageOptions = { 
-	        spriteOrigin : new daum.maps.Point(46, 154), // ½ºÇÁ¶óÀÌÆ® ÀÌ¹ÌÁö Áß »ç¿ëÇÒ ¿µ¿ªÀÇ ÁÂ»ó´Ü ÁÂÇ¥
-	        spriteSize : new daum.maps.Size(72, 648), // ½ºÇÁ¶óÀÌÆ® ÀÌ¹ÌÁöÀÇ ÀüÃ¼ Å©±â 
-	        offset : new daum.maps.Point(11, 27)// ¸¶Ä¿ ÁÂÇ¥¿¡ ÀÏÄ¡½ÃÅ³ ÀÌ¹ÌÁö ¾ÈÀÇ ÁÂÇ¥
+	        spriteOrigin : new daum.maps.Point(46, 154), // ìŠ¤í”„ë¼ì´íŠ¸ ì´ë¯¸ì§€ ì¤‘ ì‚¬ìš©í•  ì˜ì—­ì˜ ì¢Œìƒë‹¨ ì¢Œí‘œ
+	        spriteSize : new daum.maps.Size(72, 648), // ìŠ¤í”„ë¼ì´íŠ¸ ì´ë¯¸ì§€ì˜ ì „ì²´ í¬ê¸° 
+	        offset : new daum.maps.Point(11, 27)// ë§ˆì»¤ ì¢Œí‘œì— ì¼ì¹˜ì‹œí‚¬ ì´ë¯¸ì§€ ì•ˆì˜ ì¢Œí‘œ
 	    };
 
-		// ¸¶Ä¿ ÀÌ¹ÌÁö¸¦ »ı¼ºÇÑ´Ù
+		// ë§ˆì»¤ ì´ë¯¸ì§€ë¥¼ ìƒì„±í•œë‹¤
 		var markerImage = new daum.maps.MarkerImage(markerImageUrl, markerImageSize, markerImageOptions);
 	
-		// Áöµµ¿¡ ¸¶Ä¿¸¦ »ı¼ºÇÏ°í Ç¥½ÃÇÑ´Ù
+		// ì§€ë„ì— ë§ˆì»¤ë¥¼ ìƒì„±í•˜ê³  í‘œì‹œí•œë‹¤
 		var marker = new daum.maps.Marker({
-		    position: coords, // ¸¶Ä¿ÀÇ ÁÂÇ¥
-		    image : markerImage, // ¸¶Ä¿ÀÇ ÀÌ¹ÌÁö
-		    map: map // ¸¶Ä¿¸¦ Ç¥½ÃÇÒ Áöµµ °´Ã¼
+		    position: coords, // ë§ˆì»¤ì˜ ì¢Œí‘œ
+		    image : markerImage, // ë§ˆì»¤ì˜ ì´ë¯¸ì§€
+		    map: map // ë§ˆì»¤ë¥¼ í‘œì‹œí•  ì§€ë„ ê°ì²´
 		});
     	}
         
-    	//°ü±¤Áö
+    	//ê´€ê´‘ì§€
     	if (${scheduleList.a_cate}==0) {
-		// ¸¶Ä¿ ÀÌ¹ÌÁöÀÇ ÁÖ¼Ò
+		// ë§ˆì»¤ ì´ë¯¸ì§€ì˜ ì£¼ì†Œ
 		var markerImageUrl = 'http://t1.daumcdn.net/localimg/localimages/07/2012/img/marker_r.png', 
-		    markerImageSize = new daum.maps.Size(27, 27), // ¸¶Ä¿ ÀÌ¹ÌÁöÀÇ Å©±â
+		    markerImageSize = new daum.maps.Size(27, 27), // ë§ˆì»¤ ì´ë¯¸ì§€ì˜ í¬ê¸°
 		    markerImageOptions = { 
-		        spriteOrigin : new daum.maps.Point(46, 118), // ½ºÇÁ¶óÀÌÆ® ÀÌ¹ÌÁö Áß »ç¿ëÇÒ ¿µ¿ªÀÇ ÁÂ»ó´Ü ÁÂÇ¥
-		        spriteSize : new daum.maps.Size(72, 648), // ½ºÇÁ¶óÀÌÆ® ÀÌ¹ÌÁöÀÇ ÀüÃ¼ Å©±â 
-		        offset : new daum.maps.Point(11, 27)// ¸¶Ä¿ ÁÂÇ¥¿¡ ÀÏÄ¡½ÃÅ³ ÀÌ¹ÌÁö ¾ÈÀÇ ÁÂÇ¥
+		        spriteOrigin : new daum.maps.Point(46, 118), // ìŠ¤í”„ë¼ì´íŠ¸ ì´ë¯¸ì§€ ì¤‘ ì‚¬ìš©í•  ì˜ì—­ì˜ ì¢Œìƒë‹¨ ì¢Œí‘œ
+		        spriteSize : new daum.maps.Size(72, 648), // ìŠ¤í”„ë¼ì´íŠ¸ ì´ë¯¸ì§€ì˜ ì „ì²´ í¬ê¸° 
+		        offset : new daum.maps.Point(11, 27)// ë§ˆì»¤ ì¢Œí‘œì— ì¼ì¹˜ì‹œí‚¬ ì´ë¯¸ì§€ ì•ˆì˜ ì¢Œí‘œ
 		    };
 
-		// ¸¶Ä¿ ÀÌ¹ÌÁö¸¦ »ı¼ºÇÑ´Ù
+		// ë§ˆì»¤ ì´ë¯¸ì§€ë¥¼ ìƒì„±í•œë‹¤
 		var markerImage = new daum.maps.MarkerImage(markerImageUrl, markerImageSize, markerImageOptions);
 
-		// Áöµµ¿¡ ¸¶Ä¿¸¦ »ı¼ºÇÏ°í Ç¥½ÃÇÑ´Ù
+		// ì§€ë„ì— ë§ˆì»¤ë¥¼ ìƒì„±í•˜ê³  í‘œì‹œí•œë‹¤
 		var marker = new daum.maps.Marker({
-		    position: coords, // ¸¶Ä¿ÀÇ ÁÂÇ¥
-		    image : markerImage, // ¸¶Ä¿ÀÇ ÀÌ¹ÌÁö
-		    map: map // ¸¶Ä¿¸¦ Ç¥½ÃÇÒ Áöµµ °´Ã¼
+		    position: coords, // ë§ˆì»¤ì˜ ì¢Œí‘œ
+		    image : markerImage, // ë§ˆì»¤ì˜ ì´ë¯¸ì§€
+		    map: map // ë§ˆì»¤ë¥¼ í‘œì‹œí•  ì§€ë„ ê°ì²´
 		});
      	}
        
-   	    // LatLngBounds °´Ã¼¿¡ ÁÂÇ¥¸¦ Ãß°¡ÇÕ´Ï´Ù
+   	    // LatLngBounds ê°ì²´ì— ì¢Œí‘œë¥¼ ì¶”ê°€í•©ë‹ˆë‹¤
         bounds.extend(coords);
    	    
    		 if(linePath.length == ${status.index}){
    	    	 linePath.push(coords);
    	     } 
-   	     // Áöµµ¿¡ Ç¥½ÃÇÒ ¼±À» »ı¼ºÇÕ´Ï´Ù
+   	     // ì§€ë„ì— í‘œì‹œí•  ì„ ì„ ìƒì„±í•©ë‹ˆë‹¤
    	     var polyline = new daum.maps.Polyline({
-   	         path: linePath, // ¼±À» ±¸¼ºÇÏ´Â ÁÂÇ¥¹è¿­ ÀÔ´Ï´Ù
-   	         strokeWeight: 2, // ¼±ÀÇ µÎ²² ÀÔ´Ï´Ù
-   	         strokeColor: '#db4040', // ¼±ÀÇ »ö±òÀÔ´Ï´Ù
-   	         strokeOpacity: 0.9, // ¼±ÀÇ ºÒÅõ¸íµµ ÀÔ´Ï´Ù 1¿¡¼­ 0 »çÀÌÀÇ °ªÀÌ¸ç 0¿¡ °¡±î¿ï¼ö·Ï Åõ¸íÇÕ´Ï´Ù
+   	         path: linePath, // ì„ ì„ êµ¬ì„±í•˜ëŠ” ì¢Œí‘œë°°ì—´ ì…ë‹ˆë‹¤
+   	         strokeWeight: 2, // ì„ ì˜ ë‘ê»˜ ì…ë‹ˆë‹¤
+   	         strokeColor: '#db4040', // ì„ ì˜ ìƒ‰ê¹”ì…ë‹ˆë‹¤
+   	         strokeOpacity: 0.9, // ì„ ì˜ ë¶ˆíˆ¬ëª…ë„ ì…ë‹ˆë‹¤ 1ì—ì„œ 0 ì‚¬ì´ì˜ ê°’ì´ë©° 0ì— ê°€ê¹Œìš¸ìˆ˜ë¡ íˆ¬ëª…í•©ë‹ˆë‹¤
    	         endArrow : true,
    	         map : map
    	     });
 
    
-         // Ä¿½ºÅÒ ¿À¹ö·¹ÀÌ¿¡ Ç¥½ÃÇÒ ³»¿ëÀÔ´Ï´Ù     
-	     // HTML ¹®ÀÚ¿­ ¶Ç´Â Dom Element ÀÔ´Ï´Ù 
+         // ì»¤ìŠ¤í…€ ì˜¤ë²„ë ˆì´ì— í‘œì‹œí•  ë‚´ìš©ì…ë‹ˆë‹¤     
+	     // HTML ë¬¸ìì—´ ë˜ëŠ” Dom Element ì…ë‹ˆë‹¤ 
 	    var content = '<div class ="label">'+
 	     			   '<span class="left"></span><span class="center"><bold>${status.index+1}</bold> ${scheduleList.a_name}</span><span class="right"></span>'+
 	     			   '</div>';
 
-	     // Ä¿½ºÅÒ ¿À¹ö·¹ÀÌ¸¦ »ı¼ºÇÕ´Ï´Ù
+	     // ì»¤ìŠ¤í…€ ì˜¤ë²„ë ˆì´ë¥¼ ìƒì„±í•©ë‹ˆë‹¤
 	     var customOverlay = new daum.maps.CustomOverlay({
 	    	 map: map,
 	         position: coords,
@@ -509,9 +509,9 @@ geocoder.addr2coord('${scheduleList.a_addr}', function(status, result) {
 	         yAnchor: 2.2
 	     });
          
-	  	// ¸¶Ä¿¿¡ Å¬¸¯ÀÌº¥Æ®¸¦ µî·ÏÇÕ´Ï´Ù
+	  	// ë§ˆì»¤ì— í´ë¦­ì´ë²¤íŠ¸ë¥¼ ë“±ë¡í•©ë‹ˆë‹¤
         daum.maps.event.addListener(marker, 'click', function() {
-             // ¸¶Ä¿ À§¿¡ ÀÎÆ÷À©µµ¿ì¸¦ Ç¥½ÃÇÕ´Ï´Ù
+             // ë§ˆì»¤ ìœ„ì— ì¸í¬ìœˆë„ìš°ë¥¼ í‘œì‹œí•©ë‹ˆë‹¤
          	 location.href='insertArea.go?s_no=${param.s_no}&state_no=${param.state_no}&c_no=${param.c_no}&s_idx=${param.s_idx}&a_no=${scheduleList.a_no }';
       	 });  
 
@@ -523,55 +523,55 @@ geocoder.addr2coord('${scheduleList.a_addr}', function(status, result) {
 <c:if test="${empty param.a_cate}">
 <c:forEach var="areaList" items="${areaList }" varStatus="status">
 geocoder.addr2coord('${areaList.a_addr}', function(status, result) {
-	// Á¤»óÀûÀ¸·Î °Ë»öÀÌ ¿Ï·áµÆÀ¸¸é 
+	// ì •ìƒì ìœ¼ë¡œ ê²€ìƒ‰ì´ ì™„ë£Œëìœ¼ë©´ 
      if (status === daum.maps.services.Status.OK) {
 
     	var coords = new daum.maps.LatLng(result.addr[0].lat, result.addr[0].lng);
 		
-    	//¸ÀÁı
+    	//ë§›ì§‘
     	<c:if test="${areaList.a_cate == 1}">
     	var markerImageUrl = 'http://t1.daumcdn.net/localimg/localimages/07/2012/img/marker_r.png', 
-	    markerImageSize = new daum.maps.Size(27, 27), // ¸¶Ä¿ ÀÌ¹ÌÁöÀÇ Å©±â
+	    markerImageSize = new daum.maps.Size(27, 27), // ë§ˆì»¤ ì´ë¯¸ì§€ì˜ í¬ê¸°
 	    markerImageOptions = { 
-	        spriteOrigin : new daum.maps.Point(10, 154), // ½ºÇÁ¶óÀÌÆ® ÀÌ¹ÌÁö Áß »ç¿ëÇÒ ¿µ¿ªÀÇ ÁÂ»ó´Ü ÁÂÇ¥
-	        spriteSize : new daum.maps.Size(72, 648), // ½ºÇÁ¶óÀÌÆ® ÀÌ¹ÌÁöÀÇ ÀüÃ¼ Å©±â 
-	        offset : new daum.maps.Point(11, 27)// ¸¶Ä¿ ÁÂÇ¥¿¡ ÀÏÄ¡½ÃÅ³ ÀÌ¹ÌÁö ¾ÈÀÇ ÁÂÇ¥
+	        spriteOrigin : new daum.maps.Point(10, 154), // ìŠ¤í”„ë¼ì´íŠ¸ ì´ë¯¸ì§€ ì¤‘ ì‚¬ìš©í•  ì˜ì—­ì˜ ì¢Œìƒë‹¨ ì¢Œí‘œ
+	        spriteSize : new daum.maps.Size(72, 648), // ìŠ¤í”„ë¼ì´íŠ¸ ì´ë¯¸ì§€ì˜ ì „ì²´ í¬ê¸° 
+	        offset : new daum.maps.Point(11, 27)// ë§ˆì»¤ ì¢Œí‘œì— ì¼ì¹˜ì‹œí‚¬ ì´ë¯¸ì§€ ì•ˆì˜ ì¢Œí‘œ
 	    };
 
-		// ¸¶Ä¿ ÀÌ¹ÌÁö¸¦ »ı¼ºÇÑ´Ù
+		// ë§ˆì»¤ ì´ë¯¸ì§€ë¥¼ ìƒì„±í•œë‹¤
 		var markerImage = new daum.maps.MarkerImage(markerImageUrl, markerImageSize, markerImageOptions);
 	
-		// Áöµµ¿¡ ¸¶Ä¿¸¦ »ı¼ºÇÏ°í Ç¥½ÃÇÑ´Ù
+		// ì§€ë„ì— ë§ˆì»¤ë¥¼ ìƒì„±í•˜ê³  í‘œì‹œí•œë‹¤
 		var marker = new daum.maps.Marker({
-		    position: coords, // ¸¶Ä¿ÀÇ ÁÂÇ¥
-		    image : markerImage, // ¸¶Ä¿ÀÇ ÀÌ¹ÌÁö
-		    map: map // ¸¶Ä¿¸¦ Ç¥½ÃÇÒ Áöµµ °´Ã¼
+		    position: coords, // ë§ˆì»¤ì˜ ì¢Œí‘œ
+		    image : markerImage, // ë§ˆì»¤ì˜ ì´ë¯¸ì§€
+		    map: map // ë§ˆì»¤ë¥¼ í‘œì‹œí•  ì§€ë„ ê°ì²´
 		});
         </c:if>
         
-    	//°ü±¤Áö
+    	//ê´€ê´‘ì§€
     	<c:if test="${areaList.a_cate == 0}">
-		// ¸¶Ä¿ ÀÌ¹ÌÁöÀÇ ÁÖ¼Ò
+		// ë§ˆì»¤ ì´ë¯¸ì§€ì˜ ì£¼ì†Œ
 		   var markerImageUrl = 'http://t1.daumcdn.net/localimg/localimages/07/2012/img/marker_r.png', 
-		    markerImageSize = new daum.maps.Size(27, 27), // ¸¶Ä¿ ÀÌ¹ÌÁöÀÇ Å©±â
+		    markerImageSize = new daum.maps.Size(27, 27), // ë§ˆì»¤ ì´ë¯¸ì§€ì˜ í¬ê¸°
 		    markerImageOptions = { 
-		        spriteOrigin : new daum.maps.Point(10, 118), // ½ºÇÁ¶óÀÌÆ® ÀÌ¹ÌÁö Áß »ç¿ëÇÒ ¿µ¿ªÀÇ ÁÂ»ó´Ü ÁÂÇ¥
-		        spriteSize : new daum.maps.Size(72, 648), // ½ºÇÁ¶óÀÌÆ® ÀÌ¹ÌÁöÀÇ ÀüÃ¼ Å©±â 
-		        offset : new daum.maps.Point(11, 27)// ¸¶Ä¿ ÁÂÇ¥¿¡ ÀÏÄ¡½ÃÅ³ ÀÌ¹ÌÁö ¾ÈÀÇ ÁÂÇ¥
+		        spriteOrigin : new daum.maps.Point(10, 118), // ìŠ¤í”„ë¼ì´íŠ¸ ì´ë¯¸ì§€ ì¤‘ ì‚¬ìš©í•  ì˜ì—­ì˜ ì¢Œìƒë‹¨ ì¢Œí‘œ
+		        spriteSize : new daum.maps.Size(72, 648), // ìŠ¤í”„ë¼ì´íŠ¸ ì´ë¯¸ì§€ì˜ ì „ì²´ í¬ê¸° 
+		        offset : new daum.maps.Point(11, 27)// ë§ˆì»¤ ì¢Œí‘œì— ì¼ì¹˜ì‹œí‚¬ ì´ë¯¸ì§€ ì•ˆì˜ ì¢Œí‘œ
 		    };
 
-		// ¸¶Ä¿ ÀÌ¹ÌÁö¸¦ »ı¼ºÇÑ´Ù
+		// ë§ˆì»¤ ì´ë¯¸ì§€ë¥¼ ìƒì„±í•œë‹¤
 		var markerImage = new daum.maps.MarkerImage(markerImageUrl, markerImageSize, markerImageOptions);
 
-		// Áöµµ¿¡ ¸¶Ä¿¸¦ »ı¼ºÇÏ°í Ç¥½ÃÇÑ´Ù
+		// ì§€ë„ì— ë§ˆì»¤ë¥¼ ìƒì„±í•˜ê³  í‘œì‹œí•œë‹¤
 		var marker = new daum.maps.Marker({
-		    position: coords, // ¸¶Ä¿ÀÇ ÁÂÇ¥
-		    image : markerImage, // ¸¶Ä¿ÀÇ ÀÌ¹ÌÁö
-		    map: map // ¸¶Ä¿¸¦ Ç¥½ÃÇÒ Áöµµ °´Ã¼
+		    position: coords, // ë§ˆì»¤ì˜ ì¢Œí‘œ
+		    image : markerImage, // ë§ˆì»¤ì˜ ì´ë¯¸ì§€
+		    map: map // ë§ˆì»¤ë¥¼ í‘œì‹œí•  ì§€ë„ ê°ì²´
 		});
         </c:if>
         
-   	    // LatLngBounds °´Ã¼¿¡ ÁÂÇ¥¸¦ Ãß°¡ÇÕ´Ï´Ù
+   	    // LatLngBounds ê°ì²´ì— ì¢Œí‘œë¥¼ ì¶”ê°€í•©ë‹ˆë‹¤
         bounds.extend(coords);
    	    
    	    var content = '<div class="wrap">' + 
@@ -592,23 +592,23 @@ geocoder.addr2coord('${areaList.a_addr}', function(status, result) {
 			'    </div>' +    
 			'</div>'; 
 			
-         // ¸¶Ä¿¿¡ ¸¶¿ì½º¿À¹ö ÀÌº¥Æ®¸¦ µî·ÏÇÕ´Ï´Ù
+         // ë§ˆì»¤ì— ë§ˆìš°ìŠ¤ì˜¤ë²„ ì´ë²¤íŠ¸ë¥¼ ë“±ë¡í•©ë‹ˆë‹¤
          daum.maps.event.addListener(marker, 'mouseover', function() {
-           // ¸¶Ä¿¿¡ ¸¶¿ì½º¿À¹ö ÀÌº¥Æ®°¡ ¹ß»ıÇÏ¸é ÀÎÆ÷À©µµ¿ì¸¦ ¸¶Ä¿À§¿¡ Ç¥½ÃÇÕ´Ï´Ù
+           // ë§ˆì»¤ì— ë§ˆìš°ìŠ¤ì˜¤ë²„ ì´ë²¤íŠ¸ê°€ ë°œìƒí•˜ë©´ ì¸í¬ìœˆë„ìš°ë¥¼ ë§ˆì»¤ìœ„ì— í‘œì‹œí•©ë‹ˆë‹¤
         	 overlay = new daum.maps.CustomOverlay({
         		    content: content,
         		    map: map,
         		    position: marker.getPosition()
         		 });
         	 daum.maps.event.addListener(marker, 'mouseout', function() {
-                 // ¸¶Ä¿¿¡ ¸¶¿ì½º¾Æ¿ô ÀÌº¥Æ®°¡ ¹ß»ıÇÏ¸é ÀÎÆ÷À©µµ¿ì¸¦ Á¦°ÅÇÕ´Ï´Ù
+                 // ë§ˆì»¤ì— ë§ˆìš°ìŠ¤ì•„ì›ƒ ì´ë²¤íŠ¸ê°€ ë°œìƒí•˜ë©´ ì¸í¬ìœˆë„ìš°ë¥¼ ì œê±°í•©ë‹ˆë‹¤
         		 overlay.setMap(null);
              }); 
          });
          
-     	 // ¸¶Ä¿¿¡ Å¬¸¯ÀÌº¥Æ®¸¦ µî·ÏÇÕ´Ï´Ù
+     	 // ë§ˆì»¤ì— í´ë¦­ì´ë²¤íŠ¸ë¥¼ ë“±ë¡í•©ë‹ˆë‹¤
          daum.maps.event.addListener(marker, 'click', function() {
-             // ¸¶Ä¿ À§¿¡ ÀÎÆ÷À©µµ¿ì¸¦ Ç¥½ÃÇÕ´Ï´Ù
+             // ë§ˆì»¤ ìœ„ì— ì¸í¬ìœˆë„ìš°ë¥¼ í‘œì‹œí•©ë‹ˆë‹¤
          	 location.href='insertArea.go?s_no=${param.s_no}&state_no=${param.state_no}&c_no=${param.c_no}&s_idx=${param.s_idx}&a_no=${areaList.a_no }';
       	 });      	 
      }
@@ -620,51 +620,51 @@ geocoder.addr2coord('${areaList.a_addr}', function(status, result) {
 <c:if test="${not empty param.a_cate}">
 <c:forEach var="areaCateList" items="${areaCateList }" varStatus="stat">
 geocoder.addr2coord('${areaCateList.a_addr}', function(status, result) {
-    // Á¤»óÀûÀ¸·Î °Ë»öÀÌ ¿Ï·áµÆÀ¸¸é 
+    // ì •ìƒì ìœ¼ë¡œ ê²€ìƒ‰ì´ ì™„ë£Œëìœ¼ë©´ 
      if (status === daum.maps.services.Status.OK) {
 
         var coords = new daum.maps.LatLng(result.addr[0].lat, result.addr[0].lng);
 
-      //¸ÀÁı
+      //ë§›ì§‘
     	<c:if test="${areaCateList.a_cate == 1}">
     	var markerImageUrl = 'http://t1.daumcdn.net/localimg/localimages/07/2012/img/marker_r.png', 
-	    markerImageSize = new daum.maps.Size(27, 27), // ¸¶Ä¿ ÀÌ¹ÌÁöÀÇ Å©±â
+	    markerImageSize = new daum.maps.Size(27, 27), // ë§ˆì»¤ ì´ë¯¸ì§€ì˜ í¬ê¸°
 	    markerImageOptions = { 
-	        spriteOrigin : new daum.maps.Point(10, 154), // ½ºÇÁ¶óÀÌÆ® ÀÌ¹ÌÁö Áß »ç¿ëÇÒ ¿µ¿ªÀÇ ÁÂ»ó´Ü ÁÂÇ¥
-	        spriteSize : new daum.maps.Size(72, 648), // ½ºÇÁ¶óÀÌÆ® ÀÌ¹ÌÁöÀÇ ÀüÃ¼ Å©±â 
-	        offset : new daum.maps.Point(11, 27)// ¸¶Ä¿ ÁÂÇ¥¿¡ ÀÏÄ¡½ÃÅ³ ÀÌ¹ÌÁö ¾ÈÀÇ ÁÂÇ¥
+	        spriteOrigin : new daum.maps.Point(10, 154), // ìŠ¤í”„ë¼ì´íŠ¸ ì´ë¯¸ì§€ ì¤‘ ì‚¬ìš©í•  ì˜ì—­ì˜ ì¢Œìƒë‹¨ ì¢Œí‘œ
+	        spriteSize : new daum.maps.Size(72, 648), // ìŠ¤í”„ë¼ì´íŠ¸ ì´ë¯¸ì§€ì˜ ì „ì²´ í¬ê¸° 
+	        offset : new daum.maps.Point(11, 27)// ë§ˆì»¤ ì¢Œí‘œì— ì¼ì¹˜ì‹œí‚¬ ì´ë¯¸ì§€ ì•ˆì˜ ì¢Œí‘œ
 	    };
 
-		// ¸¶Ä¿ ÀÌ¹ÌÁö¸¦ »ı¼ºÇÑ´Ù
+		// ë§ˆì»¤ ì´ë¯¸ì§€ë¥¼ ìƒì„±í•œë‹¤
 		var markerImage = new daum.maps.MarkerImage(markerImageUrl, markerImageSize, markerImageOptions);
 	
-		// Áöµµ¿¡ ¸¶Ä¿¸¦ »ı¼ºÇÏ°í Ç¥½ÃÇÑ´Ù
+		// ì§€ë„ì— ë§ˆì»¤ë¥¼ ìƒì„±í•˜ê³  í‘œì‹œí•œë‹¤
 		var marker = new daum.maps.Marker({
-		    position: coords, // ¸¶Ä¿ÀÇ ÁÂÇ¥
-		    image : markerImage, // ¸¶Ä¿ÀÇ ÀÌ¹ÌÁö
-		    map: map // ¸¶Ä¿¸¦ Ç¥½ÃÇÒ Áöµµ °´Ã¼
+		    position: coords, // ë§ˆì»¤ì˜ ì¢Œí‘œ
+		    image : markerImage, // ë§ˆì»¤ì˜ ì´ë¯¸ì§€
+		    map: map // ë§ˆì»¤ë¥¼ í‘œì‹œí•  ì§€ë„ ê°ì²´
 		});
         </c:if>
         
-    	//°ü±¤Áö
+    	//ê´€ê´‘ì§€
     	<c:if test="${areaCateList.a_cate == 0}">
-		// ¸¶Ä¿ ÀÌ¹ÌÁöÀÇ ÁÖ¼Ò
+		// ë§ˆì»¤ ì´ë¯¸ì§€ì˜ ì£¼ì†Œ
 		var markerImageUrl = 'http://t1.daumcdn.net/localimg/localimages/07/2012/img/marker_r.png', 
-		    markerImageSize = new daum.maps.Size(27, 27), // ¸¶Ä¿ ÀÌ¹ÌÁöÀÇ Å©±â
+		    markerImageSize = new daum.maps.Size(27, 27), // ë§ˆì»¤ ì´ë¯¸ì§€ì˜ í¬ê¸°
 		    markerImageOptions = { 
-		        spriteOrigin : new daum.maps.Point(10, 118), // ½ºÇÁ¶óÀÌÆ® ÀÌ¹ÌÁö Áß »ç¿ëÇÒ ¿µ¿ªÀÇ ÁÂ»ó´Ü ÁÂÇ¥
-		        spriteSize : new daum.maps.Size(72, 648), // ½ºÇÁ¶óÀÌÆ® ÀÌ¹ÌÁöÀÇ ÀüÃ¼ Å©±â 
-		        offset : new daum.maps.Point(11, 27)// ¸¶Ä¿ ÁÂÇ¥¿¡ ÀÏÄ¡½ÃÅ³ ÀÌ¹ÌÁö ¾ÈÀÇ ÁÂÇ¥
+		        spriteOrigin : new daum.maps.Point(10, 118), // ìŠ¤í”„ë¼ì´íŠ¸ ì´ë¯¸ì§€ ì¤‘ ì‚¬ìš©í•  ì˜ì—­ì˜ ì¢Œìƒë‹¨ ì¢Œí‘œ
+		        spriteSize : new daum.maps.Size(72, 648), // ìŠ¤í”„ë¼ì´íŠ¸ ì´ë¯¸ì§€ì˜ ì „ì²´ í¬ê¸° 
+		        offset : new daum.maps.Point(11, 27)// ë§ˆì»¤ ì¢Œí‘œì— ì¼ì¹˜ì‹œí‚¬ ì´ë¯¸ì§€ ì•ˆì˜ ì¢Œí‘œ
 		    };
 
-		// ¸¶Ä¿ ÀÌ¹ÌÁö¸¦ »ı¼ºÇÑ´Ù
+		// ë§ˆì»¤ ì´ë¯¸ì§€ë¥¼ ìƒì„±í•œë‹¤
 		var markerImage = new daum.maps.MarkerImage(markerImageUrl, markerImageSize, markerImageOptions);
 
-		// Áöµµ¿¡ ¸¶Ä¿¸¦ »ı¼ºÇÏ°í Ç¥½ÃÇÑ´Ù
+		// ì§€ë„ì— ë§ˆì»¤ë¥¼ ìƒì„±í•˜ê³  í‘œì‹œí•œë‹¤
 		var marker = new daum.maps.Marker({
-		    position: coords, // ¸¶Ä¿ÀÇ ÁÂÇ¥
-		    image : markerImage, // ¸¶Ä¿ÀÇ ÀÌ¹ÌÁö
-		    map: map // ¸¶Ä¿¸¦ Ç¥½ÃÇÒ Áöµµ °´Ã¼
+		    position: coords, // ë§ˆì»¤ì˜ ì¢Œí‘œ
+		    image : markerImage, // ë§ˆì»¤ì˜ ì´ë¯¸ì§€
+		    map: map // ë§ˆì»¤ë¥¼ í‘œì‹œí•  ì§€ë„ ê°ì²´
 		});
         </c:if>
      
@@ -687,26 +687,26 @@ geocoder.addr2coord('${areaCateList.a_addr}', function(status, result) {
 			'    </div>' +    
 			'</div>';
 			
-			// LatLngBounds °´Ã¼¿¡ ÁÂÇ¥¸¦ Ãß°¡ÇÕ´Ï´Ù
+			// LatLngBounds ê°ì²´ì— ì¢Œí‘œë¥¼ ì¶”ê°€í•©ë‹ˆë‹¤
 	        bounds.extend(coords);
            
-        // ¸¶Ä¿¿¡ ¸¶¿ì½º¿À¹ö ÀÌº¥Æ®¸¦ µî·ÏÇÕ´Ï´Ù
+        // ë§ˆì»¤ì— ë§ˆìš°ìŠ¤ì˜¤ë²„ ì´ë²¤íŠ¸ë¥¼ ë“±ë¡í•©ë‹ˆë‹¤
         daum.maps.event.addListener(marker, 'mouseover', function() {
-          // ¸¶Ä¿¿¡ ¸¶¿ì½º¿À¹ö ÀÌº¥Æ®°¡ ¹ß»ıÇÏ¸é ÀÎÆ÷À©µµ¿ì¸¦ ¸¶Ä¿À§¿¡ Ç¥½ÃÇÕ´Ï´Ù
+          // ë§ˆì»¤ì— ë§ˆìš°ìŠ¤ì˜¤ë²„ ì´ë²¤íŠ¸ê°€ ë°œìƒí•˜ë©´ ì¸í¬ìœˆë„ìš°ë¥¼ ë§ˆì»¤ìœ„ì— í‘œì‹œí•©ë‹ˆë‹¤
        	 overlay = new daum.maps.CustomOverlay({
        		    content: content,
        		    map: map,
        		    position: marker.getPosition()
        		 });
        	 daum.maps.event.addListener(marker, 'mouseout', function() {
-                // ¸¶Ä¿¿¡ ¸¶¿ì½º¾Æ¿ô ÀÌº¥Æ®°¡ ¹ß»ıÇÏ¸é ÀÎÆ÷À©µµ¿ì¸¦ Á¦°ÅÇÕ´Ï´Ù
+                // ë§ˆì»¤ì— ë§ˆìš°ìŠ¤ì•„ì›ƒ ì´ë²¤íŠ¸ê°€ ë°œìƒí•˜ë©´ ì¸í¬ìœˆë„ìš°ë¥¼ ì œê±°í•©ë‹ˆë‹¤
        		 overlay.setMap(null);
             }); 
         });
         
-    	 // ¸¶Ä¿¿¡ Å¬¸¯ÀÌº¥Æ®¸¦ µî·ÏÇÕ´Ï´Ù
+    	 // ë§ˆì»¤ì— í´ë¦­ì´ë²¤íŠ¸ë¥¼ ë“±ë¡í•©ë‹ˆë‹¤
         daum.maps.event.addListener(marker, 'click', function() {
-            // ¸¶Ä¿ À§¿¡ ÀÎÆ÷À©µµ¿ì¸¦ Ç¥½ÃÇÕ´Ï´Ù
+            // ë§ˆì»¤ ìœ„ì— ì¸í¬ìœˆë„ìš°ë¥¼ í‘œì‹œí•©ë‹ˆë‹¤
         	 location.href='insertArea.go?s_no=${param.s_no}&state_no=${param.state_no}&c_no=${param.c_no}&a_cate=${param.a_cate}&s_idx=${param.s_idx}&a_no=${areaCateList.a_no }';
         	 
      	 }); 

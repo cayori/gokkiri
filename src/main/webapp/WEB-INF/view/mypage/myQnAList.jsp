@@ -22,18 +22,18 @@ height: 100%;
 </style>
 </head>
 <body>
-<!-- »ó´Ü ÀÌ¹ÌÁö-->
+<!-- ìƒë‹¨ ì´ë¯¸ì§€-->
 <div class="jumbotron text-center">
   <form class="form-inline">
   	<br><br>
-  	<p><font color="#ffffff" size="10"><b>ÇÑ±¹, ¾îµð±îÁö °¡ºÃ´Ï?</b></font></p>
+  	<p><font color="#ffffff" size="10"><b>í•œêµ­, ì–´ë””ê¹Œì§€ ê°€ë´¤ë‹ˆ?</b></font></p>
   	<br><br>
   </form>
 </div>
 <br>
 
 
-<!-- Ä«Å×°í¸® -->
+<!-- ì¹´í…Œê³ ë¦¬ -->
 <div class="container-fluid">
   <div class="row content">
     <div class="col-sm-3">
@@ -43,25 +43,25 @@ height: 100%;
     <div class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title" >
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse1" >ÀÏÁ¤ ¸®½ºÆ®</a>
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse1" >ì¼ì • ë¦¬ìŠ¤íŠ¸</a>
         </h4>
       </div>
       <div id="collapse1" class="panel-collapse collapse">
-        <div class="panel-body"><a href="/gokkiri/mypage/myScheduleList.go?s_complete=1&s_private=0">³» ÀÏÁ¤</a></div>
-        <div class="panel-body"><a href="/gokkiri/mypage/zzimScheduleList.go">ÂòÇÑ ÀÏÁ¤</a></div>
-        <div class="panel-body"><a href="/gokkiri/mypage/sharedScheduleList.go">°øÀ¯ÁßÀÎ ÀÏÁ¤</a></div>  
+        <div class="panel-body"><a href="/gokkiri/mypage/myScheduleList.go?s_complete=1&s_private=0">ë‚´ ì¼ì •</a></div>
+        <div class="panel-body"><a href="/gokkiri/mypage/zzimScheduleList.go">ì°œí•œ ì¼ì •</a></div>
+        <div class="panel-body"><a href="/gokkiri/mypage/sharedScheduleList.go">ê³µìœ ì¤‘ì¸ ì¼ì •</a></div>  
       </div>
     </div>
     
     <div class="panel panel-default">
       <div class="panel-heading" style="background-color:#266eb7;color:#fff;">
         <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse2"><b>³»°¡¾´ ±Û ¸®½ºÆ®</b></a>
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse2"><b>ë‚´ê°€ì“´ ê¸€ ë¦¬ìŠ¤íŠ¸</b></a>
         </h4>
       </div>
       <div id="collapse2" class="panel-collapse collapse in">
-      <div class="panel-body"><a href="/gokkiri/mypage/myTipList.go">¿©Çà Tip</a></div> 
-        <div class="panel-body"><a href="/gokkiri/mypage/myAreaReviewList.go">¸®ºä</a></div>
+      <div class="panel-body"><a href="/gokkiri/mypage/myTipList.go">ì—¬í–‰ Tip</a></div> 
+        <div class="panel-body"><a href="/gokkiri/mypage/myAreaReviewList.go">ë¦¬ë·°</a></div>
         <div class="panel-body"><a href="/gokkiri/mypage/myQnaList.go"><b>QnA</b></a></div>
         
       </div>
@@ -70,12 +70,12 @@ height: 100%;
     <div class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">È¸¿øÁ¤º¸ ¼öÁ¤</a>
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">íšŒì›ì •ë³´ ìˆ˜ì •</a>
         </h4>
       </div>
       <div id="collapse3" class="panel-collapse collapse">
-       <div class="panel-body"><a href="/gokkiri/member/memberModifyForm.go" >Á¤º¸ ¼öÁ¤</a></div>
-        <div class="panel-body"><a href="/gokkiri/member/memberDeleteForm.go" >È¸¿ø Å»Åð</a></div>
+       <div class="panel-body"><a href="/gokkiri/member/memberModifyForm.go" >ì •ë³´ ìˆ˜ì •</a></div>
+        <div class="panel-body"><a href="/gokkiri/member/memberDeleteForm.go" >íšŒì› íƒˆí‡´</a></div>
       </div>
     </div>
   </div> 
@@ -89,18 +89,18 @@ height: 100%;
 <br/>
  
  <ul class="nav nav-tabs nav-tabs" role="tablist" style="width:83%;">
-    <li class="active"><a href="/gokkiri/mypage/myQnaList.go"><b>QnA ±Û</b></a></li>
-    <li><a href="/gokkiri/mypage/myQnaCoList.go"><b>QnA ´ñ±Û</b></a></li>        
+    <li class="active"><a href="/gokkiri/mypage/myQnaList.go"><b>QnA ê¸€</b></a></li>
+    <li><a href="/gokkiri/mypage/myQnaCoList.go"><b>QnA ëŒ“ê¸€</b></a></li>        
 </ul>
 
                                                
   <table class="table">
     <thead>
       <tr class="info">
-        <th>Á¦¸ñ</th>
-        <th>³»¿ë</th>
-        <th>ÀÌ¸ÞÀÏ</th>
-        <th>³¯Â¥/½Ã°£</th>
+        <th>ì œëª©</th>
+        <th>ë‚´ìš©</th>
+        <th>ì´ë©”ì¼</th>
+        <th>ë‚ ì§œ/ì‹œê°„</th>
       </tr>
     </thead>
     
@@ -119,10 +119,10 @@ height: 100%;
    </table>
 </div>
 
-<!-- DB»ó °Ô½Ã¹°ÀÌ ¾øÀ¸¸é º¸¿©ÁÖ´Â °Í -->
+<!-- DBìƒ ê²Œì‹œë¬¼ì´ ì—†ìœ¼ë©´ ë³´ì—¬ì£¼ëŠ” ê²ƒ -->
 	<c:if test="${fn:length(qnaList) le 0}">
 		<br/>
-		<center>µî·ÏµÈ °Ô½Ã¹°ÀÌ ¾ø½À´Ï´Ù</center>
+		<center>ë“±ë¡ëœ ê²Œì‹œë¬¼ì´ ì—†ìŠµë‹ˆë‹¤</center>
 		<br/>
 	</c:if>
 

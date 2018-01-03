@@ -4,32 +4,32 @@ import java.util.Date;
 
 public class ScheduleModel {
 
-	private String m_email;			//È¸¿ø ÀÌ¸ŞÀÏ
-	private int a_no;				//¿©ÇàÁö ¹øÈ£
-	private String a_addr;			//¿©ÇàÁö ÁÖ¼Ò
-	private String a_img_sav;		//¿©ÇàÁö ÀÌ¹ÌÁö
-	private int a_cate;				//¿©ÇàÁö Ä«Å×°í¸®
-	private String a_tel;			//¿©ÇàÁö ÀüÈ­¹øÈ£
-	private String a_way;			//¿©ÇàÁö °¡´Â¹æ¹ı
+	private String m_email;			//íšŒì› ì´ë©”ì¼
+	private int a_no;				//ì—¬í–‰ì§€ ë²ˆí˜¸
+	private String a_addr;			//ì—¬í–‰ì§€ ì£¼ì†Œ
+	private String a_img_sav;		//ì—¬í–‰ì§€ ì´ë¯¸ì§€
+	private int a_cate;				//ì—¬í–‰ì§€ ì¹´í…Œê³ ë¦¬
+	private String a_tel;			//ì—¬í–‰ì§€ ì „í™”ë²ˆí˜¸
+	private String a_way;			//ì—¬í–‰ì§€ ê°€ëŠ”ë°©ë²•
 	
-	//SCH Å×ÀÌºí
-	private int s_no;				//ÀÏÁ¤ ¹øÈ£
-	private Date s_date;			//ÀÏÁ¤ »ı¼º ³¯Â¥
-	private String s_start_date;	//ÀÏÁ¤ ½ÃÀÛ ³¯Â¥
-	private String s_end_date;		//ÀÏÁ¤ ³¡ ³¯Â¥
-	private int s_hit;				//ÀÏÁ¤ Á¶È¸¼ö
-	private int s_private;			//°ø°³ ¼³Á¤ ¿©ºÎ
-	private String s_together;		//ÀÏÁ¤ °øÀ¯ÇÒ È¸¿ø
-	private String s_name;			//ÀÏÁ¤ ÀÌ¸§
-	private int s_complete;         //ÀÏÁ¤ ¿Ï¼º È®ÀÎ
-	private int s_state;			//ÀÏÁ¤ ¼ö¶ô/°ÅÀı È®ÀÎ
+	//SCH í…Œì´ë¸”
+	private int s_no;				//ì¼ì • ë²ˆí˜¸
+	private Date s_date;			//ì¼ì • ìƒì„± ë‚ ì§œ
+	private String s_start_date;	//ì¼ì • ì‹œì‘ ë‚ ì§œ
+	private String s_end_date;		//ì¼ì • ë ë‚ ì§œ
+	private int s_hit;				//ì¼ì • ì¡°íšŒìˆ˜
+	private int s_private;			//ê³µê°œ ì„¤ì • ì—¬ë¶€
+	private String s_together;		//ì¼ì • ê³µìœ í•  íšŒì›
+	private String s_name;			//ì¼ì • ì´ë¦„
+	private int s_complete;         //ì¼ì • ì™„ì„± í™•ì¸
+	private int s_state;			//ì¼ì • ìˆ˜ë½/ê±°ì ˆ í™•ì¸
 	
 	private int s_idx;
 	
-	//SCH_DETAIL Å×ÀÌºí
-	private int s_detail_no;		//¼¼ºÎÀÏÁ¤ ¹øÈ£
-	private String s_detail_memo;	//ÀÏÁ¤ ³¯Â¥º° ¼¼ºÎ ¸Ş¸ğ
-	private int s_detail_index;		//¿©ÇàÁö ¼ø¼­
+	//SCH_DETAIL í…Œì´ë¸”
+	private int s_detail_no;		//ì„¸ë¶€ì¼ì • ë²ˆí˜¸
+	private String s_detail_memo;	//ì¼ì • ë‚ ì§œë³„ ì„¸ë¶€ ë©”ëª¨
+	private int s_detail_index;		//ì—¬í–‰ì§€ ìˆœì„œ
 	private int s_detail_turn;
 	
 	private String a_name;

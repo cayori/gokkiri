@@ -7,14 +7,14 @@
 <script language="javascript">
 function validation(){
 	if(document.findEmail.m_name.value==""){
-		alert("ÀÌ¸§À» ÀÔ·ÂÇØÁÖ¼¼¿ä.");
+		alert("ì´ë¦„ì„ ì…ë ¥í•´ì£¼ì„¸ìš”.");
 		document.findEmail.m_name.focus();
 		return false;
 	}
 
 }
 </script>
-<title>¾ÆÀÌµğ Ã£±â °á°ú</title>
+<title>ì•„ì´ë”” ì°¾ê¸° ê²°ê³¼</title>
 </head>
 <body>
 <br><br><br><br><br>
@@ -22,16 +22,16 @@ function validation(){
 <c:choose>
 <c:when test="list.size() <= 0">
 <div class="container">
-  <h2>¾ÆÀÌµğ Ã£±â ½ÇÆĞ</h2>
-  <span class="glyphicon glyphicon-info-sign"></span>&nbsp;<strong>ÀÌ¸§</strong>À» È®ÀÎÇØÁÖ¼¼¿ä.
+  <h2>ì•„ì´ë”” ì°¾ê¸° ì‹¤íŒ¨</h2>
+  <span class="glyphicon glyphicon-info-sign"></span>&nbsp;<strong>ì´ë¦„</strong>ì„ í™•ì¸í•´ì£¼ì„¸ìš”.
   <hr>
   <form action="emailFind.go" method="post"  name="findEmail" onsubmit="return validation();">
   <div class="form-group">
   	<div class="col-xs-4" align="right">
-      	<input type="text" name="m_name" class="form-control" placeholder="ÀÌ¸§À» ÀÔ·ÂÇÏ¼¼¿ä.">
+      	<input type="text" name="m_name" class="form-control" placeholder="ì´ë¦„ì„ ì…ë ¥í•˜ì„¸ìš”.">
 	    <button type="submit" class="btn btn-default">
-	    <span class="glyphicon glyphicon-ok"></span>&nbsp;ÀÌ¸ŞÀÏ Ã£±â</button>
-	    <button type="button" class="btn btn-default" onclick="javascript:history.go(-1)"><span class="glyphicon glyphicon-remove"></span>&nbsp;´İ±â</button>
+	    <span class="glyphicon glyphicon-ok"></span>&nbsp;ì´ë©”ì¼ ì°¾ê¸°</button>
+	    <button type="button" class="btn btn-default" onclick="javascript:history.go(-1)"><span class="glyphicon glyphicon-remove"></span>&nbsp;ë‹«ê¸°</button>
 	</div>
   </div>
   </form>
@@ -40,15 +40,15 @@ function validation(){
 
  <c:otherwise>
 <div class="container">
-  <h2>ÀÌ¸ŞÀÏ Ã£±â °á°ú</h2>
+  <h2>ì´ë©”ì¼ ì°¾ê¸° ê²°ê³¼</h2>
   <hr>
   <form class="form-horizontal">
   <div class="col-xs-4">
  
-	<p class="fz15"><center>${member.m_name}´ÔÀÇ ÀÌ¸ŞÀÏÀº <strong>${member.m_email}</strong>ÀÔ´Ï´Ù.</center></p>
+	<p class="fz15"><center>${member.m_name}ë‹˜ì˜ ì´ë©”ì¼ì€ <strong>${member.m_email}</strong>ì…ë‹ˆë‹¤.</center></p>
 
   <div align="right">
- <button type="button" class="btn btn-default" onclick="window:location='loginForm.go'"><span class="glyphicon glyphicon-log-in"></span>&nbsp;·Î±×ÀÎ</button>
+ <button type="button" class="btn btn-default" onclick="window:location='loginForm.go'"><span class="glyphicon glyphicon-log-in"></span>&nbsp;ë¡œê·¸ì¸</button>
  </div>
  </div>
  </form>

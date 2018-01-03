@@ -15,22 +15,22 @@
 function check(){
 var write = document.sForm;	   
 if(write.s_name.value==""){
-	alert("ÀÏÁ¤ ÀÌ¸§À» ÀÔ·ÂÇØÁÖ¼¼¿ä.");
+	alert("ì¼ì • ì´ë¦„ì„ ì…ë ¥í•´ì£¼ì„¸ìš”.");
 	write.s_name.focus();
 	return false;
 }
 else if(write.s_start_date.value==""){
-	alert("Ãâ¹ßÀÏÀ» ¼³Á¤ÇØÁÖ¼¼¿ä.");
+	alert("ì¶œë°œì¼ì„ ì„¤ì •í•´ì£¼ì„¸ìš”.");
 	write.s_start_date.focus();
 	return false;
 }
 else if(write.s_end_date.value==""){
-	alert("Á¾·áÀÏÀ» ¼³Á¤ÇØÁÖ¼¼¿ä.");
+	alert("ì¢…ë£Œì¼ì„ ì„¤ì •í•´ì£¼ì„¸ìš”.");
 	write.s_end_date.focus();
 	return false;
 }
 else if(write.emailExist.value.length != 0 && write.chk.value == 0){
-	alert("ÀÌ¸ŞÀÏ °Ë»ö ¹öÆ°À» ´­·¯ÁÖ¼¼¿ä.");
+	alert("ì´ë©”ì¼ ê²€ìƒ‰ ë²„íŠ¼ì„ ëˆŒëŸ¬ì£¼ì„¸ìš”.");
 	write.emailExist.focus();
 	return false;
 }
@@ -41,18 +41,18 @@ function openEmailExist(sForm){
 	   for (i=0;i<form.emailExist.value.length;i++ ){
 	      var ch = document.sForm.emailExist.value.charAt(i)
 	      if (!(ch>='0' && ch<='9') && !(ch>='a' && ch<='z')){
-	           alert ("ÀÌ¸ŞÀÏÀº ¼Ò¹®ÀÚ, ¼ıÀÚ¸¸ ÀÔ·Â°¡´ÉÇÕ´Ï´Ù.")
+	           alert ("ì´ë©”ì¼ì€ ì†Œë¬¸ì, ìˆ«ìë§Œ ì…ë ¥ê°€ëŠ¥í•©ë‹ˆë‹¤.")
 	           form.emailExist.focus();
 	           return false;
 	        }
 	   }
 	   if(form.emailExist.value==""){
-	      alert("ÀÌ¸ŞÀÏÀ» ÀÔ·ÂÇØÁÖ¼¼¿ä.");
+	      alert("ì´ë©”ì¼ì„ ì…ë ¥í•´ì£¼ì„¸ìš”.");
 	      form.emailExist.focus();
 	      return false;
 	   }
 	   if(form.emailExist.value=="${sessionScope.session_m_email}"){
-		      alert("ÀÚ½Å ÀÌ¸ŞÀÏÀº »ç¿ëÇÒ ¼ö ¾ø½À´Ï´Ù.");
+		      alert("ìì‹  ì´ë©”ì¼ì€ ì‚¬ìš©í•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤.");
 		      form.emailExist.value="";
 		      form.emailExist.focus();
 		      return false;
@@ -67,7 +67,7 @@ $(document).ready(function(){
 })
 </script>
 <style>
-/*»ó´Ü ÀÌ¹ÌÁö*/
+/*ìƒë‹¨ ì´ë¯¸ì§€*/
 .jumbotron{
 background-image: url('/gokkiri/resources/img/cloud2.jpg');
 background-repeat: no-repeat;
@@ -118,13 +118,13 @@ height: 100%;
 </style>
 </head>
 <body>
-<!-- »ó´Ü ÀÌ¹ÌÁö -->
+<!-- ìƒë‹¨ ì´ë¯¸ì§€ -->
 <div class="jumbotron text-center">
   <form class="form-inline">
-  	<p><font color="#ffffff" size="10"><b>³ª¸¸ÀÇ ¿©Çà ÀÏÁ¤À» ¸¸µå¼¼¿ä!</b></font></p>
-  	<p><font color="#ffffff" size="3">³» ¿©Çà ÀÏÁ¤À» °øÀ¯ÇÒ ¼ö ÀÖ°í ´Ù¸¥ »ç¶÷ÀÌ ¸¸µç ¿©Çà ÀÏÁ¤À» º¼ ¼ö ÀÖ½À´Ï´Ù.</font></p>
+  	<p><font color="#ffffff" size="10"><b>ë‚˜ë§Œì˜ ì—¬í–‰ ì¼ì •ì„ ë§Œë“œì„¸ìš”!</b></font></p>
+  	<p><font color="#ffffff" size="3">ë‚´ ì—¬í–‰ ì¼ì •ì„ ê³µìœ í•  ìˆ˜ ìˆê³  ë‹¤ë¥¸ ì‚¬ëŒì´ ë§Œë“  ì—¬í–‰ ì¼ì •ì„ ë³¼ ìˆ˜ ìˆìŠµë‹ˆë‹¤.</font></p>
     <div class="input-group">
- 		<a class="btn btn-default" href="/gokkiri/schedule/scheduleList.go?currentPage=1" role="button">º¸·¯°¡±â</a>
+ 		<a class="btn btn-default" href="/gokkiri/schedule/scheduleList.go?currentPage=1" role="button">ë³´ëŸ¬ê°€ê¸°</a>
     </div>
   </form>
 </div>
@@ -136,66 +136,66 @@ height: 100%;
   <c:if test="${not empty scheduleIncompleteList }">
 	  <div class="form-group"> 
 	    <div class="col-sm-offset-2 col-sm-10">
-	    	<!-- ´©¸¦½Ã ¸¶ÀÌÆäÀÌÁö ¹Ì¿Ï¼º -->
+	    	<!-- ëˆ„ë¥¼ì‹œ ë§ˆì´í˜ì´ì§€ ë¯¸ì™„ì„± -->
 	        <label>
 	        	<span style="cursor:pointer;"
 	        			onclick="javascript:location.href='/gokkiri/mypage/myScheduleList.go?s_complete=0&s_private=0'" 
-	        			class="label label-primary">${fn:length(scheduleIncompleteList) }</span>&nbsp;°³ÀÇ ÀÏÁ¤ÀÌ ¿Ï¼ºÀ» ±â´Ù¸®°í ÀÖ½À´Ï´Ù.
+	        			class="label label-primary">${fn:length(scheduleIncompleteList) }</span>&nbsp;ê°œì˜ ì¼ì •ì´ ì™„ì„±ì„ ê¸°ë‹¤ë¦¬ê³  ìˆìŠµë‹ˆë‹¤.
 	        </label>
 	    </div>
 	  </div>
   </c:if>
   <div class="form-group">
-    <label class="control-label col-sm-2">ÀÏÁ¤ ÀÌ¸§:</label>
+    <label class="control-label col-sm-2">ì¼ì • ì´ë¦„:</label>
     <div class="col-sm-6">
       <input type="text" 
       		class="form-control" 
       		name="s_name" 
       		data-placement="bottom"
       		data-toggle="tooltip" 
-      		title="ÇÊ¼öÀÔ·Â Ç×¸ñ ÀÔ´Ï´Ù." 
-      		placeholder="ÀÏÁ¤ ÀÌ¸§À» ÀÔ·ÂÇÏ¼¼¿ä."/>
+      		title="í•„ìˆ˜ì…ë ¥ í•­ëª© ì…ë‹ˆë‹¤." 
+      		placeholder="ì¼ì • ì´ë¦„ì„ ì…ë ¥í•˜ì„¸ìš”."/>
     </div>
   </div>
   <div class="form-group">
-    <label class="control-label col-sm-2">³¯Â¥ ¼³Á¤:</label>
+    <label class="control-label col-sm-2">ë‚ ì§œ ì„¤ì •:</label>
     
     <div class="col-sm-3"> 
     	<div class="input-group">
-    		<span class="input-group-addon">Ãâ¹ßÀÏ</span>
+    		<span class="input-group-addon">ì¶œë°œì¼</span>
       		<input id="s_start_date" 
       				name="s_start_date" 
       				class="input-date form-control" 
       				type="text" 
-      				placeholder="Ãâ¹ßÀÏ ¼±ÅÃ" 
+      				placeholder="ì¶œë°œì¼ ì„ íƒ" 
       				data-placement="bottom"
       				readonly="readonly" 
       				data-toggle="tooltip" 
-      				title="ÇÊ¼öÀÔ·Â Ç×¸ñ ÀÔ´Ï´Ù."/>
+      				title="í•„ìˆ˜ì…ë ¥ í•­ëª© ì…ë‹ˆë‹¤."/>
       		<span class="input-group-addon"><span class="glyphicon glyphicon-calendar" aria-hidden="true" id="s_start_date" style="cursor:pointer;"></span></span>
     	</div>
     </div>
     <div class="col-sm-3"> 
       	<div class="input-group">
-      		<span class="input-group-addon">Á¾·áÀÏ</span>
+      		<span class="input-group-addon">ì¢…ë£Œì¼</span>
       		<input id="s_end_date" 
       			name="s_end_date" 
       			class="input-date form-control" 
       			type="text" 
-      			placeholder="Á¾·áÀÏ ¼±ÅÃ" 
+      			placeholder="ì¢…ë£Œì¼ ì„ íƒ" 
       			readonly="readonly" 
       			data-placement="bottom"
       			data-toggle="tooltip" 
-      			title="ÇÊ¼öÀÔ·Â Ç×¸ñ ÀÔ´Ï´Ù."/>
+      			title="í•„ìˆ˜ì…ë ¥ í•­ëª© ì…ë‹ˆë‹¤."/>
       		<span class="input-group-addon"><span class="glyphicon glyphicon-calendar" aria-hidden="true" id="s_end_date" style="cursor:pointer;"></span></span>
     	</div>
     </div>
     </div>
     <div class="form-group">
-      <label class="control-label col-sm-2" for="pwd">°Ë»ö:</label>
+      <label class="control-label col-sm-2" for="pwd">ê²€ìƒ‰:</label>
       <div class="col-sm-6">
        <div class="input-group">
-        <input type="text" name="emailExist" class="form-control" aria-describedby="basic-addon2" placeholder="ÀÌ¸ŞÀÏÀ» ÀÔ·ÂÇØÁÖ¼¼¿ä."> 
+        <input type="text" name="emailExist" class="form-control" aria-describedby="basic-addon2" placeholder="ì´ë©”ì¼ì„ ì…ë ¥í•´ì£¼ì„¸ìš”."> 
         <input type="hidden" name="chk" value="0">
         <span class="input-group-addon" id="basic-addon2">@naver.com</span>
         <span class="input-group-btn">
@@ -207,25 +207,25 @@ height: 100%;
     </div>
     
    <div class="form-group">
-   	<label class="control-label col-sm-2" for="pwd">ÀÏÁ¤À» °øÀ¯ÇÒ Ä£±¸:</label>
+   	<label class="control-label col-sm-2" for="pwd">ì¼ì •ì„ ê³µìœ í•  ì¹œêµ¬:</label>
     <div class="col-sm-6">
-      <input type="text" name="s_together" class="form-control" aria-describedby="basic-addon2" placeholder="°Ë»ö ÈÄ Ãß°¡¸¦ ÇØÁÖ¼¼¿ä." readonly="readonly"> 
+      <input type="text" name="s_together" class="form-control" aria-describedby="basic-addon2" placeholder="ê²€ìƒ‰ í›„ ì¶”ê°€ë¥¼ í•´ì£¼ì„¸ìš”." readonly="readonly"> 
     </div>
   </div>
     
   <div class="form-group"> 
     <div class="col-sm-offset-2 col-sm-10">
       <div class="checkbox">
-        <label data-toggle="tooltip" title="Ã¼Å©ÇÒ ½Ã ÀÏÁ¤ °Ô½ÃÆÇ¿¡ ³ªÅ¸³ªÁö ¾Ê½À´Ï´Ù.">
+        <label data-toggle="tooltip" title="ì²´í¬í•  ì‹œ ì¼ì • ê²Œì‹œíŒì— ë‚˜íƒ€ë‚˜ì§€ ì•ŠìŠµë‹ˆë‹¤.">
         	<input type="checkbox" name="s_private" value="1"/>
-        	<span class="glyphicon glyphicon-lock" aria-hidden="true"></span>&nbsp;ºñ¹Ğ±Û
+        	<span class="glyphicon glyphicon-lock" aria-hidden="true"></span>&nbsp;ë¹„ë°€ê¸€
         </label>
       </div>
     </div>
   </div>
   <div class="form-group"> 
     <div class="col-sm-offset-2 col-sm-10">
-      <button type="submit" class="button"><span>¸¸µé±â</span></button>
+      <button type="submit" class="button"><span>ë§Œë“¤ê¸°</span></button>
     </div>
   </div>
 
@@ -235,12 +235,12 @@ height: 100%;
 </table>
 
 <script type="text/javascript">
-//¼±¾ğÇÑ TextBox¿¡ DateTimePicker À§Á¬À» Àû¿ëÇÑ´Ù.
+//ì„ ì–¸í•œ TextBoxì— DateTimePicker ìœ„ì ¯ì„ ì ìš©í•œë‹¤.
 $('#s_start_date').datepicker({
   format : "yyyy-mm-dd",
-  language : "ko", // È­¸é¿¡ Ãâ·ÂµÉ ¾ğ¾î¸¦ ÇÑ±¹¾î·Î ¼³Á¤ÇÑ´Ù.
-  pickTime : false, // »ç¿ëÀÚ·ÎºÎÅÍ ½Ã°£ ¼±ÅÃÀ» Çã¿ëÇÏ·Á¸é true¸¦ ¼³Á¤ÇÏ°Å³ª pickTime ¿É¼ÇÀ» »ı·«ÇÑ´Ù.
-  startDate : new Date() // ±âº»°ªÀ¸·Î ¿À´Ã ³¯Â¥¸¦ ÀÔ·ÂÇÑ´Ù. ±âº»°ªÀ» ÇØÁ¦ÇÏ·Á¸é defaultDate ¿É¼ÇÀ» »ı·«ÇÑ´Ù.
+  language : "ko", // í™”ë©´ì— ì¶œë ¥ë  ì–¸ì–´ë¥¼ í•œêµ­ì–´ë¡œ ì„¤ì •í•œë‹¤.
+  pickTime : false, // ì‚¬ìš©ìë¡œë¶€í„° ì‹œê°„ ì„ íƒì„ í—ˆìš©í•˜ë ¤ë©´ trueë¥¼ ì„¤ì •í•˜ê±°ë‚˜ pickTime ì˜µì…˜ì„ ìƒëµí•œë‹¤.
+  startDate : new Date() // ê¸°ë³¸ê°’ìœ¼ë¡œ ì˜¤ëŠ˜ ë‚ ì§œë¥¼ ì…ë ¥í•œë‹¤. ê¸°ë³¸ê°’ì„ í•´ì œí•˜ë ¤ë©´ defaultDate ì˜µì…˜ì„ ìƒëµí•œë‹¤.
 });
 
 $('#s_end_date').datepicker({

@@ -13,17 +13,17 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <style>
-/*ÀÌ¹ÌÁö ½½¶óÀÌµå*/
+/*ì´ë¯¸ì§€ ìŠ¬ë¼ì´ë“œ*/
   .carousel-inner > .item > img,
   .carousel-inner > .item > a > img {
       width: 70%;
       height: 400px;
       margin: auto;
   }
-/*ÀÌ¹ÌÁö ½½¶óÀÌµå ³¡*/
+/*ì´ë¯¸ì§€ ìŠ¬ë¼ì´ë“œ ë*/
 
 
-/* ÀÏÁ¤ °¶·¯¸® */
+/* ì¼ì • ê°¤ëŸ¬ë¦¬ */
 ul { list-style: none;}
 
 #hover-cap-4col .thumbnail {
@@ -54,25 +54,25 @@ img {
 </style>
 <script>
 
-//°Ô½Ã±Û ¼öÁ¤ ½ºÅ©¸³Æ®
+//ê²Œì‹œê¸€ ìˆ˜ì • ìŠ¤í¬ë¦½íŠ¸
 function cityModify(){
-	if(confirm("±ÛÀ» ¼öÁ¤ÇÏ½Ã°Ú½À´Ï±î?") == true){
+	if(confirm("ê¸€ì„ ìˆ˜ì •í•˜ì‹œê² ìŠµë‹ˆê¹Œ?") == true){
 		location.href='cityModifyForm.go?c_no=${cityModel.c_no}&keyword=${param.keyword}';	
 	}else{
 		return;
 	}
 }
 
-//°Ô½Ã±Û »èÁ¦ ½ºÅ©¸³Æ®
+//ê²Œì‹œê¸€ ì‚­ì œ ìŠ¤í¬ë¦½íŠ¸
 function cityDelete(){
-	if(confirm("±ÛÀ» »èÁ¦ÇÏ½Ã°Ú½À´Ï±î?") == true){
+	if(confirm("ê¸€ì„ ì‚­ì œí•˜ì‹œê² ìŠµë‹ˆê¹Œ?") == true){
 		location.href='cityDelete.go?c_no=${cityModel.c_no}';
 	}else{
 		return;
 	}
 }
 
-//ÀÏÁ¤ °¶·¯¸®
+//ì¼ì • ê°¤ëŸ¬ë¦¬
 $(document).ready(function(){
 	 
     $("[rel='tooltip']").tooltip();    
@@ -100,17 +100,17 @@ $(document).ready(function(){
 		<tr>
 			<td colspan="3">
 				<ul class="nav nav-tabs nav-justified" >
-  					<li><a href="/gokkiri/city/cityDetail.go?c_no=${param.c_no }&keyword=${param.keyword}">È¨</a></li>
-					<li><a href="/gokkiri/area/areaList.go?c_no=${param.c_no }&a_cate=0&keyword=${param.keyword}">°ü±¤Áö</a></li>
-					<li><a href="/gokkiri/area/areaList.go?c_no=${param.c_no }&a_cate=1&keyword=${param.keyword}">¸ÀÁı</a></li>
-					<li><a data-toggle="modal" data-target="#scheduleList">¿©ÇàÀÏÁ¤ º¸±â</a></li>
+  					<li><a href="/gokkiri/city/cityDetail.go?c_no=${param.c_no }&keyword=${param.keyword}">í™ˆ</a></li>
+					<li><a href="/gokkiri/area/areaList.go?c_no=${param.c_no }&a_cate=0&keyword=${param.keyword}">ê´€ê´‘ì§€</a></li>
+					<li><a href="/gokkiri/area/areaList.go?c_no=${param.c_no }&a_cate=1&keyword=${param.keyword}">ë§›ì§‘</a></li>
+					<li><a data-toggle="modal" data-target="#scheduleList">ì—¬í–‰ì¼ì • ë³´ê¸°</a></li>
 				</ul>
 			</td>
 		</tr>
 		
 </table>
 
-<!-- °ü·Ã ¿©ÇàÀÏÁ¤ º¸±â -->
+<!-- ê´€ë ¨ ì—¬í–‰ì¼ì • ë³´ê¸° -->
 			
 <div id="scheduleList" class="modal fade" role="dialog">
 <div class="modal-dialog" style="width:80%;">
@@ -119,7 +119,7 @@ $(document).ready(function(){
 				<div class="modal-content">
 					<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal">&times;</button>
-					<h4 class="modal-title"><b><font color="#266eb7">£¼${param.keyword }£¾</font>&nbsp;</b>°ü·Ã ¿©ÇàÀÏÁ¤ º¸±â</h4>
+					<h4 class="modal-title"><b><font color="#266eb7">ï¼œ${param.keyword }ï¼</font>&nbsp;</b>ê´€ë ¨ ì—¬í–‰ì¼ì • ë³´ê¸°</h4>
 					</div>
 				
 					<div class="modal-body" style="padding-left: 0px; padding-right: 35px;">
@@ -143,16 +143,16 @@ $(document).ready(function(){
 				   		</b></font>
 				        <div class="thumbnail">
 				            <div class="caption">
-				                <p><h5>¡ì&nbsp;${scheduleList.s_start_date }¹Ú ${scheduleList.s_start_date + 1 }ÀÏ ÀÏÁ¤&nbsp;¡í</h5></p>
+				                <p><h5>â‰ª&nbsp;${scheduleList.s_start_date }ë°• ${scheduleList.s_start_date + 1 }ì¼ ì¼ì •&nbsp;â‰«</h5></p>
 				                <p></p>
-				                <p>ÀÛ¼ºÀÚ : ${scheduleList.m_email }</p>
+				                <p>ì‘ì„±ì : ${scheduleList.m_email }</p>
 				                <p><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>&nbsp;${scheduleList.s_hit }</p>
 				                
-				                <p><a href="/gokkiri/schedule/scheduleDetail.go?s_no=${scheduleList.s_no }&s_cate=0" data-toggle="tooltip" title="»ó¼¼º¸±â"><img src="/gokkiri/resources/img/view.png" width="25" /></a></p>
+				                <p><a href="/gokkiri/schedule/scheduleDetail.go?s_no=${scheduleList.s_no }&s_cate=0" data-toggle="tooltip" title="ìƒì„¸ë³´ê¸°"><img src="/gokkiri/resources/img/view.png" width="25" /></a></p>
 				                
-				                <p><h4>${scheduleList.s_detail_memo } Ãâ¹ß~</h4></p>
+				                <p><h4>${scheduleList.s_detail_memo } ì¶œë°œ~</h4></p>
 				            </div>
-				            <!-- a_img_sav ÄÃ·³À» s_together ÄÃ·³¸íÀ¸·Î ¹Ù²ã¼­ ºÒ·¯¿È¡é¡é¡é -->
+				            <!-- a_img_sav ì»¬ëŸ¼ì„ s_together ì»¬ëŸ¼ëª…ìœ¼ë¡œ ë°”ê¿”ì„œ ë¶ˆëŸ¬ì˜´â†“â†“â†“ -->
 				            <img src="/gokkiri/resources/area_img/${scheduleList.s_together }" alt="ALT NAME" class="img-responsive"  style="max-width: 100%; height: 100%;" >
 				        </div>
 					</li>
@@ -167,15 +167,15 @@ $(document).ready(function(){
 					</table>
 			</div>
 			<div class="modal-footer">
-				<button type="submit" class="btn btn-primary">´õº¸±â</button>
-				<button type="button" class="btn btn-default" data-dismiss="modal">³ª°¡±â</button>
+				<button type="submit" class="btn btn-primary">ë”ë³´ê¸°</button>
+				<button type="button" class="btn btn-default" data-dismiss="modal">ë‚˜ê°€ê¸°</button>
 			</div>
 		</div>
 		</form>
 </div>
 </div>
  			
-			<!-- °ü·Ã ¿©ÇàÀÏÁ¤ º¸±â ³¡ -->
+			<!-- ê´€ë ¨ ì—¬í–‰ì¼ì • ë³´ê¸° ë -->
 
 <br/><br/>
 </c:if>
@@ -183,8 +183,8 @@ $(document).ready(function(){
 	<c:if test="${session_m_email == 'admin' }">
 	<tr>
 		<td align="right">
-			<button type="button" class="btn btn-default" onclick="cityModify();">¼öÁ¤</button>
-			<button type="button" class="btn btn-default" onclick="cityDelete();">»èÁ¦</button>
+			<button type="button" class="btn btn-default" onclick="cityModify();">ìˆ˜ì •</button>
+			<button type="button" class="btn btn-default" onclick="cityDelete();">ì‚­ì œ</button>
 		</td>
 	</tr>
 	</c:if>
@@ -201,7 +201,7 @@ $(document).ready(function(){
   </div>
   <div class="panel-body">
   
-<!-- ÀÌ¹ÌÁö ½½¶óÀÌµå -->   
+<!-- ì´ë¯¸ì§€ ìŠ¬ë¼ì´ë“œ -->   
 <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="2000"  style="width:100%;">
   <!-- Indicators -->
    <ol class="carousel-indicators">
@@ -254,7 +254,7 @@ $(document).ready(function(){
     <span class="sr-only">Next</span>
   </a>
 </div>
-<!-- ÀÌ¹ÌÁö ½½¶óÀÌµå ³¡ -->
+<!-- ì´ë¯¸ì§€ ìŠ¬ë¼ì´ë“œ ë -->
   
 </div>
 </div>
@@ -265,7 +265,7 @@ $(document).ready(function(){
 	<tr>
 		<td align="left">
 		<div class="panel panel-default">
-			<div class="panel-heading"><b><font size="3">¡¤ ¼³¸í</font></b></div>
+			<div class="panel-heading"><b><font size="3">Â· ì„¤ëª…</font></b></div>
 			<div class="panel-body">${cityModel.c_con }</div>
 		</div>
 		</td>
@@ -273,7 +273,7 @@ $(document).ready(function(){
 </table>
 
 <br/>
-<!-- ÀÎ±â ¿©ÇàÁö ¸®½ºÆ®  -->
+<!-- ì¸ê¸° ì—¬í–‰ì§€ ë¦¬ìŠ¤íŠ¸  -->
 <h1 class="text-center">
 <img src="/gokkiri/resources/img/mainTitle1.png"/>
 </h1>
@@ -287,7 +287,7 @@ $(document).ready(function(){
     <div class="col-md-12">
       <div class="carousel slide media-carousel" id="media">
         <div class="carousel-inner"> 
-        	<!-- Ã¹¹øÂ° ½½¶óÀÌµå(±âÁØ) -->
+        	<!-- ì²«ë²ˆì§¸ ìŠ¬ë¼ì´ë“œ(ê¸°ì¤€) -->
 			<div class="item  active">
 				<div class="row" >
 				
@@ -311,7 +311,7 @@ $(document).ready(function(){
 				
 				</div>
 			</div>  
-			<!-- Ã¹¹øÂ° ½½¶óÀÌµå(±âÁØ) ³¡ -->
+			<!-- ì²«ë²ˆì§¸ ìŠ¬ë¼ì´ë“œ(ê¸°ì¤€) ë -->
 
 
 	</div>
@@ -347,7 +347,7 @@ $(document).ready(function(){
 <table border="0" width="70%" align="center"> 
 	<c:if test="${fn:length(areaReviewList) lt 1 }">
 	<tr><td align="center">
-	<br/><br/>µî·ÏµÈ ¸®ºä°¡ ¾ø½À´Ï´Ù. °ü±¤Áö/¸ÀÁı ¸®ºä¸¦ µî·ÏÇØÁÖ¼¼¿ä<br/><br/>
+	<br/><br/>ë“±ë¡ëœ ë¦¬ë·°ê°€ ì—†ìŠµë‹ˆë‹¤. ê´€ê´‘ì§€/ë§›ì§‘ ë¦¬ë·°ë¥¼ ë“±ë¡í•´ì£¼ì„¸ìš”<br/><br/>
 	</td></tr>
 	</c:if>  
    <c:forEach var="areaReviewList" items="${areaReviewList }">
@@ -372,19 +372,19 @@ $(document).ready(function(){
       <font color="#ffe616" size="5">
          <c:choose>
          <c:when test="${areaReviewList.r_score == 5 }">
-         ¡Ú¡Ú¡Ú¡Ú¡Ú
+         â˜…â˜…â˜…â˜…â˜…
          </c:when>
          <c:when test="${areaReviewList.r_score == 4 }">
-         ¡Ú¡Ú¡Ú¡Ú
+         â˜…â˜…â˜…â˜…
          </c:when>
          <c:when test="${areaReviewList.r_score == 3 }">
-         ¡Ú¡Ú¡Ú
+         â˜…â˜…â˜…
          </c:when>
          <c:when test="${areaReviewList.r_score == 2 }">
-         ¡Ú¡Ú
+         â˜…â˜…
          </c:when>
          <c:when test="${areaReviewList.r_score == 1 }">
-         ¡Ú
+         â˜…
          </c:when>
          </c:choose>
       </font>
@@ -400,7 +400,7 @@ $(document).ready(function(){
 <table width="70%" align="center">
 <tr>
 <td>
-<button type="button" class="btn btn-primary btn-lg btn-block" onclick="javascript:self.close();">´İ±â</button>
+<button type="button" class="btn btn-primary btn-lg btn-block" onclick="javascript:self.close();">ë‹«ê¸°</button>
 </td>
 </tr>
 </table>

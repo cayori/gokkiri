@@ -55,16 +55,16 @@ public class MypageController {
 	int a_cate;
 	int a_img_index;
 	
-	//ÆäÀÌÂ¡
+	//í˜ì´ì§•
 	private String pagingHtml;
 	private Paging page;
 	private int currentPage;
 	
-	// tip ¸®½ºÆ®
+	// tip ë¦¬ìŠ¤íŠ¸
 		@RequestMapping("myTipList.go")
 		public ModelAndView myTipList(HttpSession session, HttpServletRequest request, TipModel tipModel) throws UnsupportedEncodingException {
 
-			if(session.getAttribute("session_m_email") != null) { //·Î±×ÀÎo
+			if(session.getAttribute("session_m_email") != null) { //ë¡œê·¸ì¸o
 			if (request.getParameter("currentPage") == null || request.getParameter("currentPage").trim().isEmpty() || request.getParameter("currentPage").equals("0")) {
 				currentPage = 1;
 				
@@ -76,7 +76,7 @@ public class MypageController {
 			String m_email = (String) session.getAttribute("session_m_email");
 			List<TipModel> tipList = mypageService.myTipList(m_email);
 
-	        /* ÆäÀÌÂ¡  */
+	        /* í˜ì´ì§•  */
 			int totalCount = tipList.size();
 			page = new Paging("mypage/myTipList",currentPage, totalCount, 8, 5, null);
 			pagingHtml = page.getPagingHtml().toString();
@@ -95,18 +95,18 @@ public class MypageController {
 
 			return mav;
 			} else{
-				mav.setViewName("loginConfirm"); //·Î±×ÀÎx
+				mav.setViewName("loginConfirm"); //ë¡œê·¸ì¸x
 				return mav;
 			}
 		}
 	
-	//³»°¡¾´ ¸®ºä ¸ñ·Ï
+	//ë‚´ê°€ì“´ ë¦¬ë·° ëª©ë¡
 	@RequestMapping("/myAreaReviewList.go")
 	public ModelAndView myAreaReview(HttpSession session, HttpServletRequest request) throws Exception {
 		
 		session.getAttribute("session_m_email");
 		
-		if(session.getAttribute("session_m_email") != null) { //·Î±×ÀÎo
+		if(session.getAttribute("session_m_email") != null) { //ë¡œê·¸ì¸o
 
 			String m_email = (String) session.getAttribute("session_m_email");
 			List<AreaReviewModel> areaReviewList = mypageService.myAreaReviewList(m_email);
@@ -116,24 +116,24 @@ public class MypageController {
 			return mav;
 				
 		} else {
-			mav.setViewName("loginConfirm"); //·Î±×ÀÎx
+			mav.setViewName("loginConfirm"); //ë¡œê·¸ì¸x
 			return mav;
 		}
 	}
 	
 	
 	
-	//³»°¡¾´ QnA±Û ¸ñ·Ï
+	//ë‚´ê°€ì“´ QnAê¸€ ëª©ë¡
 	@RequestMapping("myQnaList.go")
 	public ModelAndView myQnaList(HttpSession session, HttpServletRequest request) throws Exception{
 
 	session.getAttribute("session_m_email");
 	
-	if(session.getAttribute("session_m_email") != null) { //·Î±×ÀÎo
+	if(session.getAttribute("session_m_email") != null) { //ë¡œê·¸ì¸o
 		
 		String m_email = (String) session.getAttribute("session_m_email");
 		
-		List<QnAModel> qnaList = mypageService.myQnaList(m_email);//QnA±Û 
+		List<QnAModel> qnaList = mypageService.myQnaList(m_email);//QnAê¸€ 
 		
 		mav.addObject("qnaList", qnaList);
 		mav.setViewName("myQnAList");
@@ -141,23 +141,23 @@ public class MypageController {
 			
 		} else {
 
-			mav.setViewName("loginConfirm"); //·Î±×ÀÎx
+			mav.setViewName("loginConfirm"); //ë¡œê·¸ì¸x
 			return mav;
 	}
 	
 }
 	
-	//³»°¡¾´ QnA ´ñ±Û ¸ñ·Ï
+	//ë‚´ê°€ì“´ QnA ëŒ“ê¸€ ëª©ë¡
 	@RequestMapping("myQnaCoList.go")
 	public ModelAndView myQnaCoList(HttpSession session, HttpServletRequest request) throws Exception{
 
 	session.getAttribute("session_m_email");
 	
-	if(session.getAttribute("session_m_email") != null) { //·Î±×ÀÎo
+	if(session.getAttribute("session_m_email") != null) { //ë¡œê·¸ì¸o
 		
 		String m_email = (String) session.getAttribute("session_m_email");
 
-		List<QnAModel> qnaCommList = mypageService.myQnaCommList(m_email);//QnA ´ñ±Û
+		List<QnAModel> qnaCommList = mypageService.myQnaCommList(m_email);//QnA ëŒ“ê¸€
 
 		mav.addObject("qnaCommList", qnaCommList);
 		mav.setViewName("myQnACoList");
@@ -165,7 +165,7 @@ public class MypageController {
 			
 		} else {
 
-			mav.setViewName("loginConfirm"); //·Î±×ÀÎx
+			mav.setViewName("loginConfirm"); //ë¡œê·¸ì¸x
 			return mav;
 	}
 	
@@ -173,21 +173,21 @@ public class MypageController {
 
 	
 
-	//³» ÀÏÁ¤ ¸®½ºÆ® º¸±â
+	//ë‚´ ì¼ì • ë¦¬ìŠ¤íŠ¸ ë³´ê¸°
 		@RequestMapping("myScheduleList.go")
 		public ModelAndView myComScheduleList(HttpSession session, HttpServletRequest request) throws Exception{
 
 			session.getAttribute("session_m_email");
 			
-			if(session.getAttribute("session_m_email") != null) { //·Î±×ÀÎo
+			if(session.getAttribute("session_m_email") != null) { //ë¡œê·¸ì¸o
 				
 				String m_email = (String) session.getAttribute("session_m_email");
 				
-				List<ScheduleModel> comScheduleList = mypageService.myComScheduleList(m_email); //¿Ï¼º±Û&°ø°³
-				List<ScheduleModel> comScheduleList_p = mypageService.myComScheduleList_p(m_email); //¿Ï¼º±Û&ºñ°ø°³
+				List<ScheduleModel> comScheduleList = mypageService.myComScheduleList(m_email); //ì™„ì„±ê¸€&ê³µê°œ
+				List<ScheduleModel> comScheduleList_p = mypageService.myComScheduleList_p(m_email); //ì™„ì„±ê¸€&ë¹„ê³µê°œ
 				
-				List<ScheduleModel> IncomScheduleList = mypageService.myIncomScheduleList(m_email); //¹Ì¿Ï¼º±Û&°ø°³
-				List<ScheduleModel> IncomScheduleList_p = mypageService.myIncomScheduleList_p(m_email); //¹Ì¿Ï¼º±Û&ºñ°ø°³
+				List<ScheduleModel> IncomScheduleList = mypageService.myIncomScheduleList(m_email); //ë¯¸ì™„ì„±ê¸€&ê³µê°œ
+				List<ScheduleModel> IncomScheduleList_p = mypageService.myIncomScheduleList_p(m_email); //ë¯¸ì™„ì„±ê¸€&ë¹„ê³µê°œ
 				
 				
 				mav.addObject("comScheduleList", comScheduleList);
@@ -201,19 +201,19 @@ public class MypageController {
 					
 				} else {
 
-					mav.setViewName("loginConfirm"); //·Î±×ÀÎx
+					mav.setViewName("loginConfirm"); //ë¡œê·¸ì¸x
 					return mav;
 			}
 			
 		}
 	
-	//ÂòÇÑÀÏÁ¤ ¸®½ºÆ® º¸±â
+	//ì°œí•œì¼ì • ë¦¬ìŠ¤íŠ¸ ë³´ê¸°
 	@RequestMapping("zzimScheduleList.go")
 	public ModelAndView zzimScheduleList(HttpSession session, HttpServletRequest request) throws Exception{
 
 		session.getAttribute("session_m_email");
 		
-		if(session.getAttribute("session_m_email") != null) { //·Î±×ÀÎo
+		if(session.getAttribute("session_m_email") != null) { //ë¡œê·¸ì¸o
 			
 			if (request.getParameter("currentPage") == null || request.getParameter("currentPage").trim().isEmpty() || request.getParameter("currentPage").equals("0")) {
 				currentPage = 1;
@@ -226,7 +226,7 @@ public class MypageController {
 			String m_email = (String) session.getAttribute("session_m_email");
 			List<ScheduleModel> zzimScheduleList = mypageService.zzimScheduleList(m_email); 
 
-	        /* ÆäÀÌÂ¡  */
+	        /* í˜ì´ì§•  */
 			int totalCount = zzimScheduleList.size();
 			page = new Paging("mypage/zzimScheduleList",currentPage, totalCount, 8, 5, null);
 			pagingHtml = page.getPagingHtml().toString();
@@ -247,20 +247,20 @@ public class MypageController {
 			
 			} else {
 
-				mav.setViewName("loginConfirm"); //·Î±×ÀÎx
+				mav.setViewName("loginConfirm"); //ë¡œê·¸ì¸x
 				return mav;
 		}
 			
 		}
 	
 	
-	//°øÀ¯ÀÏÁ¤ ¸®½ºÆ® º¸±â
+	//ê³µìœ ì¼ì • ë¦¬ìŠ¤íŠ¸ ë³´ê¸°
 	@RequestMapping("sharedScheduleList.go")
 	public ModelAndView sharedScheduleList(HttpSession session, HttpServletRequest request) throws Exception{
 
 			session.getAttribute("session_m_email");
 			
-			if(session.getAttribute("session_m_email") != null) { //·Î±×ÀÎo
+			if(session.getAttribute("session_m_email") != null) { //ë¡œê·¸ì¸o
 				
 				
 				
@@ -275,7 +275,7 @@ public class MypageController {
 				String m_email = (String) session.getAttribute("session_m_email");
 				List<ScheduleModel> sharedScheduleList = mypageService.sharedScheduleList(m_email);
 
-		        /* ÆäÀÌÂ¡  */
+		        /* í˜ì´ì§•  */
 				int totalCount = sharedScheduleList.size();
 				page = new Paging("mypage/sharedScheduleList",currentPage, totalCount, 8, 5, null);
 				pagingHtml = page.getPagingHtml().toString();
@@ -295,7 +295,7 @@ public class MypageController {
 				 
 			}else {
 
-					mav.setViewName("loginConfirm"); //·Î±×ÀÎx
+					mav.setViewName("loginConfirm"); //ë¡œê·¸ì¸x
 					return mav;
 			}
 			
